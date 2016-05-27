@@ -17,6 +17,7 @@ import random
 import sys
 import os
 import shutil
+import numpy as np
 
 all_cells = {}
 #all_included_on_cells = {}
@@ -86,8 +87,138 @@ def add_probabilistic_projection(net,
     net.projections.append(proj)
 
     return proj
+############################################################################################################################
+########### extract_seg_ids and 
+def extract_seg_ids(input_dict):
+    
+    cellID=input_dict['cellID']
+    targetCompArray=input_dict['SegOrSegGroupList']
+    targetingMode=input_dict['TargetingMode']
+    pathToNML=input_dict['pathToCell']
+    
+    '''input_dict stores a unique cellID, an array of target compartment names (e.g. segment group names or individual segment names), a targeting mode - "segments" or "segGroup", and a path to the cell.nml'''
+
+   
+    
+    loaded_cell_array={}
+    cell_nml_file = '%s.cell.nml'%cellID
+    if pathToNML != None:
+       document_cell = neuroml.loaders.NeuroMLLoader.load(pathToNML+cell_nml_file)
+    else:
+       document_cell=neuroml.loaders.NeuroMLLoader.load(cell_nml_file)
+    loaded_cell_array[cellID]=document_cell.cells[0]
+    #print("Loaded morphology file from: %s, with id: %s"%(cell_nml_file, loaded_cell_array[cellID].id))
+    segment_id_array=[]
+    segment_group_array={}
+    cell_segment_array=[]
+    #print("Now printing segment ids")
+    for segment in loaded_cell_array[cellID].morphology.segments:
+        segment_id_array.append(segment.id)   
+        #print segment.id
+        #print segment.name
+        # the block below is added for handling targeting at the segment level
+        segment_name_and_id=[]
+        segment_name_and_id.append(segment.name)
+        segment_name_and_id.append(segment.id)
+        cell_segment_array.append(segment_name_and_id)
+    #print("Now printing segment group ids their segments and groups")
+    for segment_group in loaded_cell_array[cellID].morphology.segment_groups:
+        pooled_segment_group_data={}
+        segment_list=[]
+        segment_group_list=[]
+        #print segment_group.id
+        for member in segment_group.members:
+            segment_list.append(member.segments)
+            #print member.segments
+        for included_segment_group in segment_group.includes:
+            segment_group_list.append(included_segment_group.segment_groups)
+                   
+           
+        pooled_segment_group_data["segments"]=segment_list
+        pooled_segment_group_data["groups"]=segment_group_list
+        segment_group_array[segment_group.id]=pooled_segment_group_data  
+               
+        #print segment_group_array[segment_group.id]["segments"]
+               
+        #print segment_group_array[segment_group.id]["groups"]
+    cell_segment_group={} 
+    cell_segment_group[cellID]=segment_group_array
+
+    target_segment_array={}
+
+    if targetingMode=="segments":
+       
+       for segment_counter in range(0,len(cell_segment_array)):
+           for target_segment in range(0,len(targetCompArray)):
+               if cell_segment_array[segment_counter][0]==targetCompArray[target_segment]: 
+                  target_segment_array[targetCompArray[target_segment]]=cell_segment_array[segment_counter][1]
+          
+                          
+    if targetingMode=="segGroups":
+       
+       for segment_group in cell_segment_group[cellID].keys():
+           for target_group in range(0,len(targetCompArray)):
+               if targetCompArray[target_group]==segment_group:
+                  segment_target_array=[]
+                  segment_target_array.append(targetCompArray[target_group])
+                  if cell_segment_group[cellID][segment_group]["segments"] !=[]:
+                     for segment in cell_segment_group[cellID][segment_group]["segments"]:
+                         segment_target_array.append(segment)
+                  if cell_segment_group[cellID][segment_group]["groups"] !=[]:
+                     for included_segment_group in cell_segment_group[cellID][segment_group]["groups"]:
+                         for included_segment_group_segment in cell_segment_group[cellID][included_segment_group]["segments"]:
+                             segment_target_array.append(included_segment_group_segment)
+                  target_segment_array.append(segment_target_array)
+          
+    
+
+    return target_segment_array        
+
+def get_unique_membrane_points(input_dict):
+
+
+    seg_specifications=input_dict['TargetDict']
+    seg_or_seg_group_list=input_dict['SegOrSegGroupList']
+    prob_dict=input_dict['ProbDict']
+    no_of_points_per_cell=input_dict['NumOfUniquePoints']
+    
+    '''input_dict stores the 'TargetDict' which should be in the format of the output of the function extract_seg_ids; 'SegOrSegGroupList' stores a list of names of target SegGroups or individual segments; the 'ProbDict' stores the corresponding targeting probabilities of these groups/individual segments; no_of_points_per_cell is the number of unique membrane points that has to be found by the function.'''
+    
+
+    target_points_per_cell=np.zeros([no_of_points_per_cell,2])
+    
+    x=0
+    while x==0:
+        seg_search_array=[]
+        fraction_along_search_array=[]
+        y=0
+        while y != no_of_points_per_cell:
+            segment_group=random.sample(range(0,len(seg_or_seg_group_list)),1)
+            segment_group=segment_group[0]
+            if random.random() <  prob_dict[seg_or_seg_group_list[segment_group]]:
+               seg_or_seg_group=seg_or_seg_group_list[segment_group]
+               for specified_target in range(0,len(seg_specifications)):
+                   if seg_specifications[specified_target][0]==seg_or_seg_group:
+                      segment_ids=seg_specifications[specified_target][1:]
+                      segment_id=random.sample(segment_ids,1)
+                      segment_id=segment_id[0]
+                      seg_search_array.append(segment_id)
+                      fraction_along_search_array.append(random.random())
+                      y=y+1
+                      break
+        if len(fraction_along_search_array)==len(set(fraction_along_search_array)):
+             x=1
+             
+    for point in range(0,no_of_points_per_cell):
+        target_points_per_cell[point,0]=seg_search_array[point]
+        target_points_per_cell[point,1]=fraction_along_search_array[point]
     
     
+    return target_points_per_cell
+
+
+#######################################################################################
+
 def include_cell_prototype(nml_doc,cell_nml2_path):
     
     nml_doc.includes.append(neuroml.IncludeType(cell_nml2_path)) 
