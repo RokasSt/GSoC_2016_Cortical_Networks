@@ -1,0 +1,46 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.12 (libNeuroML v0.2.15)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim_Cell2_suppyrFRB_FigA1FRB"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="Cell2_suppyrFRB_FigA1FRB.net.nml"/>
+    <Include file="../generatedNeuroML2/L23PyrFRB.cell.nml"/>
+    <Include file="ar__m00_25.channel.nml"/>
+    <Include file="cad__beta0_01__phi26000.nml"/>
+    <Include file="cad__beta0_05__phi52000.nml"/>
+    <Include file="cal.channel.nml"/>
+    <Include file="cat.channel.nml"/>
+    <Include file="k2.channel.nml"/>
+    <Include file="ka.channel.nml"/>
+    <Include file="kahp.channel.nml"/>
+    <Include file="kc.channel.nml"/>
+    <Include file="kdr.channel.nml"/>
+    <Include file="km.channel.nml"/>
+    <Include file="naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="nap.channel.nml"/>
+    <Include file="pas.channel.nml"/>
+   
+    <Simulation id="Sim_Cell2_suppyrFRB_FigA1FRB" length="800ms" step="0.025ms" target="Cell2_suppyrFRB_FigA1FRB" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="DispPop__CGsuppyrFRB" title="Membrane potentials of cells in CGsuppyrFRB" timeScale="1ms" xmin="-80.0" xmax="880.0" ymin="-90" ymax="50">
+            <Line id="CGsuppyrFRB[0]: v" quantity="CGsuppyrFRB/0/L23PyrFRB/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__CGsuppyrFRB" fileName="Sim_Cell2_suppyrFRB_FigA1FRB.CGsuppyrFRB.v.dat">
+            <OutputColumn id="v_CGsuppyrFRB_0_L23PyrFRB_v" quantity="CGsuppyrFRB/0/L23PyrFRB/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

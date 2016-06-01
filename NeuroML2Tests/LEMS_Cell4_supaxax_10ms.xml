@@ -1,0 +1,46 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.12 (libNeuroML v0.2.15)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim_Cell4_supaxax_10ms"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="Cell4_supaxax_10ms.net.nml"/>
+    <Include file="../generatedNeuroML2/SupAxAx.cell.nml"/>
+    <Include file="ar__m00_25.channel.nml"/>
+    <Include file="cad__beta0_02__phi260000.nml"/>
+    <Include file="cad__beta0_05__phi520000.nml"/>
+    <Include file="cal.channel.nml"/>
+    <Include file="cat.channel.nml"/>
+    <Include file="k2.channel.nml"/>
+    <Include file="ka.channel.nml"/>
+    <Include file="kahp_slower.channel.nml"/>
+    <Include file="kc_fast.channel.nml"/>
+    <Include file="kdr_fs.channel.nml"/>
+    <Include file="km.channel.nml"/>
+    <Include file="naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="nap.channel.nml"/>
+    <Include file="pas.channel.nml"/>
+   
+    <Simulation id="Sim_Cell4_supaxax_10ms" length="10ms" step="0.025ms" target="Cell4_supaxax_10ms" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="DispPop__CGsupaxax" title="Membrane potentials of cells in CGsupaxax" timeScale="1ms" xmin="-1.0" xmax="11.0" ymin="-90" ymax="50">
+            <Line id="CGsupaxax[0]: v" quantity="CGsupaxax/0/SupAxAx/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__CGsupaxax" fileName="Sim_Cell4_supaxax_10ms.CGsupaxax.v.dat">
+            <OutputColumn id="v_CGsupaxax_0_SupAxAx_v" quantity="CGsupaxax/0/SupAxAx/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

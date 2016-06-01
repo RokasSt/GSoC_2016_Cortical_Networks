@@ -1,0 +1,24 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell2_suppyrFRB_10ms">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 20:21:54, 30-May-16
+
+Cell Group: CGsuppyrFRB contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/L23PyrFRB.cell.nml"></include>
+    <pulseGenerator id="Input_9" delay="0.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell2_suppyrFRB_10ms" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGsuppyrFRB" component="L23PyrFRB" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="86.059073999999995" y="23.920014999999999" z="52.316223000000001"/>
+            </instance>
+        </population>
+        <inputList id="Input_9" population="CGsuppyrFRB" component="Input_9">
+            <input id="0" target="../CGsuppyrFRB/0/L23PyrFRB" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

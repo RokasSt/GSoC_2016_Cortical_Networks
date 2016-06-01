@@ -1,0 +1,47 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.12 (libNeuroML v0.2.15)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim_Cell8_tuftRS_Fig5A_1400"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="Cell8_tuftRS_Fig5A_1400.net.nml"/>
+    <Include file="../generatedNeuroML2/L5TuftedPyrRS.cell.nml"/>
+    <Include file="ar__m00_25.channel.nml"/>
+    <Include file="cad__beta0_01__phi4333_33.nml"/>
+    <Include file="cad__beta0_02__phi86666_7.nml"/>
+    <Include file="cad__beta0_075__phi86666_7.nml"/>
+    <Include file="cal.channel.nml"/>
+    <Include file="cat.channel.nml"/>
+    <Include file="k2.channel.nml"/>
+    <Include file="ka.channel.nml"/>
+    <Include file="kahp_deeppyr.channel.nml"/>
+    <Include file="kc.channel.nml"/>
+    <Include file="kdr.channel.nml"/>
+    <Include file="km.channel.nml"/>
+    <Include file="naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="nap.channel.nml"/>
+    <Include file="pas.channel.nml"/>
+   
+    <Simulation id="Sim_Cell8_tuftRS_Fig5A_1400" length="700ms" step="0.025ms" target="Cell8_tuftRS_Fig5A_1400" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="DispPop__CGtuftRS" title="Membrane potentials of cells in CGtuftRS" timeScale="1ms" xmin="-70.0" xmax="770.0" ymin="-90" ymax="50">
+            <Line id="CGtuftRS[0]: v" quantity="CGtuftRS/0/L5TuftedPyrRS/v" scale="1mV" color="#f7697f" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__CGtuftRS" fileName="Sim_Cell8_tuftRS_Fig5A_1400.CGtuftRS.v.dat">
+            <OutputColumn id="v_CGtuftRS_0_L5TuftedPyrRS_v" quantity="CGtuftRS/0/L5TuftedPyrRS/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>

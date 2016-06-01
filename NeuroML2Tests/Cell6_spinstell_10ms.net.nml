@@ -1,0 +1,24 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell6_spinstell_10ms">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 11:06:54, 31-May-16
+
+Cell Group: CGspinstell contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/L4SpinyStellate.cell.nml"></include>
+    <pulseGenerator id="Input_21" delay="0.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell6_spinstell_10ms" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGspinstell" component="L4SpinyStellate" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="41.920451999999997" y="16.598628999999999" z="44.465088000000002"/>
+            </instance>
+        </population>
+        <inputList id="Input_21" population="CGspinstell" component="Input_21">
+            <input id="0" target="../CGspinstell/0/L4SpinyStellate" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

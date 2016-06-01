@@ -1,0 +1,28 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell13_TCR_FigA7_300">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 19:58:18, 31-May-16
+
+Cell Group: CGTCR contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/TCR.cell.nml"></include>
+    <pulseGenerator id="Input_42" delay="0.0ms" duration="300.0ms" amplitude="-9.0E-4uA"/>
+    <pulseGenerator id="Input_42c" delay="300.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell13_TCR_FigA7_300" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGTCR" component="TCR" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="0." y="0." z="0."/>
+            </instance>
+        </population>
+        <inputList id="Input_42" population="CGTCR" component="Input_42">
+            <input id="0" target="../CGTCR/0/TCR" destination="synapses"/>
+        </inputList>
+        <inputList id="Input_42c" population="CGTCR" component="Input_42c">
+            <input id="0" target="../CGTCR/0/TCR" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

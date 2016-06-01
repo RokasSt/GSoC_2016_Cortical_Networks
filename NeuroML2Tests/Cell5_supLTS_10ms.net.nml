@@ -1,0 +1,24 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell5_supLTS_10ms">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 10:19:18, 31-May-16
+
+Cell Group: CGsupLTS contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/SupLTSInter.cell.nml"></include>
+    <pulseGenerator id="Input_18" delay="0.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell5_supLTS_10ms" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGsupLTS" component="SupLTSInter" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="42.582450000000001" y="12.719941" z="81.591840000000005"/>
+            </instance>
+        </population>
+        <inputList id="Input_18" population="CGsupLTS" component="Input_18">
+            <input id="0" target="../CGsupLTS/0/SupLTSInter" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

@@ -1,0 +1,28 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell12_deepLTS_FigA2b">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 18:44:50, 31-May-16
+
+Cell Group: CGdeepLTS contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/DeepLTSInter.cell.nml"></include>
+    <pulseGenerator id="Input_39" delay="100.0ms" duration="100.0ms" amplitude="4.0E-4uA"/>
+    <pulseGenerator id="Input_38" delay="0.0ms" duration="100.0ms" amplitude="-1.0E-4uA"/>
+    <network id="Cell12_deepLTS_FigA2b" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGdeepLTS" component="DeepLTSInter" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="11.854698000000001" y="18.159549999999999" z="65.275350000000003"/>
+            </instance>
+        </population>
+        <inputList id="Input_39" population="CGdeepLTS" component="Input_39">
+            <input id="0" target="../CGdeepLTS/0/DeepLTSInter" destination="synapses"/>
+        </inputList>
+        <inputList id="Input_38" population="CGdeepLTS" component="Input_38">
+            <input id="0" target="../CGdeepLTS/0/DeepLTSInter" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

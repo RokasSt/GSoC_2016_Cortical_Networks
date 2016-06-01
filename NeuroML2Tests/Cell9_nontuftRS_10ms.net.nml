@@ -1,0 +1,24 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell9_nontuftRS_10ms">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 15:33:24, 31-May-16
+
+Cell Group: CGnontuftRS contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/L6NonTuftedPyrRS.cell.nml"></include>
+    <pulseGenerator id="Input_28" delay="0.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell9_nontuftRS_10ms" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGnontuftRS" component="L6NonTuftedPyrRS" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="79.343890000000002" y="21.479671" z="50.701152999999998"/>
+            </instance>
+        </population>
+        <inputList id="Input_28" population="CGnontuftRS" component="Input_28">
+            <input id="0" target="../CGnontuftRS/0/L6NonTuftedPyrRS" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>

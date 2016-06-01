@@ -1,0 +1,24 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="Cell10_deepbask_10ms">
+    <notes>
+
+Network structure (NeuroML 2beta4) for project: Thalamocortical saved with neuroConstruct v1.7.1 on: 16:29:35, 31-May-16
+
+Cell Group: CGdeepbask contains 1 cells
+
+
+
+    </notes>
+    <include href="../generatedNeuroML2/DeepBasket.cell.nml"></include>
+    <pulseGenerator id="Input_31" delay="0.0ms" duration="50.0ms" amplitude="3.0E-4uA"/>
+    <network id="Cell10_deepbask_10ms" type="networkWithTemperature" temperature="6.3 degC">
+        <population id="CGdeepbask" component="DeepBasket" size="1" type="populationList">
+            <annotation/>
+            <instance id="0">
+                <location x="98.600830000000002" y="15.552481999999999" z="75.639160000000004"/>
+            </instance>
+        </population>
+        <inputList id="Input_31" population="CGdeepbask" component="Input_31">
+            <input id="0" target="../CGdeepbask/0/DeepBasket" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>
