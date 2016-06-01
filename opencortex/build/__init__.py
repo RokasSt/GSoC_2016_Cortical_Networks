@@ -371,16 +371,30 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
 
 ################################################################################    
     
-def add_populations_in_layers(net,boundaryDict,popDict): 
+def add_populations_in_layers(net,boundaryDict,popDict,x_min,x_max,y_min,y_max): 
 
-    # will use add_population_in_rectangular_region
+  
+# popDict are unique cell model ids; each entry stores a tuple of size and Layer index; these index strings make up the keys() of boundaryDict;
+# boundaryDict have layer pointers as keys; each entry stores the left and right bound of the layer in the list format , e.g. [L3_min, L3_max]
+   return_pop_array=[]
+   
+
+   for cellModel in popDict.keys():
+   
+       # the same cell model is allowed to be distributed in multiple layers
+       for subset in range(0,len(popDict[cellModel])):
+           size, layer = popDict[cellModel][subset]
     
-
-
-
-
-
-
+           if size>0:
+       
+              xl=x_max-x_min
+              yl=boundaryDict[layer][1]-boundaryDict[layer][0]
+              zl=z_max-z_min
+          
+              pop=add_population_in_rectangular_region(net,"Pop_%s_%s"%(cellModel,layer),cellModel,size,x_min,boundaryDict[layer][0],z_min,xl,yl,zl)
+         
+              return_pop_array.append(pop)
+          
 
 
 
