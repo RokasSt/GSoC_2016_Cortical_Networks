@@ -151,7 +151,7 @@ def extract_seg_ids(input_dict):
        for segment_counter in range(0,len(cell_segment_array)):
            for target_segment in range(0,len(targetCompArray)):
                if cell_segment_array[segment_counter][0]==targetCompArray[target_segment]: 
-                  target_segment_array[targetCompArray[target_segment]]=cell_segment_array[segment_counter][1]
+                  target_segment_array[targetCompArray[target_segment]]=[cell_segment_array[segment_counter][1]]
           
                           
     if targetingMode=="segGroups":
@@ -160,7 +160,6 @@ def extract_seg_ids(input_dict):
            for target_group in range(0,len(targetCompArray)):
                if targetCompArray[target_group]==segment_group:
                   segment_target_array=[]
-                  segment_target_array.append(targetCompArray[target_group])
                   if cell_segment_group[cellID][segment_group]["segments"] !=[]:
                      for segment in cell_segment_group[cellID][segment_group]["segments"]:
                          segment_target_array.append(segment)
@@ -168,7 +167,7 @@ def extract_seg_ids(input_dict):
                      for included_segment_group in cell_segment_group[cellID][segment_group]["groups"]:
                          for included_segment_group_segment in cell_segment_group[cellID][included_segment_group]["segments"]:
                              segment_target_array.append(included_segment_group_segment)
-                  target_segment_array.append(segment_target_array)
+                  target_segment_array[targetCompArray[target_group]]=segment_target_array
           
     
 
@@ -178,11 +177,10 @@ def get_unique_membrane_points(input_dict):
 
 
     seg_specifications=input_dict['TargetDict']
-    seg_or_seg_group_list=input_dict['SegOrSegGroupList']
     prob_dict=input_dict['ProbDict']
     no_of_points_per_cell=input_dict['NumOfUniquePoints']
     
-    '''input_dict stores the 'TargetDict' which should be in the format of the output of the function extract_seg_ids; 'SegOrSegGroupList' stores a list of names of target SegGroups or individual segments; the 'ProbDict' stores the corresponding targeting probabilities of these groups/individual segments; no_of_points_per_cell is the number of unique membrane points that has to be found by the function.'''
+    '''input_dict stores the 'TargetDict' which should be in the format of the output of the function extract_seg_ids; the 'ProbDict' stores the corresponding targeting probabilities of these groups/individual segments; no_of_points_per_cell is the number of unique membrane points that has to be found by the function.'''
     
 
     target_points_per_cell=np.zeros([no_of_points_per_cell,2])
@@ -193,25 +191,26 @@ def get_unique_membrane_points(input_dict):
         fraction_along_search_array=[]
         y=0
         while y != no_of_points_per_cell:
-            segment_group=random.sample(range(0,len(seg_or_seg_group_list)),1)
+            segment_group=random.sample(range(0,len(seg_specifications.keys())),1)
             segment_group=segment_group[0]
-            if random.random() <  prob_dict[seg_or_seg_group_list[segment_group]]:
-               seg_or_seg_group=seg_or_seg_group_list[segment_group]
-               for specified_target in range(0,len(seg_specifications)):
-                   if seg_specifications[specified_target][0]==seg_or_seg_group:
-                      segment_ids=seg_specifications[specified_target][1:]
-                      segment_id=random.sample(segment_ids,1)
-                      segment_id=segment_id[0]
-                      seg_search_array.append(segment_id)
-                      fraction_along_search_array.append(random.random())
-                      y=y+1
-                      break
-        if len(fraction_along_search_array)==len(set(fraction_along_search_array)):
-             x=1
+            if seg_specifications.keys()[segment_group] in prob_dict.keys() :
+               if random.random() <  prob_dict[seg_specifications.keys()[segment_group]]:
+                  seg_or_seg_group=seg_specifications.keys()[segment_group]
+                  for specified_target in seg_specifications.keys():
+                      if specified_target==seg_or_seg_group:
+                         segment_ids=seg_specifications[specified_target]
+                         segment_id=random.sample(segment_ids,1)
+                         segment_id=segment_id[0]
+                         seg_search_array.append(segment_id)
+                         fraction_along_search_array.append(random.random())
+                         y=y+1
+                         break
+            if len(fraction_along_search_array)==len(set(fraction_along_search_array)):
+                x=1
              
-    for point in range(0,no_of_points_per_cell):
-        target_points_per_cell[point,0]=seg_search_array[point]
-        target_points_per_cell[point,1]=fraction_along_search_array[point]
+        for point in range(0,no_of_points_per_cell):
+            target_points_per_cell[point,0]=seg_search_array[point]
+            target_points_per_cell[point,1]=fraction_along_search_array[point]
     
     
     return target_points_per_cell
@@ -369,6 +368,26 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
             inst.location = neuroml.Location(x=str(x_min +(x_size)*random.random()), y=str(y_min +(y_size)*random.random()), z=str(z_min+(z_size)*random.random()))
     
     return pop
+
+################################################################################    
+    
+def add_populations_in_layers(net,boundaryDict,popDict): 
+
+    # will use add_population_in_rectangular_region
+    
+
+
+
+
+
+
+
+
+
+#################################################################################
+
+
+
 
 def add_inputs_to_population(net, id, population, input_comp_id, all_cells=False, only_cells=None):
     
