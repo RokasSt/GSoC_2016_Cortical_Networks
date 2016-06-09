@@ -1,6 +1,12 @@
 #####################
 ### Subject to change without notice!!
 #####################
+#
+# 
+#
+#
+#
+
 
 import opencortex
 import neuroml
@@ -18,6 +24,7 @@ import sys
 import os
 import shutil
 import numpy as np
+import json
 
 all_cells = {}
 #all_included_on_cells = {}
@@ -33,15 +40,20 @@ def add_connection(projection,
                    post_cell_id, 
                    post_seg_id,
                    delay,
-                   weight):
-
+                   weight,
+                   pre_fraction=0.5,
+                   post_fraction=0.5):
+    
+                   
+                   
+ 
     connection = neuroml.ConnectionWD(id=id, \
                             pre_cell_id="../%s/%i/%s"%(presynaptic_population.id, pre_cell_id, presynaptic_population.component), \
                             pre_segment_id=pre_seg_id, \
-                            pre_fraction_along=0.5,
+                            pre_fraction_along=pre_fraction,
                             post_cell_id="../%s/%i/%s"%(postsynaptic_population.id, post_cell_id, postsynaptic_population.component), \
                             post_segment_id=post_seg_id,
-                            post_fraction_along=0.5,
+                            post_fraction_along=post_fraction,
                             delay = '%s ms'%delay,
                             weight = weight)
 
@@ -72,6 +84,7 @@ def add_probabilistic_projection(net,
         for j in range(0, postsynaptic_population.size):
             if i != j or presynaptic_population.id != postsynaptic_population.id:
                 if connection_probability>= 1 or random.random() < connection_probability:
+                    
                     add_connection(proj, 
                                    count, 
                                    presynaptic_population, 
@@ -87,8 +100,168 @@ def add_probabilistic_projection(net,
     net.projections.append(proj)
 
     return proj
+    
+def add_advanced_projection(net, 
+                            proj_counter,
+                            presynaptic_population, 
+                            postsynaptic_population, 
+                            synapseList,  
+                            connection_probability,
+                            postTargetParams,
+                            delaysInfo=None,
+                            weightsInfo=None):
+                            
+
+    if presynaptic_population.size==0 or postsynaptic_population.size==0:
+        return None
+    
+    proj_array={}
+    syn_counter=0
+    for synapse_id in synapseList:
+        proj = neuroml.Projection(id="Proj%dsyn%d_%s_%s"%(proj_counter,syn_counter,presynaptic_population.id, postsynaptic_population.id), 
+                      presynaptic_population=presynaptic_population.id, 
+                      postsynaptic_population=postsynaptic_population.id, 
+                      synapse=synapse_id)
+        syn_counter+=1              
+        proj_array[synapse_id]=proj
+
+    count = 0
+
+    for i in range(0, presynaptic_population.size):
+        for j in range(0, postsynaptic_population.size):
+            if i != j or presynaptic_population.id != postsynaptic_population.id:
+                if connection_probability>= 1 or random.random() < connection_probability:
+                   target_array=get_unique_membrane_points(postTargetParams)
+                   #### at the moment get_unique_mebrane_points is only used to pick up the single target segment id on the postsynaptic cell
+                   post_seg_id=0
+                   if len(target_array)==1:
+                      post_seg_id=int(target_array[0][0])
+                   for synapse_id in synapseList:
+                       delay=0
+                       weight=1
+                       if delaysInfo !=None:
+                          for synapseComp in delaysInfo.keys():
+                              if synapseComp in synapse_id:
+                                 delay=delaysInfo[synapseComp]
+                       if weightsInfo !=None:
+                          for synapseComp in weightsInfo.keys():
+                              if synapseComp in synapse_id:
+                                 weight=weightsInfo[synapseComp]
+                       
+                       add_connection(proj_array[synapse_id], 
+                                      count, 
+                                      presynaptic_population, 
+                                      i, 
+                                      0, 
+                                      postsynaptic_population, 
+                                      j, 
+                                      post_seg_id,
+                                      delay = delay,
+                                      weight = weight)
+                   count+=1
+                   
+    for synapse_id in synapseList:
+        net.projections.append(proj_array[synapse_id])
+
+    return proj_array, proj_counter
+ 
+############################################################################################################################# 
+def parse_extra_params(extra_params,pre_pop,post_pop):
+
+    prob_dict=None
+    weights=None
+    delays=None
+    for params_set in range(0,len(extra_params)):
+        if extra_params[params_set]['pre']==pre_pop and extra_params[params_set]['post']==post_pop:
+           if 'ProbDict' in extra_params[params_set].keys():
+              prob_dict=extra_params[params_set]['ProbDict']
+           if 'weights' in extra_params[params_set].keys() and 'synComps' in extra_params[params_set].keys():
+              if isinstance(extra_params[params_set]['synComps'],list) and isinstance(extra_params[params_set]['weights'],list):
+                 if len(extra_params[params_set]['synComps'])==len(extra_params[params_set]['weights']):
+                    weights={}
+                    for syn_comp in range(0,len(extra_params[params_set]['synComps'])):
+                        weights[extra_params[params_set]['synComps'][syn_comp]]=extra_params[params_set]['weights'][syn_comp]
+           if 'delays' in extra_params[params_set].keys() and 'synComps' in extra_params[params_set].keys():
+              if isinstance(extra_params[params_set]['synComps'],list) and isinstance(extra_params[params_set]['delays'],list):
+                 if len(extra_params[params_set]['synComps'])==len(extra_params[params_set]['delays']):
+                    delays={}
+                    for syn_comp in range(0,len(extra_params[params_set]['synComps'])):
+                        delays[extra_params[params_set]['synComps'][syn_comp][syn_comp]]=extra_params[params_set]['delays'][syn_comp]
+                        
+                        
+    return prob_dict, weights, delays
 ############################################################################################################################
-########### extract_seg_ids and 
+
+
+def use_conn_summary(net,popObjects,connFile,pathToCells,extra_params=None):
+
+    final_synapse_list=[]
+    final_proj_array=[]
+    with open(connFile,'r') as json_conn:
+         conn_data=json.load(json_conn)
+    proj_counter=0
+    for prePop in popObjects.keys():
+    
+        for subset_pre in popObjects[prePop].keys():
+        
+            preCellObject=popObjects[prePop][subset_pre]
+            
+            for postPop in popObjects.keys():
+            
+                for subset_post in popObjects[postPop].keys():
+                
+                    postCellObject=popObjects[postPop][subset_post]
+            
+                    for stored_proj in range(0,len(conn_data)):
+                    
+                        projInfo=conn_data[stored_proj]
+                        
+                        if projInfo['PreCellGroup']==prePop and projInfo['PostCellGroup']==postPop:
+                    
+                           connP=float(projInfo['NumPerPostCell'])/preCellObject['size']
+                           
+                           target_comp_groups=projInfo['LocOnPostCell']
+                           
+                           if extra_params != None:
+                              prob_dict, weights, delays=parse_extra_params(extra_params,prePop,postPop)
+                           else:
+                              prob_dict=None
+                              weights=None
+                              delays=None     
+                           if prob_dict ==None:
+                              prob_dict={}
+                                    
+                           if not isinstance(target_comp_groups,list):
+                              prob_dict[target_comp_groups]=1
+                              target_comp_groups=[target_comp_groups]
+                              
+                           target_segments=extract_seg_ids({'cellID':postPop,'SegOrSegGroupList':target_comp_groups,'TargetingMode':'segGroups','pathToCell':pathToCells})
+                           postTargetParams={'TargetDict':target_segments,'ProbDict':prob_dict,'NumOfUniquePoints':1}
+                           synapseList=projInfo['SynapseList']                                                
+                           final_synapse_list.extend(projInfo['SynapseList'])
+                           compound_proj=add_advanced_projection(net, 
+                                                        proj_counter,
+                                                        preCellObject['popObj'], 
+                                                        postCellObject['popObj'], 
+                                                        synapseList,  
+                                                        connP,
+                                                        postTargetParams,
+                                                        delaysInfo=delays,
+                                                        weightsInfo=weights)
+                                                        
+                           proj_counter+=1                      
+                           final_proj_array.extend(compound_proj)
+          
+    final_synapse_list=np.unique(final_synapse_list)
+                          
+    return final_synapse_list, final_proj_array
+                           
+                           
+                        
+    
+
+############################################################################################################################
+
 def extract_seg_ids(input_dict):
     
     cellID=input_dict['cellID']
@@ -172,7 +345,7 @@ def extract_seg_ids(input_dict):
     
 
     return target_segment_array        
-
+######################################################################################
 def get_unique_membrane_points(input_dict):
 
 
@@ -303,8 +476,18 @@ def add_cell_and_channels(nml_doc,cell_nml2_path, cell_id):
                 new_loc = '%s/%s'%(nml_doc.id,included.href)
                 nml_doc.includes.append(neuroml.IncludeType(new_loc))
                 all_included_files.append(new_loc)
-
+                
+                
+#########################################
+def add_synapses(nml_doc,nml2_path,synapseList):
     
+   for synapse in synapseList: 
+       _copy_to_dir_for_model(nml_doc,nml2_path+"%s.synapse.nml"%synapse)
+       new_file = '%s/%s.synapse.nml'%(nml_doc.id,synapse)
+       nml_doc.includes.append(neuroml.IncludeType(new_file)) 
+            
+
+#########################################
     
 def add_exp_two_syn(nml_doc, id, gbase, erev, tau_rise, tau_decay):
     # Define synapse
@@ -371,29 +554,33 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
 
 ################################################################################    
     
-def add_populations_in_layers(net,boundaryDict,popDict,x_min,x_max,y_min,y_max): 
+def add_populations_in_layers(net,boundaryDict,popDict,x_vector,z_vector): 
 
   
 # popDict are unique cell model ids; each entry stores a tuple of size and Layer index; these index strings make up the keys() of boundaryDict;
 # boundaryDict have layer pointers as keys; each entry stores the left and right bound of the layer in the list format , e.g. [L3_min, L3_max]
-   return_pop_array=[]
+   return_pops={}
    
 
    for cellModel in popDict.keys():
-   
+
        # the same cell model is allowed to be distributed in multiple layers
        for subset in range(0,len(popDict[cellModel])):
            size, layer = popDict[cellModel][subset]
     
            if size>0:
-       
-              xl=x_max-x_min
+              return_pops[cellModel]={}
+              xl=x_vector[1]-x_vector[0]
               yl=boundaryDict[layer][1]-boundaryDict[layer][0]
-              zl=z_max-z_min
+              zl=z_vector[1]-z_vector[0]
           
-              pop=add_population_in_rectangular_region(net,"Pop_%s_%s"%(cellModel,layer),cellModel,size,x_min,boundaryDict[layer][0],z_min,xl,yl,zl)
+              pop=add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl)
          
-              return_pop_array.append(pop)
+              return_pops[cellModel][layer]={}
+              return_pops[cellModel][layer]['popObj']=pop
+              return_pops[cellModel][layer]['size']=size
+   
+   return return_pops
           
 
 
