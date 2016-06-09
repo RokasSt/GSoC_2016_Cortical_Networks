@@ -11,7 +11,7 @@ conn_dict_Traub.append(proj1)
 proj2={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_SupPyr_SupPyr','Syn_NMDA_SupPyr_SupPyr'],'NumPerPostCell':50,'LocOnPostCell':'basal_obl_dends'}
 conn_dict_Traub.append(proj2)
 
-proj3={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_RSPyr_SupFS'],'NumPerPostCell':90,'LocOnPostCell':'mid_tip_dends'}
+proj3={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_RSPyr_SupFS'],'NumPerPostCell':90,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj3)
 
 proj4={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_RSPyr_SupFS'],'NumPerPostCell':90,'LocOnPostCell':'mid_tip_dends'}
@@ -19,9 +19,6 @@ conn_dict_Traub.append(proj4)
 
 proj5={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'SupLTS','SynapseList':['Syn_AMPA_SupPyr_SupLTS','Syn_NMDA_RSPyr_SupLTS'],'NumPerPostCell':90,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj5)
-
-proj6={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_RSPyr_SupFS'],'NumPerPostCell':90,'LocOnPostCell':'mid_tip_dends'}
-conn_dict_Traub.append(proj6)
 
 proj7={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'L4SpinStell','SynapseList':['Syn_AMPA_SupPyr_L4SS','Syn_NMDA_SupPyr_L4SS'],'NumPerPostCell':3,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj7)
@@ -50,11 +47,12 @@ conn_dict_Traub.append(proj14)
 proj15={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'DeepBask','SynapseList':['Syn_AMPA_SupPyr_DeepFS','Syn_NMDA_SupPyr_DeepFS'],'NumPerPostCell':30,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj15)
 
-proj16={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrRS','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.72,'LocOnPostCell':'axon_group'}
-conn_dict_Traub.append(proj16)
+### at the moment Syn_Elect_SupPyr_SupPyr is not in the generatedNeuroML2 directory which is copied to the '../NeuroML2/prototypes/Thalamocortical/
+#proj16={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrRS','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.72,'LocOnPostCell':'axon_group'}
+#conn_dict_Traub.append(proj16)
 
-proj17={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.375,'LocOnPostCell':'axon_group'}
-conn_dict_Traub.append(proj17)
+#proj17={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.375,'LocOnPostCell':'axon_group'}
+#conn_dict_Traub.append(proj17)
 
 
 #  2 From L23PyrFRB
@@ -65,7 +63,7 @@ conn_dict_Traub.append(proj18)
 proj19={'type':'chem','PreCellGroup':'L23PyrFRB','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_SupPyr_SupPyr','Syn_NMDA_SupPyr_SupPyr'],'NumPerPostCell':5,'LocOnPostCell':'basal_obl_dends'}
 conn_dict_Traub.append(proj19)
 
-proj20={'type':'chem','PreCellGroup':'L23PyrFRB','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_FRBPyr_SupFS'],'NumPerPostCell':5,'LocOnPostCell':'mid_tip_dends'}
+proj20={'type':'chem','PreCellGroup':'L23PyrFRB','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_FRBPyr_SupFS'],'NumPerPostCell':5,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj20)
 
 proj21={'type':'chem','PreCellGroup':'L23PyrFRB','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_SupPyr_SupFS','Syn_NMDA_FRBPyr_SupFS'],'NumPerPostCell':5,'LocOnPostCell':'mid_tip_dends'}
@@ -105,26 +103,26 @@ conn_dict_Traub.append(proj31)
 
 #  3 From SupBask
 
-proj32={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'L23PyrRS','SynapseList':['Syn_GABAA_SupBask_SupPyr'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
+proj32={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'L23PyrRS','SynapseList':['Syn_GABAA_SupBask_SupPyr'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
 conn_dict_Traub.append(proj32)
 
-proj33={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_GABAA_SupBask_SupPyr'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
+proj33={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_GABAA_SupBask_SupPyr'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
 conn_dict_Traub.append(proj33)
 
-proj34={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'SupBask','SynapseList':['Syn_GABAA_SupBask_supBask'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj34={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'SupBasket','SynapseList':['Syn_GABAA_SupBask_SupBask'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj34)
 
-proj35={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'SupAxAx','SynapseList':['Syn_GABAA_SupBask_SupAxAx'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj35={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'SupAxAx','SynapseList':['Syn_GABAA_SupBask_SupAxAx'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj35)
 
-proj36={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'SupLTS','SynapseList':['Syn_GABAA_SupBask_SupLTS'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj36={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'SupLTS','SynapseList':['Syn_GABAA_SupBask_SupLTS'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj36)
 
-proj37={'type':'chem','PreCellGroup':'SupBask','PostCellGroup':'L4SpinStell','SynapseList':['Syn_GABAA_SupBask_L4SS'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
+proj37={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'L4SpinStell','SynapseList':['Syn_GABAA_SupBask_L4SS'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
 conn_dict_Traub.append(proj37)
-
-proj38={'type':'elec','PreCellGroup':'SupBask','PostCellGroup':'SupBask','SynapseList':['Syn_Elect_CortIN_CortIN'],'NumPerPostCell':2.22,'LocOnPostCell':'mid_tip_dends'}
-conn_dict_Traub.append(proj38)
+#### at the moment Syn_Elect_CortIN_CortIN is not in the generatedNeuroML2 directory
+#proj38={'type':'elec','PreCellGroup':'SupBasket','PostCellGroup':'SupBasket','SynapseList':['Syn_Elect_CortIN_CortIN'],'NumPerPostCell':2.22,'LocOnPostCell':'mid_tip_dends'}
+#conn_dict_Traub.append(proj38)
 
 
 
@@ -157,7 +155,7 @@ conn_dict_Traub.append(proj45)
 proj46={'type':'chem','PreCellGroup':'SupLTS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_GABAA_SupLTS_SupPyr'],'NumPerPostCell':20,'LocOnPostCell':'LTS_dends'}
 conn_dict_Traub.append(proj46)
 
-proj47={'type':'chem','PreCellGroup':'SupLTS','PostCellGroup':'SupBask','SynapseList':['Syn_GABAA_SupLTS_FS'],'NumPerPostCell':20,'LocOnPostCell':'mid_dist_dends'}
+proj47={'type':'chem','PreCellGroup':'SupLTS','PostCellGroup':'SupBasket','SynapseList':['Syn_GABAA_SupLTS_FS'],'NumPerPostCell':20,'LocOnPostCell':'mid_dist_dends'}
 conn_dict_Traub.append(proj47)
 
 proj48={'type':'chem','PreCellGroup':'SupLTS','PostCellGroup':'SupAxAx','SynapseList':['Syn_GABAA_SupLTS_FS'],'NumPerPostCell':20,'LocOnPostCell':'mid_dist_dends'}
@@ -199,7 +197,7 @@ conn_dict_Traub.append(proj58)
 proj59={'type':'chem','PreCellGroup':'L4SpinStell','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_L4SS_Pyr','Syn_NMDA_L4SS_Pyr'],'NumPerPostCell':20,'LocOnPostCell':'basal_dends'}
 conn_dict_Traub.append(proj59)
 
-proj60={'type':'chem','PreCellGroup':'L4SpinStell','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_L4SS_IN','Syn_NMDA_L4SS_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj60={'type':'chem','PreCellGroup':'L4SpinStell','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_L4SS_IN','Syn_NMDA_L4SS_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj60)
 
 proj61={'type':'chem','PreCellGroup':'L4SpinStell','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_L4SS_IN','Syn_NMDA_L4SS_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
@@ -240,7 +238,7 @@ conn_dict_Traub.append(proj71)
 proj72={'type':'chem','PreCellGroup':'L5TuftIB','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_L5IB_SupPyr','Syn_NMDA_L5IB_SupPyr'],'NumPerPostCell':2,'LocOnPostCell':'mid_apic_dends'}
 conn_dict_Traub.append(proj72)
 
-proj73={'type':'chem','PreCellGroup':'L5TUftIB','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_L5IB_SupFS','Syn_NMDA_L5IB_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj73={'type':'chem','PreCellGroup':'L5TUftIB','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_L5IB_SupFS','Syn_NMDA_L5IB_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj73)
 
 proj74={'type':'chem','PreCellGroup':'L5TuftIB','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_L5IB_SupFS','Syn_NMDA_L5IB_IN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
@@ -284,7 +282,7 @@ conn_dict_Traub.append(proj85)
 proj86={'type':'chem','PreCellGroup':'L5TuftRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_L5RS_SupPyr','Syn_NMDA_L5RS_SupPyr'],'NumPerPostCell':2,'LocOnPostCell':'mid_apic_dends'}
 conn_dict_Traub.append(proj86)
 
-proj87={'type':'chem','PreCellGroup':'L5TUftRS','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_L5RS_SupFS','Syn_NMDA_L5RS_SupIN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
+proj87={'type':'chem','PreCellGroup':'L5TUftRS','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_L5RS_SupFS','Syn_NMDA_L5RS_SupIN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj87)
 
 proj88={'type':'chem','PreCellGroup':'L5TuftRS','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_L5RS_SupFS','Syn_NMDA_L5RS_SupIN'],'NumPerPostCell':20,'LocOnPostCell':'mid_tip_dends'}
@@ -326,7 +324,7 @@ conn_dict_Traub.append(proj98)
 proj99={'type':'chem','PreCellGroup':'L6NonTuftRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_L6NT_SupPyr','Syn_NMDA_L6NT_SupPyr'],'NumPerPostCell':10,'LocOnPostCell':'L6Pyr_dends'}
 conn_dict_Traub.append(proj99)
 
-proj100={'type':'chem','PreCellGroup':'L6NonTuftRS','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_L6NT_SupFS','Syn_NMDA_L6NT_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_tip_dends'}
+proj100={'type':'chem','PreCellGroup':'L6NonTuftRS','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_L6NT_SupFS','Syn_NMDA_L6NT_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj100)
 
 proj101={'type':'chem','PreCellGroup':'L6NonTuftRS','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_L6NT_SupFS','Syn_NMDA_L6NT_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_tip_dends'}
@@ -424,7 +422,7 @@ conn_dict_Traub.append(proj128)
 proj129={'type':'chem','PreCellGroup':'DeepLTS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_GABAA_DeepLTS_SupPyr'],'NumPerPostCell':10,'LocOnPostCell':'LTS_dends'}
 conn_dict_Traub.append(proj129)
 
-proj130={'type':'chem','PreCellGroup':'DeepLTS','PostCellGroup':'SupBask','SynapseList':['Syn_GABAA_DeepLTS_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_dist_dends'}
+proj130={'type':'chem','PreCellGroup':'DeepLTS','PostCellGroup':'SupBasket','SynapseList':['Syn_GABAA_DeepLTS_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_dist_dends'}
 conn_dict_Traub.append(proj130)
 
 proj131={'type':'chem','PreCellGroup':'DeepLTS','PostCellGroup':'SupAxAx','SynapseList':['Syn_GABAA_DeepLTS_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'mid_dist_dends'}
@@ -466,7 +464,7 @@ conn_dict_Traub.append(proj141)
 proj142={'type':'chem','PreCellGroup':'TCR','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_AMPA_TCR_SupPyr','Syn_NMDA_TCR_SupPyr'],'NumPerPostCell':10,'LocOnPostCell':'TCR_dends'}
 conn_dict_Traub.append(proj142)
 
-proj143={'type':'elec','PreCellGroup':'TCR','PostCellGroup':'SupBask','SynapseList':['Syn_AMPA_TCR_SupFS','Syn_NMDA_TCR_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'prox_mid_dends'}
+proj143={'type':'elec','PreCellGroup':'TCR','PostCellGroup':'SupBasket','SynapseList':['Syn_AMPA_TCR_SupFS','Syn_NMDA_TCR_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'prox_mid_dends'}
 conn_dict_Traub.append(proj143)
 
 proj144={'type':'chem','PreCellGroup':'TCR','PostCellGroup':'SupAxAx','SynapseList':['Syn_AMPA_TCR_SupFS','Syn_NMDA_TCR_SupFS'],'NumPerPostCell':10,'LocOnPostCell':'prox_mid_dends'}
