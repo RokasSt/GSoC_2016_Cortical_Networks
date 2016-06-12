@@ -26,6 +26,7 @@ import shutil
 import numpy as np
 import json
 import math
+import operator
 
 all_cells = {}
 #all_included_on_cells = {}
@@ -186,10 +187,12 @@ def add_convergent_projection(net,
                               
     targetDict=postTargetingSpec['TargetDict']
     fractions=postTargetingSpec['ConnFractions']
+    minimalProbRange=postTargetingSpec['minimalProbRange']
+    
     for i in range(0, postsynaptic_population.size):
         presynaptic_cells=random.sample(range(0,postsynaptic_population.size),noOfConnections)
         
-        target_array=get_unique_membrane_points(targetDict,fractions,noOfConnections)
+        target_array=get_unique_membrane_points(targetDict,fractions,noOfConnections,minimalProbRange)
         
         for j in presynaptic_cells:
             if i != j or presynaptic_population.id != postsynaptic_population.id:
@@ -362,7 +365,7 @@ def make_target_dict(target_segs,cellPath):
     targetDict={}
     for target in target_segs.keys():
         targetDict[target]=get_seg_probabilities(cellPath,target_segs[target])
-    return targetDict           
+    return targetDict
     
 ############################################################################################################################
 
@@ -446,10 +449,12 @@ def get_seg_probabilities(cellPath,targetSegments):
     for seg in cellObject.morphology.segments:
         for target_seg in targetSegments:
             if target_seg==seg.id:
+            
                if seg.distal !=None:
                   xd=seg.distal.x
                   yd=seg.distal.y
                   zd=seg.distal.z
+                  
                if seg.proximal !=None:
                   xp=seg.proximal.x
                   yp=seg.proximal.y
@@ -474,9 +479,8 @@ def get_seg_probabilities(cellPath,targetSegments):
         lengthProbs[target_seg]=lengthDict[target_seg]/totalLength
         totalProb=lengthProbs[target_seg]+totalProb
     return lengthProbs
-           
-        
-#############################################################################################################################
+############################################################################################################################
+
 
 def extract_seg_ids(input_dict):
     
@@ -562,41 +566,53 @@ def extract_seg_ids(input_dict):
 
     return target_segment_array        
 ######################################################################################
-def get_unique_membrane_points(seg_specifications,subset_dict):
+def get_target_segments(seg_specifications,subset_dict,minimalProbRange):
     
-    '''input_dict stores the 'TargetDict' which should be in the format of the output of the function make_target_dict; the fraction_dict stores the corresponding targeting fractions of these groups/individual segments; no_of_points_per_cell is the number of unique membrane points that has to be found by the function.'''
     
-    target_points_per_cell=[]
+    target_segs_per_cell=[]
     for target_group in subset_dict.keys():
         print target_group
         no_per_target_group=subset_dict[target_group]
         print seg_specifications.keys()
         if target_group in seg_specifications.keys():
-           print target_group
-           x=0
-           while x==0:
-              seg_search_array=[]
-              fraction_along_search_array=[]
+           equal_probabilities, max_value, min_value=check_seg_probabilities(seg_specifications[target_group],minimalProbRange)
+           if equal_probabilities:
+              if len(seg_specifications[target_group].keys()) < no_per_target_group:
+                 full_sets=int(math.floor(float(no_per_target_group)/len(seg_specifications[target_group].keys())))
+                 remaining= no_per_target_group % len(seg_specifications[target_group].keys())
+                 for set in range(0,full_sets):
+                     for segment in seg_specifications[target_group].keys():
+                         target_segs_per_cell.append(int(segment))
+                 for segment in random.sample(seg_specifications[target_group].keys(),remaining):
+                     target_segs_per_cell.append(int(segment))
+              else:
+                 for segment in seg_specifications[target_group].keys():
+                     target_segs_per_cell.append(int(segment))
+           else:
               y=0
               while y != no_per_target_group:
-                    p=random.random()
-                    for segment in seg_specifications[target_group].keys():
-                        if p < seg_specifications[target_group][segment]:
-                           seg_search_array.append(int(segment))
-                           fraction_along_search_array.append(random.random())
-                           y=y+1
-                        
-              if len(fraction_along_search_array)==len(set(fraction_along_search_array)):
-                 x=1
+                   print y
+                   p=random.random()
+                   print p
+                   segment=random.sample(seg_specifications[target_group].keys(),1)[0]
+                   if p < seg_specifications[target_group][segment]:
+                          print segment
+                          target_segs_per_cell.append(int(segment))
+                          y=y+1
              
-           for point in range(0,no_per_target_group):
-               target_point=[]
-               target_point.append(int(seg_search_array[point]))
-               target_point.append(round(fraction_along_search_array[point],5))
-               target_points_per_cell.append(target_point)
+    return target_segs_per_cell
+####################################################################################################
+
+
+def check_seg_probabilities(lengthProbs,minimalProbRange):
+    equalProbs=False
+    rescaledProbs={}
+    max_value=max(lengthProbs.iteritems(),key=operator.itemgetter(1))[0]
+    min_value=min(lengthProbs.iteritems(),key=operator.itemgetter(1))[0]
+    if minimalProbRange > lengthProbs[max_value]-lengthProbs[min_value]:
+       equalProbs=True
     
-    
-    return target_points_per_cell
+    return equalProbs, max_value, min_value
 
 
 #######################################################################################
