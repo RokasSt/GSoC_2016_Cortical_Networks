@@ -30,10 +30,10 @@ if __name__=="__main__":
   
   pathToNML2_golgi=parentdir+"/NeuroML2/prototypes/Golgi/"
   
-  print oc.extract_seg_ids({'cellID':'Golgi_10comp_3channels_1CaPool',
+  print oc.extract_seg_ids({'CellID':'Golgi_10comp_3channels_1CaPool',
                             'SegOrSegGroupList':['apical_dendrite_group','basal_dendrite_group'],
                             'TargetingMode':'segGroups',
-                            'pathToCell':pathToNML2_golgi})
+                            'PathToCell':pathToNML2_golgi})
                             
                             
   target_dict3=oc.make_target_dict({'basal_dendrite_group': [9, 10], 'apical_dendrite_group': [3, 4, 5, 6, 7, 8]},
@@ -41,8 +41,23 @@ if __name__=="__main__":
                                    
   print target_dict3
   
-  print oc.get_target_segments({'basal_dendrite_group': {'9': 0.25,'15':0.25,'3':0.25,'8':0.25},'apical':{'10':0.5,'6':0.5}},{'basal_dendrite_group':10,'apical':2},1e-6)
-
+  print oc.get_target_segments({'basal_dendrite_group': {'9': 0.8,'15':0.2},'apical':{'10':0.5,'6':0.5}},{'basal_dendrite_group':10,'apical':2},1e-9)
+  
+  print oc.get_target_segments({'basal':{'2':1},'apical':{'3':1}},{'basal':10,'apical':2},1e-06)
+  
+  print oc.get_target_segments(target_dict2,{'basal_obl_dends':50},1e-09)
+  
+  print oc.get_target_segments({'basal_dendrite_group':{'9':0.020,'15':0.180,'16':0.8}},{'basal_dendrite_group':50},1e-6)
+  
+  print oc.get_target_segments(target_dict2,{'basal_obl_dends':100,'most_prox_bas_dend':25},1e-09)
+  
+  target_segs_list=oc.get_target_segments(target_dict2,{'basal_obl_dends':100,'most_prox_bas_dend':25},1e-06)
+  
+  oc.get_unique_membrane_points(target_segs_list)
+  
+  
+  
+  
   
   
   

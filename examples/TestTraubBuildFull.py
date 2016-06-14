@@ -19,7 +19,7 @@ popDict['L23PyrFRB']=[(50,'L23')]
 popDict['L6NonTuftedPyrRS']=[(500,'L6')]
 popDict['DeepAxAx']=[(100,'L6')]
 popDict['DeepBasket']=[(100,'L6')]
-popDict['DeepLTS']=[(100,'L6')]
+popDict['DeepLTSInter']=[(100,'L6')]
 popDict['SupLTSInter']=[(90,'L23')]
 popDict['nRT']=[(100,'Thalamus')]
 popDict['TCR']=[(100,'Thalamus')]
@@ -31,7 +31,7 @@ t3=-250
 t4=-200.0
 t5=-300.0
 t6=-300.0
-t7=-100.0
+t7=-200.0
 t8=-200.0
 
 boundaries={}
@@ -46,7 +46,7 @@ boundaries['Thalamus']=[t1+t2+t3+t4+t5+t6+t7,t1+t2+t3+t4+t5+t6+t7+t8]
 xs = [0,500]
 zs = [0,500] 
 
-nml_doc, network = oc.generate_network("TestTraubBuild")
+nml_doc, network = oc.generate_network("TestTraubBuildFull")
 
 
 for cellModel in popDict.keys():
@@ -60,7 +60,7 @@ popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc.use_conn_summary(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/",extra_params)                  
+synapseList,projArray=oc.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 

@@ -47,12 +47,12 @@ conn_dict_Traub.append(proj14)
 proj15={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'DeepBask','SynapseList':['Syn_AMPA_SupPyr_DeepFS','Syn_NMDA_SupPyr_DeepFS'],'NumPerPostCell':30,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj15)
 
-### at the moment Syn_Elect_SupPyr_SupPyr is not in the generatedNeuroML2 directory which is copied to the '../NeuroML2/prototypes/Thalamocortical/
-#proj16={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrRS','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.72,'LocOnPostCell':'axon_group'}
-#conn_dict_Traub.append(proj16)
+#at the moment Syn_Elect_SupPyr_SupPyr is not in the generatedNeuroML2 directory which is copied to the '../NeuroML2/prototypes/Thalamocortical/
+proj16={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrRS','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.72,'LocOnPostCell':'axon_group'}
+conn_dict_Traub.append(proj16)
 
-#proj17={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.375,'LocOnPostCell':'axon_group'}
-#conn_dict_Traub.append(proj17)
+proj17={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrFRB','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.375,'LocOnPostCell':'axon_group'}
+conn_dict_Traub.append(proj17)
 
 
 #  2 From L23PyrFRB
@@ -120,9 +120,9 @@ conn_dict_Traub.append(proj36)
 
 proj37={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'L4SpinStell','SynapseList':['Syn_GABAA_SupBask_L4SS'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
 conn_dict_Traub.append(proj37)
-#### at the moment Syn_Elect_CortIN_CortIN is not in the generatedNeuroML2 directory
-#proj38={'type':'elec','PreCellGroup':'SupBasket','PostCellGroup':'SupBasket','SynapseList':['Syn_Elect_CortIN_CortIN'],'NumPerPostCell':2.22,'LocOnPostCell':'mid_tip_dends'}
-#conn_dict_Traub.append(proj38)
+#at the moment Syn_Elect_CortIN_CortIN is not in the generatedNeuroML2 directory
+proj38={'type':'elec','PreCellGroup':'SupBasket','PostCellGroup':'SupBasket','SynapseList':['Syn_Elect_CortIN_CortIN'],'NumPerPostCell':2.22,'LocOnPostCell':'mid_tip_dends'}
+conn_dict_Traub.append(proj38)
 
 
 
@@ -496,10 +496,10 @@ conn_dict_Traub.append(proj151)
 
 # 14 From nRT
 
-proj152={'type':'chem','PreCellGroup':'nRT','PostCellGroup':'TCR','SynapseList':['Syn_GABAA_nRT_TCR_s','Syn_GABAA_nRT_TCR_s'],'NumPerPostCell':30,'LocOnPostCell':'soma_prox_dends'}
+proj152={'type':'chem','PreCellGroup':'nRT','PostCellGroup':'TCR','SynapseList':['Syn_GABAA_nRT_TCR_s'],'NumPerPostCell':30,'LocOnPostCell':'soma_prox_dends'}
 conn_dict_Traub.append(proj152)
 
-proj153={'type':'chem','PreCellGroup':'nRT','PostCellGroup':'nRT','SynapseList':['Syn_GABAA_nRT_nRT_s','Syn_GABAA_nRT_nRT_s'],'NumPerPostCell':10,'LocOnPostCell':'soma_dends'}
+proj153={'type':'chem','PreCellGroup':'nRT','PostCellGroup':'nRT','SynapseList':['Syn_GABAA_nRT_nRT_s'],'NumPerPostCell':10,'LocOnPostCell':'soma_dends'}
 conn_dict_Traub.append(proj153)
 
 proj154={'type':'elec','PreCellGroup':'nRT','PostCellGroup':'nRT','SynapseList':['Syn_Elect_nRT_nRT'],'NumPerPostCell':2.5,'LocOnPostCell':'dendrite_group'}

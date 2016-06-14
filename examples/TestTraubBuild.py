@@ -43,7 +43,7 @@ popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc.use_conn_summary(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/",extra_params)                  
+synapseList,projArray=oc.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/",extra_params)                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 
