@@ -599,7 +599,9 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                           
     return final_synapse_list, final_proj_array
                            
-                           
+############################################################################################################################
+
+#def build_inputs():                          
                         
     
 
@@ -810,8 +812,86 @@ def check_seg_probabilities(lengthProbs,minimalProbRange):
     print lengthProbs[max_value]-lengthProbs[min_value]
     return equalProbs
 
+############################################################################################################################
+def network_reader(net_file_name,path_to_net):
 
-#######################################################################################
+    nml2_file_path=os.path.join(path_to_net,net_file_name+".net.nml")      
+                  
+    net_doc = pynml.read_neuroml2_file(nml2_file_path)
+    
+    popParams=[]
+    
+    popPositions={}
+    
+    includeRefs=[]
+    
+    for include_counter in range(0,len(net_doc.includes)):
+    
+        include=net_doc.includes[include_counter]
+        includeRefs.append(include.href)
+        
+    print includeRefs
+    
+    for net_counter in range(0,len(net_doc.networks)):
+        net=net_doc.networks[net_counter]
+        for pop_counter in range(0,len(net.populations)):
+            popDict={}
+            pop=net.populations[pop_counter]
+            popDict['id']=pop.id
+            popDict['component']=pop.component
+            popDict['size']=pop.size
+            popDict['type']=pop.type
+            popParams.append(popDict)
+            cellPositions=[]
+            
+            for instance_counter in range(0,len(pop.instances)):
+                cell_location={}
+                instance=pop.instances[instance_counter]
+                print instance.id
+                cell_location['x']=instance.location.x
+                cell_location['y']=instance.location.y
+                cell_location['z']=instance.location.z
+                cellPositions.append(cell_location)
+                
+            popPositions[popDict['id']]=cellPositions
+            
+        print popParams
+        print popPositions
+        
+        projDict={}
+        
+        for proj_counter in range(0,len(net.projections)):
+            
+            connections=[]
+            
+            proj=net.projections[proj_counter]
+            print proj.id
+            for conn_counter in range(0,len(proj.connection_wds)):
+                connection_dict={}
+                connection=proj.connection_wds[conn_counter]
+                print connection.id
+                connection_dict['preCellId']=connection.pre_cell_id
+                connection_dict['postCellId']=connection.post_cell_id
+                if hasattr(connection,'post_segment_id'):
+                   connection_dict['postSegmentId']=connection.post_segment_id
+                if hasattr(connection,'pre_segment_id'):
+                   connection_dict['preSegmentId']=connection.pre_segment_id
+                if hasattr(connection,'pre_fraction_along'):
+                   connection_dict['preFractionAlong']=connection.pre_fraction_along
+                if hasattr(connection,'post_fraction_along'):
+                   connection_dict['postFractionAlong']=connection.post_fraction_along
+                if hasattr(connection,'delay'):
+                   connection_dict['delay']=connection.delay
+                if hasattr(connection,'weight'):
+                   connection_dict['weight']=connection.weight
+                connections.append(connection_dict)
+                
+            projDict[proj.id]=connections
+            
+        print projDict
+
+
+###########################################################################################################################
 
 def include_cell_prototype(nml_doc,cell_nml2_path):
     
@@ -932,6 +1012,21 @@ def add_poisson_firing_synapse(nml_doc, id, average_rate, synapse_id):
     nml_doc.poisson_firing_synapses.append(pfs)
 
     return pfs
+    
+
+def add_transient_poisson_firing_synapse(nml_doc, id, average_rate,delay,duration, synapse_id):
+
+    pfs = neuroml.TransientPoissonFiringSynapse(id=id,
+                                       average_rate=average_rate,
+                                       delay=delay,
+                                       duration=duration,
+                                       synapse=synapse_id, 
+                                       spike_target="./%s"%synapse_id)
+                                       
+    nml_doc.transient_poisson_firing_synapses.append(pfs)
+
+    return pfs
+
 
 def add_pulse_generator(nml_doc, id, delay, duration, amplitude):
 
@@ -1021,10 +1116,7 @@ def add_populations_in_layers(net,boundaryDict,popDict,x_vector,z_vector,storeSo
 
 
 
-#################################################################################
-
-
-
+###############################################################################################
 
 def add_inputs_to_population(net, id, population, input_comp_id, all_cells=False, only_cells=None):
     
@@ -1057,6 +1149,40 @@ def add_inputs_to_population(net, id, population, input_comp_id, all_cells=False
     
     return input_list
     
+##################################################################################################
+
+def add_advanced_inputs_to_population(net, id, population, input_comp_id, all_cells=False, only_cells=None):
+    
+    if all_cells and only_cells is not None:
+        opencortex.print_comment_v("Error! Method opencortex.build.%s() called with both arguments all_cells and only_cells set!"%sys._getframe().f_code.co_name)
+        exit(-1)
+        
+    cell_ids = []
+    
+    if all_cells:
+        cell_ids = range(population.size)
+    if only_cells is not None:
+        if only_cells == []:
+            return
+        cell_ids = only_cells
+        
+    input_list = neuroml.InputList(id=id,
+                         component=input_comp_id,
+                         populations=population.id)
+    count = 0
+    for cell_id in cell_ids:
+        input = neuroml.Input(id=count, 
+                      target="../%s/%i/%s"%(population.id, cell_id, population.component), 
+                      destination="synapses",segment_id="%d"%target_points[target_point,0],fraction_along="%f"%target_points[target_point,1])  
+        input_list.input.append(input)
+        count+=1
+        
+                         
+    net.input_lists.append(input_list)
+    
+    return input_list
+
+###############################################################################################################
 
 def generate_network(reference, seed=1234):
     

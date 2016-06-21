@@ -7,22 +7,24 @@ sys.path.insert(0,parentdir)
 import opencortex.build as oc
 
 #### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment 
+###### larger networks exceed GitHub's file size limit of 100.00 MB
 
 popDict = {}
 popDict['L23PyrRS'] = [(1000, 'L23')]
 popDict['SupBasket'] = [(90, 'L23')]
-popDict['SupAxAx'] = [(90, 'L23')]
-popDict['L5TuftedPyrIB'] = [(800, 'L5')]
-popDict['L5TuftedPyrRS']=[(200,'L5')]
-popDict['L4SpinyStellate']=[(240,'L4')]
-popDict['L23PyrFRB']=[(50,'L23')]
-popDict['L6NonTuftedPyrRS']=[(500,'L6')]
-popDict['DeepAxAx']=[(100,'L6')]
-popDict['DeepBasket']=[(100,'L6')]
-popDict['DeepLTSInter']=[(100,'L6')]
-popDict['SupLTSInter']=[(90,'L23')]
-popDict['nRT']=[(100,'Thalamus')]
-popDict['TCR']=[(100,'Thalamus')]
+#popDict['SupAxAx'] = [(90, 'L23')]
+#popDict['L5TuftedPyrIB'] = [(800, 'L5')]
+#popDict['L5TuftedPyrRS']=[(200,'L5')]
+#popDict['L4SpinyStellate']=[(240,'L4')]
+######################### uncomment the below leads to Java out of memory errors when validating the final nml2 network file
+#popDict['L23PyrFRB']=[(50,'L23')]
+#popDict['L6NonTuftedPyrRS']=[(500,'L6')]
+#popDict['DeepAxAx']=[(100,'L6')]
+#popDict['DeepBasket']=[(100,'L6')]
+#popDict['DeepLTSInter']=[(100,'L6')]
+#popDict['SupLTSInter']=[(90,'L23')]
+#popDict['nRT']=[(100,'Thalamus')]
+#popDict['TCR']=[(100,'Thalamus')]
 
 
 t1=-0

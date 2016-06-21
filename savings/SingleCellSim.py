@@ -85,7 +85,7 @@ if __name__=="__main__":
   #SingleCellSim("nRT","Cell14_nRT_10ms",30)
   #SingleCellSim("nRT","Cell14_nRT_FigA8_00",200)
   #SingleCellSim("nRT","Cell14_nRT_FigA8_300",450)
-  SingleCellSim("nRT","Cell14_nRT_FigA8_500",450)
+  #SingleCellSim("nRT","Cell14_nRT_FigA8_500",450)
 
 
 
