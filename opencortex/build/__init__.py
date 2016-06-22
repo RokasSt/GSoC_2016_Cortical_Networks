@@ -601,11 +601,38 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                            
 ############################################################################################################################
 
-#def build_inputs():                          
+def build_inputs(nml_doc,net,pop_params,input_params,pathToSynapses):                          
                         
+    for cell_model in input_params.keys():
     
+        for input_group_ind in range(0,len(input_params[cell_model])):
+        
+            input_group_params=input_params[cell_model][input_group_ind]
+        
+            layer=input_group_params['Layer'] 
+            
+            popID=cell_model+"_"+layer
+            
+            cell_positions=pop_params[cell_model][layer]['Positions']
+            
+            pop_size=pop_params[cell_model][layer]['Size']
+            
+            fraction_to_target=input_group_params['FractionToTarget']
+            
+            list_of_regions=input_group_params['RegionsToTarget']
+            
+            target_cell_ids=get_target_cells(pop_size,fraction_to_target,cell_positions)
 
 ############################################################################################################################
+
+
+def get_target_cells(pop_size,fraction_to_target,cell_positions,list_of_regions):
+
+    
+    
+
+
+################################################################################################################################
 
 def get_seg_probabilities(cellPath,targetSegments):
     

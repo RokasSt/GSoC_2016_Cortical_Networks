@@ -5,6 +5,7 @@ sys.path.insert(0,parentdir)
 
 
 import opencortex.build as oc
+import opencortex.errorChecks as oc_check
 
 #### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment 
 
@@ -46,7 +47,7 @@ boundaries['Thalamus']=[t1+t2+t3+t4+t5+t6+t7,t1+t2+t3+t4+t5+t6+t7+t8]
 xs = [0,500]
 zs = [0,500] 
 
-nml_doc, network = oc.generate_network("TestTraubBuildFull")
+nml_doc, network = oc.generate_network("TestTraubBuildFull_winputs")
 
 
 for cellModel in popDict.keys():
@@ -59,12 +60,29 @@ popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
-input_params={'TCR':{'inputType':'PoissonTrains','trainType':'persistent','SynapseList':'Syn_AMPA_L6NT_TCR','averageRate':0.05,
-              'TargetDict':{'dendrite_group':1000 }       }              }
- 
-oc.build_inputs()
+input_params={'TCR':[   {'InputType':'GeneratePoissonTrains',
+                         'InputTag':'PT',
+                         'Layer':'Thalamus',
+                         'TrainType':'persistent',
+                         'Synapse':'Syn_AMPA_L6NT_TCR',
+                         'AverageRate':0.05,
+                         'LocationSpecific':True,
+                         'FractionToTarget':1.0,
+                         'TargetDict':{'dendrite_group':1000 }     }    ]              }
 
-synapseList,projArray=oc.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")                  
+oc_check.check_inputs(input_params,popDict)
+ 
+synapseListInputs=oc.build_inputs(nml_doc,network,popObjs,input_params,"../NeuroML2/prototypes/Thalamocortical/")
+sys.exit(1)
+
+synapseList,projArray=oc.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")  
+
+for synapse in synapseListInputs:
+
+    if synapse in synapseList:
+       pass
+    else:
+       synapseList.append(synapse)             
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 
