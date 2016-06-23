@@ -619,18 +619,58 @@ def build_inputs(nml_doc,net,pop_params,input_params,pathToSynapses):
             
             fraction_to_target=input_group_params['FractionToTarget']
             
-            list_of_regions=input_group_params['RegionsToTarget']
+            if not input_group_params['LocationSpecific']:
+             
+               target_cell_ids=get_target_cells(pop_size,fraction_to_target)
+               
+            else:
             
-            target_cell_ids=get_target_cells(pop_size,fraction_to_target,cell_positions)
+               list_of_regions=input_group_params['TargetRegions']
+            
+               target_cell_ids=get_target_cells(pop_size,fraction_to_target,cell_positions, list_of_regions)
+               
+            if target_cell_ids != []:
+            
+               for cell_id in target_cell_ids:
+                   
+                   ###TODO
+                   pass
+                    
+           
+               
 
 ############################################################################################################################
 
 
-def get_target_cells(pop_size,fraction_to_target,cell_positions,list_of_regions):
+def get_target_cells(pop_size,fraction_to_target,cell_positions=None,list_of_regions=None):
 
+    if cell_positions==None:
     
-    
+       target_cells=random.sample(range(pop_size),int(round(fraction_to_target*pop_size)   )   )
+       
+    else:
+       
+       region_specific_targets_per_cell_group=[]
+       
+       for region in range(0,len(input_group_parameters['regionList'])):
+       
+           for cell in range(0,pop_size):
+           
+               if (input_group_parameters['regionList'][region]['xVector'][0] <  cell_positions[cell,0]) and \
+                  (cell_positions[cell,0] < input_group_parameters['regionList'][region]['xVector'][1]):
+               
+               if (input_group_parameters['regionList'][region]['yVector'][0] <  cell_positions[cell,1]) and \
+                  (cell_positions[cell,1] <input_group_parameters['regionList'][region]['yVector'][1]) :
+                
+                  if (input_group_parameters['regionList'][region]['zVector'][0] <  cell_positions[cell,2]) and \
+                     (cell_positions[cell,2] < input_group_parameters['regionList'][region]['zVector'][1]):
+                     
+                     region_specific_targets_per_cell_group.append(cell)
+                                                                        
+    target_cells=random.sample(region_specific_targets_per_cell_group,int(round(fraction_to_target*len(region_specific_targets_per_cell_group))))
+                                                                   
 
+    return target_cells
 
 ################################################################################################################################
 
