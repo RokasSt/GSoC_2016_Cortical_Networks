@@ -44,7 +44,6 @@ conn_dict_Traub.append(proj14)
 proj15={'type':'chem','PreCellGroup':'L23PyrRS','PostCellGroup':'DeepBasket','SynapseList':['Syn_AMPA_SupPyr_DeepFS','Syn_NMDA_SupPyr_DeepFS'],'NumPerPostCell':30,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj15)
 
-#at the moment Syn_Elect_SupPyr_SupPyr is not in the generatedNeuroML2 directory which is copied to the '../NeuroML2/prototypes/Thalamocortical/
 proj16={'type':'elect','PreCellGroup':'L23PyrRS','PostCellGroup':'L23PyrRS','SynapseList':['Syn_Elect_SupPyr_SupPyr'],'NumPerPostCell':0.72,'LocOnPostCell':'axon_group'}
 conn_dict_Traub.append(proj16)
 
@@ -114,7 +113,7 @@ conn_dict_Traub.append(proj36)
 
 proj37={'type':'chem','PreCellGroup':'SupBasket','PostCellGroup':'L4SpinyStellate','SynapseList':['Syn_GABAA_SupBask_L4SS'],'NumPerPostCell':20,'LocOnPostCell':'prox_dends_soma'}
 conn_dict_Traub.append(proj37)
-#at the moment Syn_Elect_CortIN_CortIN is not in the generatedNeuroML2 directory
+
 proj38={'type':'elec','PreCellGroup':'SupBasket','PostCellGroup':'SupBasket','SynapseList':['Syn_Elect_CortIN_CortIN'],'NumPerPostCell':2.22,'LocOnPostCell':'mid_tip_dends'}
 conn_dict_Traub.append(proj38)
 
