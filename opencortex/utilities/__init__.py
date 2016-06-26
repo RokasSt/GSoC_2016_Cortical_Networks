@@ -32,85 +32,6 @@ import operator
 import opencortex.build as oc_build
 
 
-
-def add_advanced_chem_projection(net, 
-                                 proj_counter,
-                                 presynaptic_population, 
-                                 postsynaptic_population, 
-                                 synapse_list,  
-                                 targeting_mode,
-                                 seg_length_dict,
-                                 num_of_conn_dict,
-                                 minimal_prob_range,
-                                 distance_dependent_params,
-                                 delays_dict,
-                                 weights_dict):
-                            
-    ############# postCompSpec keys: 'Mode','NoPerPostCell' or 'NoPerPreCell','DistDependConn','MinimalProbRange'
-                  
-    
-    distDependentConn=distanceDependentParams['DistDependConn']
-    
-    if presynaptic_population.size==0 or postsynaptic_population.size==0:
-        return None
-    
-    proj_array={}
-    syn_counter=0
-    for synapse_id in synapse_list:
-        proj = neuroml.Projection(id="Proj%dsyn%d_%s_%s"%(proj_counter,syn_counter,presynaptic_population.id, postsynaptic_population.id), 
-                      presynaptic_population=presynaptic_population.id, 
-                      postsynaptic_population=postsynaptic_population.id, 
-                      synapse=synapse_id)
-        syn_counter+=1              
-        proj_array[synapse_id]=proj
-
-    count = 0
-       
-    if targetingMode=='convergent':
-       if distDependentConn==None:
-          proj_array              =add_convergent_projection(net,
-                                                             proj_array,
-                                                             presynaptic_population,
-                                                             postsynaptic_population,
-                                                             synapse_list,
-                                                             postCompSpec,
-                                                             delaysInfo,
-                                                             weightsInfo) 
-       else:
-          proj_array              =add_convergent_spatial_projection(net,
-                                                                     proj_array,
-                                                                     presynaptic_population,
-                                                                     postsynaptic_population,
-                                                                     synapse_list,
-                                                                     postCompSpec,
-                                                                     distanceDependentParams,
-                                                                     delaysInfo,
-                                                                     weightsInfo)
-       
-    if targetingMode=='divergent':
-       if distDependentConn==None:
-          proj_array              =add_divergent_projection(net,
-                                                            proj_array,
-                                                            presynaptic_population,
-                                                            postsynaptic_population,
-                                                            synapse_list,
-                                                            postCompSpec,
-                                                            delaysInfo,
-                                                            weightsInfo)
-       else:
-          proj_array              =add_divergent_spatial_projection(net,
-                                                                    proj_array,
-                                                                    presynaptic_population,
-                                                                    postsynaptic_population,
-                                                                    synapse_list,
-                                                                    postCompSpec,
-                                                                    distanceDependentParams,
-                                                                    delaysInfo,
-                                                                    weightsInfo)
-    
-
-    return proj_array, proj_counter
-
 #######################################################################################################################################
 
 def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
@@ -149,11 +70,11 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                            target_comp_groups=projInfo['LocOnPostCell']
                            
                            if 'NumPerPostCell' in projInfo:
-                              mode='convergent'
+                              targetingMode='convergent'
                               mode_string='NumPerPostCell'
                               
                            if 'NumPerPreCell' in projInfo:
-                              mode='divergent'
+                              targetingMode='divergent'
                               mode_string='NumPerPreCell'
                            
                            if extra_params != None:
@@ -181,18 +102,19 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                                 document_cell=neuroml.loaders.NeuroMLLoader.load(cell_nml_file)
                               
                               cellObject=document_cell.cells[0]
+                              
                               target_segments=extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups')
+                              
                               segLengthtDict=make_target_dict(cell_object,target_segments)
+                              
                               postTargetParams={'TargetDict':segLengthDict,'SubsetsOfConnections':subset_dict}
+                              
                               cached_target_dict[postPop]=postTargetParams
                               
                            else:
                               segLengthDict=cached_target_dict[postPop]['TargetDict']
                               subset_dict=cached_target_dict[postPop]['SubsetsOfConnections']
                               
-                                    
-                           targetingMode=mode
-                           distanceDependence={'DistDependConn':dist_par,'prePositions':preCellObject['Positions'],'postPositions':postCellObject['Positions']}
                            synapseList=projInfo['SynapseList']                                                
                            final_synapse_list.extend(projInfo['SynapseList'])
                            
@@ -205,8 +127,9 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                                                                                        targeting_mode=targetingMode,
                                                                                        seg_length_dict=segLengthDict,
                                                                                        num_of_conn_dict=subset_dict,
-                                                                                       minimal_prob_range=1e-06,
-                                                                                       distance_dependent_params=distanceDependence,
+                                                                                       distance_dependent_rule=dist_par,
+                                                                                       pre_cell_positions=preCellObject['Positions'],
+                                                                                       post_cell_positions=postCellObject['Positions'],
                                                                                        delays_dict=delays,
                                                                                        weights_dict=weights)
                                                         
