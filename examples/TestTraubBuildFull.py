@@ -4,28 +4,44 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir) 
 
 
+import opencortex.utilities as oc_utils
 import opencortex.build as oc
 
 #### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment 
 ###### larger networks exceed GitHub's file size limit of 100.00 MB
+######Note: the below leads to Java out of memory errors when validating the final nml2 network file; use another format instead of nml;
+popDictFull = {}
+##############   Full model ############################## 
+popDictFull['L23PyrRS'] = [(1000, 'L23')]
+popDictFull['SupBasket'] = [(90, 'L23')]
+popDictFull['SupAxAx'] = [(90, 'L23')]
+popDictFull['L5TuftedPyrIB'] = [(800, 'L5')]
+popDictFull['L5TuftedPyrRS']=[(200,'L5')]
+popDictFull['L4SpinyStellate']=[(240,'L4')]
+popDictFull['L23PyrFRB']=[(50,'L23')]
+popDictFull['L6NonTuftedPyrRS']=[(500,'L6')]
+popDictFull['DeepAxAx']=[(100,'L6')]
+popDictFull['DeepBasket']=[(100,'L6')]
+popDictFull['DeepLTSInter']=[(100,'L6')]
+popDictFull['SupLTSInter']=[(90,'L23')]
+popDictFull['nRT']=[(100,'Thalamus')]
+popDictFull['TCR']=[(100,'Thalamus')]
+###########################################################
+scale=0.1
+popDict={}
+for cell_model in popDictFull.keys():
 
-popDict = {}
-popDict['L23PyrRS'] = [(1000, 'L23')]
-popDict['SupBasket'] = [(90, 'L23')]
-#popDict['SupAxAx'] = [(90, 'L23')]
-#popDict['L5TuftedPyrIB'] = [(800, 'L5')]
-#popDict['L5TuftedPyrRS']=[(200,'L5')]
-#popDict['L4SpinyStellate']=[(240,'L4')]
-######################### uncomment the below leads to Java out of memory errors when validating the final nml2 network file
-#popDict['L23PyrFRB']=[(50,'L23')]
-#popDict['L6NonTuftedPyrRS']=[(500,'L6')]
-#popDict['DeepAxAx']=[(100,'L6')]
-#popDict['DeepBasket']=[(100,'L6')]
-#popDict['DeepLTSInter']=[(100,'L6')]
-#popDict['SupLTSInter']=[(90,'L23')]
-#popDict['nRT']=[(100,'Thalamus')]
-#popDict['TCR']=[(100,'Thalamus')]
-
+    popDict[cell_model]=[]
+    
+    for pop_in_layer in range(0,len(popDictFull[cell_model])):
+      
+        pop_in_layer_tuple=()
+        print round(scale*popDictFull[cell_model][pop_in_layer][0])
+        pop_in_layer_tuple=( int(round(scale*popDictFull[cell_model][pop_in_layer][0] )), popDictFull[cell_model][pop_in_layer][1] )
+        
+        popDict[cell_model].append(pop_in_layer_tuple)
+        
+        
 
 t1=-0
 t2=-250
@@ -62,7 +78,7 @@ popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")                  
+synapseList,projArray=oc_utils.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 

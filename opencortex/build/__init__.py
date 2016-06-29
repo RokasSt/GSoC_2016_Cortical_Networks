@@ -206,8 +206,8 @@ def add_conv_or_div_projection(net,
                                synapse_list,
                                seg_target_dict,
                                subset_dict,
-                               delays_info=None,
-                               weights_info=None):
+                               delays_dict=None,
+                               weights_dict=None):
     
     
     '''This method adds the divergent or convergent chemical projection depending on the input argument targeting_mode. The input arguments are as follows:
@@ -320,7 +320,7 @@ def add_conv_or_div_projection(net,
                                   post_fraction=fraction_along)
                count+=1
                    
-    for synapse_id in synapseList:
+    for synapse_id in synapse_list:
         net.projections.append(proj_array[synapse_id])
 
     return proj_array                         
@@ -494,8 +494,8 @@ def make_target_dict(cell_object,
     for target in target_segs.keys():
         targetDict[target]={}
         lengths,segment_list=get_seg_lengths(cell_object,target_segs[target])
-        targetDict[target]['LengthDict']=lengths
-        targetDict[target]['SegList']=total_length
+        targetDict[target]['LengthDist']=lengths
+        targetDict[target]['SegList']=segment_list
     return targetDict
     
 ############################################################################################################################
@@ -530,13 +530,13 @@ def get_target_cells(pop_size,
                if (list_of_xvectors[region][0] <  cell_positions[cell,0]) and \
                   (cell_positions[cell,0] < list_of_xvectors[region][1]):
                
-               if (list_of_yvectors[region][0] <  cell_positions[cell,1]) and \
-                  (cell_positions[cell,1] <  list_of_yvectors[region][1]) :
+                   if (list_of_yvectors[region][0] <  cell_positions[cell,1]) and \
+                      (cell_positions[cell,1] <  list_of_yvectors[region][1]) :
                 
-                  if (list_of_zvectors[region][0] <  cell_positions[cell,2]) and \
-                     (cell_positions[cell,2] < list_of_zvectors[region][1]):
+                      if (list_of_zvectors[region][0] <  cell_positions[cell,2]) and \
+                         (cell_positions[cell,2] < list_of_zvectors[region][1]):
                      
-                     region_specific_targets_per_cell_group.append(cell)
+                         region_specific_targets_per_cell_group.append(cell)
                                                                         
     target_cells=random.sample(region_specific_targets_per_cell_group,int(round(fraction_to_target*len(region_specific_targets_per_cell_group))))
                                                                    
@@ -605,7 +605,7 @@ def extract_seg_ids(cell_object,
         segment_name_and_id.append(segment.name)
         segment_name_and_id.append(segment.id)
         cell_segment_array.append(segment_name_and_id)
-    for segment_group in loaded_cell_array[cellID].morphology.segment_groups:
+    for segment_group in cell_object.morphology.segment_groups:
         pooled_segment_group_data={}
         segment_list=[]
         segment_group_list=[]
@@ -619,12 +619,10 @@ def extract_seg_ids(cell_object,
         pooled_segment_group_data["groups"]=segment_group_list
         segment_group_array[segment_group.id]=pooled_segment_group_data  
                
-    cell_segment_group={} 
-    cell_segment_group[cellID]=segment_group_array
-
+    
     target_segment_array={}
 
-    if targetingMode=="segments":
+    if targeting_mode=="segments":
        
        for segment_counter in range(0,len(cell_segment_array)):
            for target_segment in range(0,len(target_compartment_array)):
@@ -632,18 +630,18 @@ def extract_seg_ids(cell_object,
                   target_segment_array[target_compartment_array[target_segment]]=[cell_segment_array[segment_counter][1]]
           
                           
-    if targetingMode=="segGroups":
+    if targeting_mode=="segGroups":
        
-       for segment_group in cell_segment_group[cellID].keys():
+       for segment_group in segment_group_array.keys():
            for target_group in range(0,len(target_compartment_array)):
                if target_compartment_array[target_group]==segment_group:
                   segment_target_array=[]
-                  if cell_segment_group[cellID][segment_group]["segments"] !=[]:
-                     for segment in cell_segment_group[cellID][segment_group]["segments"]:
+                  if segment_group_array[segment_group]["segments"] !=[]:
+                     for segment in segment_group_array[segment_group]["segments"]:
                          segment_target_array.append(segment)
-                  if cell_segment_group[cellID][segment_group]["groups"] !=[]:
-                     for included_segment_group in cell_segment_group[cellID][segment_group]["groups"]:
-                         for included_segment_group_segment in cell_segment_group[cellID][included_segment_group]["segments"]:
+                  if segment_group_array[segment_group]["groups"] !=[]:
+                     for included_segment_group in segment_group_array[segment_group]["groups"]:
+                         for included_segment_group_segment in segment_group_array[included_segment_group]["segments"]:
                              segment_target_array.append(included_segment_group_segment)
                   target_segment_array[target_compartment_array[target_group]]=segment_target_array
           
@@ -678,13 +676,13 @@ def get_target_segments(seg_specifications,
                  
                  loc=p*cumulative_length_dist[-1]
                  
-                 if len(segment_list)==len(cumulative_length_dict):
+                 if len(segment_list)==len(cumulative_length_dist):
                  
                     previous_dist_value=0
                     
                     for seg_index in range(0,len(segment_list)):
                     
-                        current_dist_value=cumulative_length_dict[seg_index]
+                        current_dist_value=cumulative_length_dist[seg_index]
                         
                         if loc > previous_dist_value and loc <  current_dist_value:
                         

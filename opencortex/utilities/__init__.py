@@ -6,6 +6,10 @@
 #
 #
 #
+import os,sys,inspect
+currentdir = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
+parentdir = os.path.dirname(currentdir)
+sys.path.insert(0,parentdir) 
 
 
 import opencortex
@@ -37,7 +41,9 @@ import opencortex.build as oc_build
 def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
 
     final_synapse_list=[]
+    
     final_proj_array=[]
+    
     cached_target_dict={}
     
     if isinstance(connInfo,list):
@@ -94,7 +100,7 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                               
                            if postPop not in cached_target_dict.keys():
                            
-                              cell_nml_file = '%s.cell.nml'%cellID
+                              cell_nml_file = '%s.cell.nml'%postPop
                            
                               if pathToCells != None:
                                  document_cell = neuroml.loaders.NeuroMLLoader.load(os.path.join(pathToCells,cell_nml_file))
@@ -103,9 +109,9 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                               
                               cellObject=document_cell.cells[0]
                               
-                              target_segments=extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups')
+                              target_segments=oc_build.extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups')
                               
-                              segLengthtDict=make_target_dict(cell_object,target_segments)
+                              segLengthDict=oc_build.make_target_dict(cell_object=cellObject,target_segs=target_segments) 
                               
                               postTargetParams={'TargetDict':segLengthDict,'SubsetsOfConnections':subset_dict}
                               
@@ -119,7 +125,7 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                            final_synapse_list.extend(projInfo['SynapseList'])
                            
                            if projInfo['type']=='chem':
-                              compound_proj, proj_counter=add_advanced_chem_projection(net=net, 
+                              compound_proj, proj_counter=oc_build.add_advanced_chem_projection(net=net, 
                                                                                        proj_counter=proj_counter,
                                                                                        presynaptic_population=preCellObject['PopObj'], 
                                                                                        postsynaptic_population=postCellObject['PopObj'], 
@@ -137,7 +143,7 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,extra_params=None):
                               proj_counter+=1                      
                               final_proj_array.extend(compound_proj)
                               
-                           if projInfo['elec']=='elec':
+                           if projInfo['type']=='elec':
                               pass
                               #TODO
           
