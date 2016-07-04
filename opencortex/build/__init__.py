@@ -258,7 +258,7 @@ def add_conv_or_div_projection(net,
        
        pop2_id=presynaptic_population.id
                  
-    total_given=sum(subset_dict.values())
+    total_given=int(round(sum(subset_dict.values())))
     count=0
     for i in range(0, pop1_size):
         
@@ -409,7 +409,7 @@ def add_conv_or_div_spatial_projection(net,
        
        pop2_cell_positions=pre_cell_positions
                  
-    total_given=sum(subsets.values())
+    total_given=int(round(sum(subsets.values())))
     count=0
     for i in range(0, pop1_size):
     

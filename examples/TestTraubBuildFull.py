@@ -7,8 +7,8 @@ sys.path.insert(0,parentdir)
 import opencortex.utilities as oc_utils
 import opencortex.build as oc
 
-#### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment 
-###### larger networks exceed GitHub's file size limit of 100.00 MB
+#### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment;
+###### larger networks exceed GitHub's file size limit of 100.00 MB;
 ######Note: the below leads to Java out of memory errors when validating the final nml2 network file; use another format instead of nml;
 popDictFull = {}
 ##############   Full model ############################## 
@@ -78,7 +78,7 @@ popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc_utils.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/")                  
+synapseList,projArray=oc_utils.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/",'netConnList')                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 
