@@ -36,9 +36,190 @@ import operator
 import opencortex.build as oc_build
 
 
+################################################################################    
+    
+def add_populations_in_layers(net,boundaryDict,popDict,x_vector,z_vector,storeSoma=False): 
+
+   '''This method distributes the cells in rectangular layers. The input arguments:
+   
+   net - libNeuroML network object;
+                    
+   popDict - a dictionary whose keys are unique cell model ids; each key entry stores a list of tuples of size and Layer index; 
+   these layer-specifying strings make up the keys() of boundaryDict;
+    
+   boundaryDict have layer pointers as keys; each entry stores the left and right bound of the layer in the list format , e.g. [L3_min, L3_max]
+   
+   x_vector - a vector that stores the left and right bounds of the cortical column along x dimension
+   
+   y_vector - a vector that stores the left and right bounds of the cortical column along y dimension
+   
+   storeSoma - specifies whether soma positions have to be stored in the output array (default is set to False).'''
+    
+   return_pops={}
+   for cellModel in popDict.keys():
+
+       # the same cell model is allowed to be distributed in multiple layers
+       for subset in range(0,len(popDict[cellModel])):
+           size, layer = popDict[cellModel][subset]
+    
+           if size>0:
+              return_pops[cellModel]={}
+              xl=x_vector[1]-x_vector[0]
+              yl=boundaryDict[layer][1]-boundaryDict[layer][0]
+              zl=z_vector[1]-z_vector[0]
+          
+              pop, cellPositions=oc_build.add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl,storeSoma)
+         
+              return_pops[cellModel][layer]={}
+              return_pops[cellModel][layer]['PopObj']=pop
+              return_pops[cellModel][layer]['Size']=size
+              return_pops[cellModel][layer]['Positions']=cellPositions
+   
+   return return_pops
+          
+
+############################################################################################################################################################################
+
+def build_projection(net, 
+                     proj_counter,
+                     proj_type,
+                     presynaptic_population, 
+                     postsynaptic_population, 
+                     synapse_list,  
+                     targeting_mode,
+                     seg_length_dict,
+                     num_of_conn_dict,
+                     distance_dependent_rule=None,
+                     pre_cell_positions=None,
+                     post_cell_positions=None,
+                     delays_dict=None,
+                     weights_dict=None):
+                         
+    
+    '''This method calls the appropriate methods that construct chemical or electrical projections. The input arguments are as follows:
+   
+    net - the network object created using libNeuroML ( neuroml.Network() );
+    
+    proj_counter - stores the number of projections at any given moment;
+    
+    proj_type - 'Chem' or 'Elect' depending on whether the projection is chemical or electrical.
+    
+    presynaptic_population - object corresponding to the presynaptic population in the network;
+    
+    postsynaptic_population - object corresponding to the postsynaptic population in the network;
+    
+    synapse_list - the list of synapse ids that correspond to the individual receptor components on the physical synapse, e.g. the first element is
+    the id of the AMPA synapse and the second element is the id of the NMDA synapse; these synapse components will be mapped onto the same location of the target segment;
+    
+    targeting_mode - specifies the type of projection: divergent or convergent;
+    
+    seg_length_dict - a dictionary whose keys are the ids of target segment groups and the values are dictionaries in the format returned by make_target_dict();
+    
+    num_of_conn_dict - a dictionary whose keys are the ids of target segment groups with the corresponding values of type 'int' specifying the number of connections per 
+    tarrget segment group per each cell.
+    
+    distance_dependent_rule - optional string which defines the distance dependent rule of connectivity - soma to soma distance must be represented by the string character 'r';
+    
+    pre_cell_positions- optional array specifying the cell positions for the presynaptic population; the format is an array of [ x coordinate, y coordinate, z coordinate];
+    
+    post_cell_positions- optional array specifying the cell positions for the postsynaptic population; the format is an array of [ x coordinate, y coordinate, z coordinate];
+    
+    delays_dict - optional dictionary that specifies the delays (in ms) for individual synapse components, e.g. {'NMDA':5.0} or {'AMPA':3.0,'NMDA':5};
+    
+    weights_dict - optional dictionary that specifies the weights (in ms) for individual synapse components, e.g. {'NMDA':1} or {'NMDA':1,'AMPA':2}.'''  
+               
+    
+    if presynaptic_population.size==0 or postsynaptic_population.size==0:
+        return None
+    
+    proj_array={}
+    syn_counter=0
+    
+    for synapse_id in synapse_list:
+       
+        if proj_type=='Elect':
+        
+           proj = neuroml.ElectricalProjection(id="Proj%dsyn%d_%s_%s"%(proj_counter,syn_counter,presynaptic_population.id, postsynaptic_population.id),
+                                               presynaptic_population=presynaptic_population.id,
+                                               postsynaptic_population=postsynaptic_population.id)
+                                               
+           syn_counter+=1
+           proj_array[synapse_id]=proj
+           
+        if proj_type=='Chem':
+                                            
+           proj = neuroml.Projection(id="Proj%dsyn%d_%s_%s"%(proj_counter,syn_counter,presynaptic_population.id, postsynaptic_population.id), 
+                                     presynaptic_population=presynaptic_population.id, 
+                                     postsynaptic_population=postsynaptic_population.id, 
+                                     synapse=synapse_id)
+                                     
+           syn_counter+=1              
+           proj_array[synapse_id]=proj
+ 
+       
+    if distance_dependent_rule==None:
+       
+       if proj_type=='Chem':
+          proj_array              =oc_build.add_chem_projection(net,
+                                                                proj_array,
+                                                                presynaptic_population,
+                                                                postsynaptic_population,
+                                                                targeting_mode,
+                                                                synapse_list,
+                                                                seg_length_dict,
+                                                                num_of_conn_dict,
+                                                                delays_dict,
+                                                                weights_dict) 
+                                                                
+       if proj_type=='Elect':
+          proj_array              =oc_build.add_elect_projection(net,
+                                                                 proj_array,
+                                                                 presynaptic_population,
+                                                                 postsynaptic_population,
+                                                                 targeting_mode,
+                                                                 synapse_list,
+                                                                 seg_length_dict,
+                                                                 num_of_conn_dict)
+    else:
+    
+       if proj_type=='Chem':
+          proj_array              =oc_build.add_chem_spatial_projection(net,
+                                                                        proj_array,
+                                                                        presynaptic_population,
+                                                                        postsynaptic_population,
+                                                                        targeting_mode,
+                                                                        synapse_list,
+                                                                        seg_length_dict,
+                                                                        num_of_conn_dict,
+                                                                        distance_dependent_rule,
+                                                                        pre_cell_positions,
+                                                                        post_cell_positions,
+                                                                        delays_dict,
+                                                                        weights_dict)
+                                                                        
+       if proj_type=='Elect':
+          proj_array              =oc_build.add_elect_spatial_projection(net,
+                                                                         proj_array,
+                                                                         presynaptic_population,
+                                                                         postsynaptic_population,
+                                                                         targeting_mode,
+                                                                         synapse_list,
+                                                                         seg_length_dict,
+                                                                         num_of_conn_dict,
+                                                                         distance_dependent_rule,
+                                                                         pre_cell_positions,
+                                                                         post_cell_positions)
+       
+          
+    
+
+    return proj_array, proj_counter
+
+
+
 #######################################################################################################################################
 
-def build_connectivity(net,popObjects,connInfo,pathToCells,conn_file,extra_params=None):
+def build_connectivity(net,pop_objects,path_to_cells,conn_file_name,extra_params=None):
 
     final_synapse_list=[]
     
@@ -48,105 +229,128 @@ def build_connectivity(net,popObjects,connInfo,pathToCells,conn_file,extra_param
     
     proj_counter=0
     
-    for prePop in popObjects.keys():
-        print prePop
-        for subset_pre in popObjects[prePop].keys():
+    for prePop in pop_objects.keys():
         
-            preCellObject=popObjects[prePop][subset_pre]
+        for subset_pre in pop_objects[prePop].keys():
+        
+            preCellObject=pop_objects[prePop][subset_pre]
             
-            for postPop in popObjects.keys():
-                print postPop
-                for subset_post in popObjects[postPop].keys():
+            for postPop in pop_objects.keys():
                 
-                    postCellObject=popObjects[postPop][subset_post]
-            
-                    projInfo=read_connectivity(prePop,postPop,os.path.join(pathToCells,conn_file) )
+                for subset_post in pop_objects[postPop].keys():
+                
+                    postCellObject=pop_objects[postPop][subset_post]
                     
-                    print projInfo
-                    
-                    target_comp_groups=projInfo['LocOnPostCell']
-                           
-                    if 'NumPerPostCell' in projInfo:
-                    
-                       targetingMode='convergent'
+                    if preCellObject['Size'] !=0 and postCellObject['Size'] !=0:
                        
-                       mode_string='NumPerPostCell'
-                              
-                    if 'NumPerPreCell' in projInfo:
-                    
-                       targetingMode='divergent'
+                       proj_summary=read_connectivity(prePop,postPop,os.path.join(path_to_cells,conn_file_name) )
                        
-                       mode_string='NumPerPreCell'
-                           
-                    if extra_params != None:
-                       subset_dict, weights, delays, dist_par=parse_extra_params(extra_params,prePop,postPop)
-                    else:
-                       subset_dict=None
-                       weights=None
-                       delays=None 
-                       dist_par=None   
-                    if subset_dict ==None:
-                       subset_dict={}
-                                    
-                    if not isinstance(target_comp_groups,list):
-                       subset_dict[target_comp_groups]=float(projInfo[mode_string])
-                       print subset_dict[target_comp_groups]
-                       target_comp_groups=[target_comp_groups]
-                              
-                    if postPop not in cached_target_dict.keys():
-                           
-                       cell_nml_file = '%s.cell.nml'%postPop
-                           
-                       if pathToCells != None:
+                       if proj_summary !=[]:
                        
-                          document_cell = neuroml.loaders.NeuroMLLoader.load(os.path.join(pathToCells,cell_nml_file))
+                          for proj_ind in range(0,len(proj_summary)):
                           
-                       else:
-                       
-                          document_cell=neuroml.loaders.NeuroMLLoader.load(cell_nml_file)
-                              
-                       cellObject=document_cell.cells[0]
-                              
-                       target_segments=oc_build.extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups')
-                              
-                       segLengthDict=oc_build.make_target_dict(cell_object=cellObject,target_segs=target_segments) 
-                              
-                       postTargetParams={'TargetDict':segLengthDict,'SubsetsOfConnections':subset_dict}
-                              
-                       cached_target_dict[postPop]=postTargetParams
-                              
-                    else:
-                    
-                       segLengthDict=cached_target_dict[postPop]['TargetDict']
-                       
-                       subset_dict=cached_target_dict[postPop]['SubsetsOfConnections']
-                              
-                    synapseList=projInfo['SynapseList']                                                
-                    final_synapse_list.extend(projInfo['SynapseList'])
+                              projInfo=proj_summary[proj_ind]
+                          
+                              target_comp_groups=projInfo['LocOnPostCell']
                            
-                    if projInfo['Type']=='Chem':
-                       compound_proj, proj_counter=oc_build.add_advanced_chem_projection(net=net, 
-                                                                                         proj_counter=proj_counter,
-                                                                                         presynaptic_population=preCellObject['PopObj'], 
-                                                                                         postsynaptic_population=postCellObject['PopObj'], 
-                                                                                         synapse_list=synapseList,  
-                                                                                         targeting_mode=targetingMode,
-                                                                                         seg_length_dict=segLengthDict,
-                                                                                         num_of_conn_dict=subset_dict,
-                                                                                         distance_dependent_rule=dist_par,
-                                                                                         pre_cell_positions=preCellObject['Positions'],
-                                                                                         post_cell_positions=postCellObject['Positions'],
-                                                                                         delays_dict=delays,
-                                                                                         weights_dict=weights)
-                                                        
-                                                        
-                       proj_counter+=1                      
-                       final_proj_array.extend(compound_proj)
+                              if 'NumPerPostCell' in projInfo:
+                    
+                                 targetingMode='convergent'
+                       
+                                 mode_string='NumPerPostCell'
                               
-                    if projInfo['Type']=='Elect':
-                       pass
-                       #TODO
-          
+                              if 'NumPerPreCell' in projInfo:
+                    
+                                 targetingMode='divergent'
+                       
+                                 mode_string='NumPerPreCell'
+                           
+                              if extra_params != None:
+                                 subset_dict, weights, delays, dist_par=parse_extra_params(extra_params,prePop,postPop,projInfo['Type'])
+                              else:
+                                 subset_dict=None
+                                 weights=None
+                                 delays=None 
+                                 dist_par=None   
+                                 
+                              if subset_dict ==None:
+                                 subset_dict={}
+                                    
+                              if not isinstance(target_comp_groups,list):
+                                 subset_dict[target_comp_groups]=float(projInfo[mode_string])
+                                 print subset_dict[target_comp_groups]
+                                 target_comp_groups=[target_comp_groups]
+                                 
+                              if postPop not in cached_target_dict.keys():
+                           
+                                 cell_nml_file = '%s.cell.nml'%postPop
+                           
+                                 if path_to_cells != None:
+                       
+                                    document_cell = neuroml.loaders.NeuroMLLoader.load(os.path.join(path_to_cells,cell_nml_file))
+                          
+                                 else:
+                       
+                                    document_cell=neuroml.loaders.NeuroMLLoader.load(cell_nml_file)
+                              
+                                 cellObject=document_cell.cells[0]
+                              
+                                 target_segments=oc_build.extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups')
+                              
+                                 segLengthDict=oc_build.make_target_dict(cell_object=cellObject,target_segs=target_segments) 
+                              
+                                 postTargetParams={'TargetDict':segLengthDict,'SubsetsOfConnections':subset_dict}
+                                 
+                                 cached_target_dict[postPop]={}
+                                 
+                                 cached_target_dict[postPop]['CellObject']=cellObject
+                              
+                                 cached_target_dict[postPop][projInfo['Type']]=postTargetParams
+                              
+                              else:
+                              
+                                 if projInfo['Type'] not in cached_target_dict[postPop].keys():
+                                 
+                                    cellObject=cached_target_dict[postPop]['CellObject']
+                                 
+                                    target_segments=oc_build.extract_seg_ids(cell_object=cellObject,target_compartment_array=target_comp_groups,targeting_mode='segGroups') 
+                                 
+                                    segLengthDict=oc_build.make_target_dict(cell_object=cellObject,target_segs=target_segments) 
+                              
+                                    postTargetParams={'TargetDict':segLengthDict,'SubsetsOfConnections':subset_dict}
+                              
+                                    cached_target_dict[postPop][projInfo['Type']]=postTargetParams
+                                    
+                                 else:
+                                 
+                                    segLengthDict=cached_target_dict[postPop][projInfo['Type']]['TargetDict']
+                       
+                                    subset_dict=cached_target_dict[postPop][projInfo['Type']]['SubsetsOfConnections']
+                              
+                              synapseList=projInfo['SynapseList']   
+                                                                           
+                              final_synapse_list.extend(projInfo['SynapseList'])
+                           
+                              compound_proj, proj_counter=build_projection(net=net, 
+                                                                           proj_counter=proj_counter,
+                                                                           proj_type=projInfo['Type'],
+                                                                           presynaptic_population=preCellObject['PopObj'], 
+                                                                           postsynaptic_population=postCellObject['PopObj'], 
+                                                                           synapse_list=synapseList,  
+                                                                           targeting_mode=targetingMode,
+                                                                           seg_length_dict=segLengthDict,
+                                                                           num_of_conn_dict=subset_dict,
+                                                                           distance_dependent_rule=dist_par,
+                                                                           pre_cell_positions=preCellObject['Positions'],
+                                                                           post_cell_positions=postCellObject['Positions'],
+                                                                           delays_dict=delays,
+                                                                           weights_dict=weights)
+                                                        
+                                                        
+                              proj_counter+=1                      
+                              final_proj_array.extend(compound_proj)
+                              
+                              
     final_synapse_list=np.unique(final_synapse_list)
                           
     return final_synapse_list, final_proj_array
@@ -158,9 +362,9 @@ def read_connectivity(pre_pop,
                       post_pop,
                       path_to_txt_file):
                       
-    '''Method that reads the txt file in the format of netConnList found in: Thalamocortical/neuroConstruct/pythonScripts/netbuild .'''                   
+    '''Method that reads the txt file in the format of netConnList found in: Thalamocortical/neuroConstruct/pythonScripts/netbuild.'''                   
 
-    proj_info=None
+    proj_summary=[]
 
     with open(path_to_txt_file, 'r') as file:
     
@@ -196,7 +400,7 @@ def read_connectivity(pre_pop,
         counter=0    
           
         if pre_pop in extract_info[0] and post_pop in extract_info[1]:
-        
+           
            proj_info={}
            
            proj_info['PreCellGroup']=pre_pop
@@ -265,11 +469,10 @@ def read_connectivity(pre_pop,
            
               proj_info['LocOnPostCell']=compartment
                 
-           print proj_info   
+           proj_summary.append(proj_info)   
+           
        
-         
-    
-    return proj_info
+    return proj_summary
         
 ################################################################################################################################################################    
 
@@ -388,7 +591,7 @@ def replace_network_components(net_file_name,path_to_net,replace_specifics):
         print projDict
         
 ##############################################################################################################################################
-def parse_extra_params(extra_params,pre_pop,post_pop):
+def parse_extra_params(extra_params,pre_pop,post_pop,proj_type):
 
     subset_dict=None
     weights=None
@@ -397,7 +600,8 @@ def parse_extra_params(extra_params,pre_pop,post_pop):
     for params_set in range(0,len(extra_params)):
         if extra_params[params_set]['pre']==pre_pop and extra_params[params_set]['post']==post_pop:
            if 'subsetDict' in extra_params[params_set].keys():
-              prob_dict=extra_params[params_set]['subsetDict']
+              if proj_type in extra_params[params_set]['subsetDict'].keys():
+                 subset_dict=extra_params[params_set]['subsetDict'][proj_type]
            if 'DistDependConn' in extra_params[params_set].keys():
               distDependence=extra_params[params_set]['DistDependConn']
            if 'weights' in extra_params[params_set].keys() and 'synComps' in extra_params[params_set].keys():

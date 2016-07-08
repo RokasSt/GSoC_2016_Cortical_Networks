@@ -16,7 +16,8 @@ popDictFull['L23PyrRS'] = [(1000, 'L23')]
 popDictFull['SupBasket'] = [(90, 'L23')]
 popDictFull['SupAxAx'] = [(90, 'L23')]
 popDictFull['L5TuftedPyrIB'] = [(800, 'L5')]
-popDictFull['L5TuftedPyrRS']=[(200,'L5')]
+popDictFull['L5TuftedPyrRS']=[(0,'L5')]           ##### not all of the L5TuftedPyrRS synapses can be found in generatedNeuroML2; therefore the size is set to 0 at the moment;
+                                                  ##### original value in the full model is 200.
 popDictFull['L4SpinyStellate']=[(240,'L4')]
 popDictFull['L23PyrFRB']=[(50,'L23')]
 popDictFull['L6NonTuftedPyrRS']=[(500,'L6')]
@@ -72,13 +73,13 @@ for cellModel in popDict.keys():
 
 
 
-popObjs=oc.add_populations_in_layers(network,boundaries,popDict,xs,zs)
+pop_params=oc_utils.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 
 
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc_utils.build_connectivity(network,popObjs,"Traub_conn_data.json","../NeuroML2/prototypes/Thalamocortical/",'netConnList')                  
+synapseList,projArray=oc_utils.build_connectivity(network,pop_params,"../NeuroML2/prototypes/Thalamocortical/",'netConnList')                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 

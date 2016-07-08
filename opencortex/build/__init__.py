@@ -61,6 +61,35 @@ def add_connection(projection,
 
     projection.connection_wds.append(connection)
     
+#############################################################################################################################
+def add_elect_connection(projection, 
+                         id, 
+                         presynaptic_population, 
+                         pre_cell_id, 
+                         pre_seg_id, 
+                         postsynaptic_population, 
+                         post_cell_id, 
+                         post_seg_id,
+                         gap_junction_id,
+                         pre_fraction=0.5,
+                         post_fraction=0.5):
+    
+                   
+                   
+    connection =neuroml.ElectricalConnectionInstance(id=id,\
+                                                     pre_cell="../%s/%i/%s"%(presynaptic_population.id, pre_cell_id, presynaptic_population.component),\
+                                                     post_cell="../%s/%i/%s"%(postsynaptic_population.id, post_cell_id,postsynaptic_population.component),\
+                                                     synapse=gap_junction_id,\
+                                                     pre_segment=pre_seg_id,\
+                                                     post_segment=post_seg_id,\
+                                                     pre_fraction_along=pre_fraction,\
+                                                     post_fraction_along=post_fraction)
+                                                     
+    projection.electrical_connection_instances.append(connection)
+    
+    
+########################################################################################################################################    
+    
 
 def add_probabilistic_projection(net, 
                                  prefix, 
@@ -103,111 +132,19 @@ def add_probabilistic_projection(net,
 
     return proj
 
-############################################################################################################################################################################
-
-def add_advanced_chem_projection(net, 
-                                 proj_counter,
-                                 presynaptic_population, 
-                                 postsynaptic_population, 
-                                 synapse_list,  
-                                 targeting_mode,
-                                 seg_length_dict,
-                                 num_of_conn_dict,
-                                 distance_dependent_rule=None,
-                                 pre_cell_positions=None,
-                                 post_cell_positions=None,
-                                 delays_dict=None,
-                                 weights_dict=None):
-                         
-    
-    '''This method adds the detailed chemical projections according to the various parameters passed. The input arguments are as follows:
-    
-    net - the network object created using libNeuroML ( neuroml.Network() );
-    
-    proj_counter - stores the number of projections at any given moment;
-    
-    presynaptic_population - object corresponding to the presynaptic population in the network;
-    
-    postsynaptic_population - object corresponding to the postsynaptic population in the network;
-    
-    synapse_list - the list of synapse ids that correspond to the individual receptor components on the physical synapse, e.g. the first element is
-    the id of the AMPA synapse and the second element is the id of the NMDA synapse; these synapse components will be mapped onto the same location of the target segment;
-    
-    targeting_mode - specifies the type of projection: divergent or convergent;
-    
-    seg_length_dict - a dictionary whose keys are the ids of target segment groups and the values are dictionaries in the format returned by make_target_dict();
-    
-    num_of_conn_dict - a dictionary whose keys are the ids of target segment groups with the corresponding values of type 'int' specifying the number of connections per 
-    tarrget segment group per each cell.
-    
-    distance_dependent_rule - optional string which defines the distance dependent rule of connectivity - soma to soma distance must be represented by the string character 'r';
-    
-    pre_cell_positions- optional array specifying the cell positions for the presynaptic population; the format is an array of [ x coordinate, y coordinate, z coordinate];
-    
-    post_cell_positions- optional array specifying the cell positions for the postsynaptic population; the format is an array of [ x coordinate, y coordinate, z coordinate];
-    
-    delays_dict - optional dictionary that specifies the delays (in ms) for individual synapse components, e.g. {'NMDA':5.0} or {'AMPA':3.0,'NMDA':5};
-    
-    weights_dict - optional dictionary that specifies the weights (in ms) for individual synapse components, e.g. {'NMDA':1} or {'NMDA':1,'AMPA':2}.
-    
-    '''             
-    
-    if presynaptic_population.size==0 or postsynaptic_population.size==0:
-        return None
-    
-    proj_array={}
-    syn_counter=0
-    for synapse_id in synapse_list:
-        proj = neuroml.Projection(id="Proj%dsyn%d_%s_%s"%(proj_counter,syn_counter,presynaptic_population.id, postsynaptic_population.id), 
-                      presynaptic_population=presynaptic_population.id, 
-                      postsynaptic_population=postsynaptic_population.id, 
-                      synapse=synapse_id)
-        syn_counter+=1              
-        proj_array[synapse_id]=proj
-
-    count = 0
-       
-    if distance_dependent_rule==None:
-       proj_array              =add_conv_or_div_projection(net,
-                                                           proj_array,
-                                                           presynaptic_population,
-                                                           postsynaptic_population,
-                                                           targeting_mode,
-                                                           synapse_list,
-                                                           seg_length_dict,
-                                                           num_of_conn_dict,
-                                                           delays_dict,
-                                                           weights_dict) 
-    else:
-       proj_array              =add_conv_or_div_spatial_projection(net,
-                                                                   proj_array,
-                                                                   presynaptic_population,
-                                                                   postsynaptic_population,
-                                                                   targeting_mode,
-                                                                   synapse_list,
-                                                                   seg_length_dict,
-                                                                   num_of_conn_dict,
-                                                                   distance_dependent_rule,
-                                                                   pre_cell_positions,
-                                                                   post_cell_positions,
-                                                                   delays_dict,
-                                                                   weights_dict)
-    
-
-    return proj_array, proj_counter
 
 ###################################################################################################################################################################   
 
-def add_conv_or_div_projection(net,
-                               proj_array,
-                               presynaptic_population,
-                               postsynaptic_population,
-                               targeting_mode,
-                               synapse_list,
-                               seg_target_dict,
-                               subset_dict,
-                               delays_dict=None,
-                               weights_dict=None):
+def add_chem_projection(net,
+                        proj_array,
+                        presynaptic_population,
+                        postsynaptic_population,
+                        targeting_mode,
+                        synapse_list,
+                        seg_target_dict,
+                        subset_dict,
+                        delays_dict=None,
+                        weights_dict=None):
     
     
     '''This method adds the divergent or convergent chemical projection depending on the input argument targeting_mode. The input arguments are as follows:
@@ -258,29 +195,194 @@ def add_conv_or_div_projection(net,
        
        pop2_id=presynaptic_population.id
                  
-    total_given=int(round(sum(subset_dict.values())))
+    total_given=int(sum(subset_dict.values() ))
+    
     count=0
+    
     for i in range(0, pop1_size):
+    
+        pop2_cell_ids=range(0,pop2_size)
+        
+        if pop1_id == pop2_id:
+           
+           pop2_cell_ids.remove(i)
         
         if pop2_size >= total_given:
         
-           pop2_cells=random.sample(range(0,pop2_size),total_given)
+           pop2_cells=random.sample(pop2_cell_ids,total_given)
            
         else:
         
            pop2_cells=[]
            
            for value in range(0,total_given):
-               cell_id=random.sample(range(0,pop2_size),1)
+           
+               cell_id=random.sample(pop2_cell_ids,1)
+               
                pop2_cells.extend(cell_id)
         
         target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
         
         for j in pop2_cells:
-            if i != j or pop1_id != pop2_id:
+        
+            post_seg_id=target_seg_array[0]
+            
+            del target_seg_array[0]
+            
+            fraction_along=target_fractions[0]
+            
+            del target_fractions[0]  
+                
+            if targeting_mode=='divergent':
+                   
+               pre_cell_id=i
+                      
+               post_cell_id=j
+                      
+            if targeting_mode=='convergent':
+                   
+               pre_cell_id=j
+                      
+               post_cell_id=i  
+                         
+            for synapse_id in synapse_list:
+            
+                delay=0
+                
+                weight=1
+                
+                if delays_dict !=None:
+                   for synapseComp in delays_dict.keys():
+                       if synapseComp in synapse_id:
+                          delay=delays_dict[synapseComp]
+                          
+                if weights_dict !=None:
+                   for synapseComp in weights_dict.keys():
+                       if synapseComp in synapse_id:
+                          weight=weights_dict[synapseComp]
+                     
+                add_connection(proj_array[synapse_id], 
+                               count, 
+                               presynaptic_population, 
+                               pre_cell_id, 
+                               0, 
+                               postsynaptic_population, 
+                               post_cell_id, 
+                               post_seg_id,
+                               delay = delay,
+                               weight = weight,
+                               post_fraction=fraction_along)
+            count+=1
+                   
+    for synapse_id in synapse_list:
+    
+        net.projections.append(proj_array[synapse_id])
+
+    return proj_array  
+    
+#####################################################################################################################################################
+    
+def add_elect_projection(net,
+                         proj_array,
+                         presynaptic_population,
+                         postsynaptic_population,
+                         targeting_mode,
+                         synapse_list,
+                         seg_target_dict,
+                         subset_dict):
+    
+    '''This method adds the divergent or convergent electrical projection depending on the input argument targeting_mode. The input arguments are as follows:
+    
+    net - the network object created using libNeuroML API ( neuroml.Network() );
+    
+    proj_counter - stores the number of projections at any given moment;
+    
+    presynaptic_population - object corresponding to the presynaptic population in the network;
+    
+    postsynaptic_population - object corresponding to the postsynaptic population in the network;
+    
+    targeting_mode - a string that specifies the targeting mode: 'convergent' or 'divergent';
+    
+    synapse_list - the list of synapse ids that correspond to the individual receptor components on the physical synapse, e.g. the first element is
+    the id of the AMPA synapse and the second element is the id of the NMDA synapse; these synapse components will be mapped onto the same location of the target segment;
+    
+    seg_target_dict - a dictionary whose keys are the ids of target segment groups and the values are dictionaries in the format returned by make_target_dict();
+    
+    subset_dict - a dictionary whose keys are the ids of target segment groups; interpretation of the corresponding dictionary values depends on the targeting mode:
+    
+    Case I, targeting mode = 'divergent' - the number of synaptic connections made by each presynaptic cell per given target segment group of postsynaptic cells;
+    
+    Case II, targeting mode = 'convergent' - the number of synaptic connections per target segment group per each postsynaptic cell.'''    
+    
+    if targeting_mode=='divergent':
+       
+       pop1_size=presynaptic_population.size
+       
+       pop1_id=presynaptic_population.id
+       
+       pop2_size=postsynaptic_population.size
+       
+       pop2_id=postsynaptic_population.size
+       
+    if targeting_mode=='convergent':
+       
+       pop1_size=postsynaptic_population.size
+       
+       pop1_id=postsynaptic_population.id
+       
+       pop2_size=presynaptic_population.size
+       
+       pop2_id=presynaptic_population.id
+                     
+    count=0
+    
+    ############ some initial handling of the average number of electrical connections per post or pre cell as specified in netConnList;
+    
+    total=0
+    
+    for subset in subset_dict.keys():
+            
+        #num_of_GJs=np.random.binomial(pop2_size,subset_dict[subset]/pop2_size)
+                  
+        subset_dict[subset]=int(round(subset_dict[subset],0))
+            
+        total=subset_dict[subset]+total
+        
+    #######################################################################################################################################
+        
+    
+    for i in range(0, pop1_size):
+        
+        pop2_cell_ids=range(0,pop2_size)
+        
+        if pop1_id == pop2_id:
+           
+           pop2_cell_ids.remove(i)
+        
+        if pop2_size >= total:
+        
+           pop2_cells=random.sample(pop2_cell_ids,total)
+           
+        else:
+        
+           pop2_cells=[]
+           
+           for value in range(0,total):
+               cell_id=random.sample(pop2_cell_ids,1)
+               pop2_cells.extend(cell_id)
+        
+        if total != 0:
+           
+           target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
+           
+           for j in pop2_cells:
+           
                post_seg_id=target_seg_array[0]
+               
                del target_seg_array[0]
+               
                fraction_along=target_fractions[0]
+               
                del target_fractions[0]  
                 
                if targeting_mode=='divergent':
@@ -296,50 +398,42 @@ def add_conv_or_div_projection(net,
                   post_cell_id=i  
                          
                for synapse_id in synapse_list:
-                   delay=0
-                   weight=1
-                   if delays_dict !=None:
-                      for synapseComp in delays_dict.keys():
-                          if synapseComp in synapse_id:
-                             delay=delays_dict[synapseComp]
-                   if weights_dict !=None:
-                      for synapseComp in weights_dict.keys():
-                          if synapseComp in synapse_id:
-                             weight=weights_dict[synapseComp]
-                     
-                   add_connection(proj_array[synapse_id], 
-                                  count, 
-                                  presynaptic_population, 
-                                  pre_cell_id, 
-                                  0, 
-                                  postsynaptic_population, 
-                                  post_cell_id, 
-                                  post_seg_id,
-                                  delay = delay,
-                                  weight = weight,
-                                  post_fraction=fraction_along)
+                   
+                   add_elect_connection(proj_array[synapse_id], 
+                                        count, 
+                                        presynaptic_population, 
+                                        pre_cell_id, 
+                                        0, 
+                                        postsynaptic_population, 
+                                        post_cell_id, 
+                                        post_seg_id,
+                                        synapse_id,
+                                        pre_fraction=0.5,
+                                        post_fraction=fraction_along)
                count+=1
                    
     for synapse_id in synapse_list:
-        net.projections.append(proj_array[synapse_id])
+    
+        net.electrical_projections.append(proj_array[synapse_id])
 
-    return proj_array                         
+    return proj_array   
+                       
     
 #########################################################################################
     
-def add_conv_or_div_spatial_projection(net,
-                                     proj_array,
-                                     presynaptic_population,
-                                     postsynaptic_population,
-                                     targeting_mode,
-                                     synapse_list,
-                                     seg_target_dict,
-                                     subset_dict,
-                                     distance_rule,
-                                     pre_cell_positions,
-                                     post_cell_positions,
-                                     delays_dict,
-                                     weights_dict):
+def add_chem_spatial_projection(net,
+                                proj_array,
+                                presynaptic_population,
+                                postsynaptic_population,
+                                targeting_mode,
+                                synapse_list,
+                                seg_target_dict,
+                                subset_dict,
+                                distance_rule,
+                                pre_cell_positions,
+                                post_cell_positions,
+                                delays_dict,
+                                weights_dict):
     
     '''This method adds the divergent distance-dependent chemical projection. The input arguments are as follows:
     
@@ -365,9 +459,9 @@ def add_conv_or_div_spatial_projection(net,
     
     Case II, targeting mode = 'convergent' - the desired number of synaptic connections per target segment group per each postsynaptic cell;
     
-    Note: the connection is made only if distance-dependent probability is higher than some random number random.random(); thus, the actual numbers of connections made
+    Note: the chemical connection is made only if distance-dependent probability is higher than some random number random.random(); thus, the actual numbers of connections made
     
-    according to the distance-dependent rule might be smaller than the numbers of connections specified by subset_dict. The role of subset_dict is to define the upper bound for the 
+    according to the distance-dependent rule might be smaller than the numbers of connections specified by subset_dict; subset_dict defines the upper bound for the 
     
     number of connections.
     
@@ -409,9 +503,30 @@ def add_conv_or_div_spatial_projection(net,
        
        pop2_cell_positions=pre_cell_positions
                  
-    total_given=int(round(sum(subsets.values())))
+    total_given=int( sum(subsets.values()) )
+    
     count=0
     for i in range(0, pop1_size):
+    
+        pop2_cell_ids=range(0,pop2_size)
+        
+        if pop1_id == pop2_id:
+           
+           pop2_cell_ids.remove(i)
+        
+        if pop2_size >= total_given:
+        
+           pop2_cells=random.sample(pop2_cell_ids,total_given)
+           
+        else:
+        
+           pop2_cells=[]
+           
+           for value in range(0,total_given):
+           
+               cell_id=random.sample(pop2_cell_ids,1)
+               
+               pop2_cells.extend(cell_id)
     
         cell1_position=pop1_cell_positions[i]
         
@@ -419,62 +534,71 @@ def add_conv_or_div_spatial_projection(net,
         
         conn_counter=0
         
-        for j in range(0,pop2_size):
+        for j in pop2_cells:
         
             cell2_position=pop2_cell_positions[j]
         
-            if i != j or pop1_id != pop2_id:
-               
-               r=math.sqrt(sum([(a - b)**2 for a,b in zip(cell1_position,cell2_position)]))
-               if target_seg_array !=[]:
-                  if eval(distance_rule) >= 1 or random.random() < eval(distance_rule):
-                     conn_counter+=1
-                     post_seg_id=target_seg_array[0]
-                     del target_seg_array[0]
-                     fraction_along=fractions_along[0]
-                     del fractions_along[0]
+            r=math.sqrt(sum([(a - b)**2 for a,b in zip(cell1_position,cell2_position)]))
+            
+            if eval(distance_rule) >= 1 or random.random() < eval(distance_rule):
+                  
+              conn_counter+=1
+                     
+              post_seg_id=target_seg_array[0]
+                     
+              del target_seg_array[0]
+                     
+              fraction_along=fractions_along[0]
+                     
+              del fractions_along[0]
                        
-                     if targeting_mode=='divergent':
+              if targeting_mode=='divergent':
                    
-                        pre_cell_id=i
+                 pre_cell_id=i
                       
-                        post_cell_id=j
+                 post_cell_id=j
                       
-                     if targeting_mode=='convergent':
+              if targeting_mode=='convergent':
                    
-                        pre_cell_id=j
+                 pre_cell_id=j
                       
-                        post_cell_id=i
+                 post_cell_id=i
                                 
-                     for synapse_id in synapse_list:
-                         delay=0
-                         weight=1
-                         if delays_dict !=None:
-                            for synapseComp in delays_dict.keys():
-                                if synapseComp in synapse_id:
-                                   delay=delays_dict[synapseComp]
-                         if weights_dict !=None:
-                            for synapseComp in weights_dict.keys():
-                                if synapseComp in synapse_id:
-                                   weight=weights_dict[synapseComp]
+              for synapse_id in synapse_list:
+                  
+                  delay=0
+                      
+                  weight=1
+                      
+                  if delays_dict !=None:
+                     for synapseComp in delays_dict.keys():
+                         if synapseComp in synapse_id:
+                            delay=delays_dict[synapseComp]
+                                
+                  if weights_dict !=None:
+                     for synapseComp in weights_dict.keys():
+                         if synapseComp in synapse_id:
+                            weight=weights_dict[synapseComp]
                        
                         
-                         add_connection(proj_array[synapse_id], 
-                                        count, 
-                                        presynaptic_population, 
-                                        pre_cell_id, 
-                                        0, 
-                                        postsynaptic_population, 
-                                        post_cell_id, 
-                                        post_seg_id,
-                                        delay = delay,
-                                        weight = weight,
-                                        post_fraction=fraction_along)
-                     count+=1
-               if conn_counter==total_given:
-                  break
+                  add_connection(proj_array[synapse_id], 
+                                 count, 
+                                 presynaptic_population, 
+                                 pre_cell_id, 
+                                 0, 
+                                 postsynaptic_population, 
+                                 post_cell_id, 
+                                 post_seg_id,
+                                 delay = delay,
+                                 weight = weight,
+                                 post_fraction=fraction_along)
+              count+=1
+                     
+            if conn_counter==total_given:
+               break
                    
     for synapse_id in synapseList:
+    
         net.projections.append(proj_array[synapse_id])
 
     return proj_array               
@@ -660,14 +784,19 @@ def get_target_segments(seg_specifications,
     
     target_segs_per_cell=[]
     target_fractions_along_per_cell=[]
+    
     for target_group in subset_dict.keys():
-        print target_group
+   
         no_per_target_group=subset_dict[target_group]
-        print seg_specifications.keys()
+        
         if target_group in seg_specifications.keys():
+        
            target_segs_per_group=[]
+           
            target_fractions_along_per_group=[]
+           
            cumulative_length_dist=seg_specifications[target_group]['LengthDist']
+           
            segment_list=seg_specifications[target_group]['SegList']
            not_selected=True
            while not_selected:
@@ -677,14 +806,24 @@ def get_target_segments(seg_specifications,
                  loc=p*cumulative_length_dist[-1]
                  
                  if len(segment_list)==len(cumulative_length_dist):
-                 
-                    previous_dist_value=0
                     
                     for seg_index in range(0,len(segment_list)):
                     
                         current_dist_value=cumulative_length_dist[seg_index]
                         
+                        if seg_index ==0:
+                           
+                           previous_dist_value=0
+                           
+                        else:
+                        
+                           previous_dist_value=cumulative_length_dist[seg_index-1]
+                        
                         if loc > previous_dist_value and loc <  current_dist_value:
+                        
+                           print("Will be print the current dist value")
+                           
+                           print current_dist_value
                         
                            segment_length=current_dist_value-previous_dist_value
                            
@@ -695,9 +834,6 @@ def get_target_segments(seg_specifications,
                            target_segs_per_group.append(segment_list[seg_index])
                            
                            target_fractions_along_per_group.append(post_fraction_along)
-                           
-                           
-                           previous_dist_value=current_dist_value
                            
                            break
                            
@@ -873,7 +1009,7 @@ def add_single_cell_population(net, pop_id, cell_id, x=0, y=0, z=0, color=None):
 
     return pop
     
-    
+##############################################################################################################################    
 def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_min, z_min, x_size, y_size, z_size,storeSoma=False, color=None):
     
     pop = neuroml.Population(id=pop_id, component=cell_id, type="populationList", size=size)
@@ -901,38 +1037,6 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
             
     
     return pop, cellPositions
-
-################################################################################    
-    
-def add_populations_in_layers(net,boundaryDict,popDict,x_vector,z_vector,storeSoma=False): 
-
-  
-# popDict are unique cell model ids; each entry stores a tuple of size and Layer index; these index strings make up the keys() of boundaryDict;
-# boundaryDict have layer pointers as keys; each entry stores the left and right bound of the layer in the list format , e.g. [L3_min, L3_max]
-   return_pops={}
-   
-
-   for cellModel in popDict.keys():
-
-       # the same cell model is allowed to be distributed in multiple layers
-       for subset in range(0,len(popDict[cellModel])):
-           size, layer = popDict[cellModel][subset]
-    
-           if size>0:
-              return_pops[cellModel]={}
-              xl=x_vector[1]-x_vector[0]
-              yl=boundaryDict[layer][1]-boundaryDict[layer][0]
-              zl=z_vector[1]-z_vector[0]
-          
-              pop, cellPositions=add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl,storeSoma)
-         
-              return_pops[cellModel][layer]={}
-              return_pops[cellModel][layer]['PopObj']=pop
-              return_pops[cellModel][layer]['Size']=size
-              return_pops[cellModel][layer]['Positions']=cellPositions
-   
-   return return_pops
-          
 
 
 

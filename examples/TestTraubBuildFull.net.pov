@@ -602,7 +602,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.137237,0.442332,0.548262> }
+    pigment { color rgb <0.794936,0.398103,0.539055> }
 }
 
 #declare cell_SupBasket = 
@@ -1197,7 +1197,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.668887,0.008208,0.026752> }
+    pigment { color rgb <0.448552,0.678020,0.534289> }
 }
 
 #declare cell_L4SpinyStellate = 
@@ -1792,7 +1792,7 @@ union {
         <0.000000, 200.000000, 240.000000>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.294390,0.308794,0.923881> }
+    pigment { color rgb <0.686989,0.108915,0.381280> }
 }
 
 #declare cell_L6NonTuftedPyrRS = 
@@ -2297,7 +2297,7 @@ union {
         <0.000144, 500.000060, 0.000000>, 0.600000 
         //CELL_GROUP_NAME_0.87
     }
-    pigment { color rgb <0.567778,0.044730,0.043942> }
+    pigment { color rgb <0.031730,0.786445,0.883379> }
 }
 
 #declare cell_DeepBasket = 
@@ -2892,7 +2892,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.568484,0.888824,0.406865> }
+    pigment { color rgb <0.140793,0.838135,0.427825> }
 }
 
 #declare cell_L23PyrRS = 
@@ -3637,7 +3637,7 @@ union {
         <-128.611560, 344.194400, 0.000000>, 0.800000 
         //CELL_GROUP_NAME_0.121
     }
-    pigment { color rgb <0.230459,0.025217,0.708032> }
+    pigment { color rgb <0.375172,0.001234,0.403016> }
 }
 
 #declare cell_TCR = 
@@ -5012,7 +5012,7 @@ union {
         <29.206408, -169.080000, 0.000000>, 0.500000 
         //CELL_GROUP_NAME_0.269
     }
-    pigment { color rgb <0.092170,0.231797,0.731346> }
+    pigment { color rgb <0.360244,0.676907,0.288175> }
 }
 
 #declare cell_L5TuftedPyrRS = 
@@ -5627,7 +5627,7 @@ union {
         <-81.762665, 1193.419200, 0.000000>, 0.550000 
         //CELL_GROUP_NAME_0.107
     }
-    pigment { color rgb <0.200801,0.241625,0.616861> }
+    pigment { color rgb <0.868725,0.932508,0.231031> }
 }
 
 #declare cell_SupLTSInter = 
@@ -6222,7 +6222,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.141870,0.322612,0.366965> }
+    pigment { color rgb <0.409099,0.743728,0.193995> }
 }
 
 #declare cell_L5TuftedPyrIB = 
@@ -6837,7 +6837,7 @@ union {
         <-81.762665, 1193.419200, 0.000000>, 0.550000 
         //CELL_GROUP_NAME_0.107
     }
-    pigment { color rgb <0.907163,0.706268,0.444898> }
+    pigment { color rgb <0.209376,0.404596,0.403527> }
 }
 
 #declare cell_DeepAxAx = 
@@ -7432,7 +7432,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.684928,0.622238,0.065410> }
+    pigment { color rgb <0.098968,0.619962,0.550207> }
 }
 
 #declare cell_SupAxAx = 
@@ -8027,7 +8027,7 @@ union {
         <-0.000870, 244.000030, 196.000260>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.812662,0.640707,0.518837> }
+    pigment { color rgb <0.507232,0.218669,0.450414> }
 }
 
 #declare cell_L23PyrFRB = 
@@ -8772,7 +8772,7 @@ union {
         <-128.611560, 344.194400, 0.000000>, 0.800000 
         //CELL_GROUP_NAME_0.121
     }
-    pigment { color rgb <0.036756,0.872300,0.394144> }
+    pigment { color rgb <0.911738,0.256667,0.303200> }
 }
 
 #declare cell_nRT = 
@@ -9367,7 +9367,7 @@ union {
         <-431.470900, 30.000000, -325.115570>, 0.418973 
         //CELL_GROUP_NAME_0.27
     }
-    pigment { color rgb <0.582306,0.588334,0.432428> }
+    pigment { color rgb <0.415064,0.340879,0.325846> }
 }
 
 
@@ -9388,61 +9388,61 @@ union {
 object {
     cell_DeepLTSInter
     translate <483.226767846, -1132.21977975, 3.74573502929>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_0
 }
 object {
     cell_DeepLTSInter
     translate <455.487981225, -1281.78069921, 291.113786529>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_1
 }
 object {
     cell_DeepLTSInter
     translate <335.781740744, -1025.18146805, 383.240466396>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_2
 }
 object {
     cell_DeepLTSInter
     translate <118.404887682, -1009.24420652, 394.386358618>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_3
 }
 object {
     cell_DeepLTSInter
     translate <173.044482799, -1186.98444251, 307.907847552>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_4
 }
 object {
     cell_DeepLTSInter
     translate <74.2773193541, -1054.92719422, 57.2064848443>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_5
 }
 object {
     cell_DeepLTSInter
     translate <7.30939024345, -1146.02546218, 482.450780458>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_6
 }
 object {
     cell_DeepLTSInter
     translate <32.2811404886, -1162.32645567, 232.949279504>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_7
 }
 object {
     cell_DeepLTSInter
     translate <300.731724781, -1026.678649, 289.501343094>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_8
 }
 object {
     cell_DeepLTSInter
     translate <134.79275191, -1166.92976817, 322.317117089>
-    pigment { color rgb <0.090158,0.177642,0.054071> }
+    pigment { color rgb <0.717429,0.872200,0.455804> }
     //DeepLTSInter_L6_9
 }
 
@@ -9452,55 +9452,55 @@ object {
 object {
     cell_SupBasket
     translate <240.518185683, -177.619573721, 124.576060681>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_0
 }
 object {
     cell_SupBasket
     translate <466.757749021, -226.694009738, 265.080603456>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_1
 }
 object {
     cell_SupBasket
     translate <9.64978315486, -254.05096289, 2.89011870887>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_2
 }
 object {
     cell_SupBasket
     translate <71.8842137978, -236.413462674, 188.673720386>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_3
 }
 object {
     cell_SupBasket
     translate <27.0875993231, -293.764254066, 82.001611871>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_4
 }
 object {
     cell_SupBasket
     translate <278.665118721, -72.122860801, 468.653542348>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_5
 }
 object {
     cell_SupBasket
     translate <385.48998576, -478.466561175, 70.6138822082>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_6
 }
 object {
     cell_SupBasket
     translate <152.696354144, -19.794812114, 138.391847396>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_7
 }
 object {
     cell_SupBasket
     translate <403.256252558, -88.6715176391, 77.2852573554>
-    pigment { color rgb <0.775538,0.898334,0.686909> }
+    pigment { color rgb <0.327062,0.549999,0.537112> }
     //SupBasket_L23_8
 }
 
@@ -9510,145 +9510,145 @@ object {
 object {
     cell_L4SpinyStellate
     translate <477.359327851, -530.910280018, 416.944647076>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_0
 }
 object {
     cell_L4SpinyStellate
     translate <20.5314031359, -577.236705667, 174.796150982>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_1
 }
 object {
     cell_L4SpinyStellate
     translate <170.853896375, -663.292611343, 237.967454066>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_2
 }
 object {
     cell_L4SpinyStellate
     translate <391.445144761, -594.168025062, 408.672003429>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_3
 }
 object {
     cell_L4SpinyStellate
     translate <440.783799328, -587.919279536, 390.531798896>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_4
 }
 object {
     cell_L4SpinyStellate
     translate <407.370580129, -559.135783129, 61.9383371535>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_5
 }
 object {
     cell_L4SpinyStellate
     translate <92.8109303725, -587.21195872, 59.7337035056>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_6
 }
 object {
     cell_L4SpinyStellate
     translate <264.899570879, -665.884232283, 242.600576493>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_7
 }
 object {
     cell_L4SpinyStellate
     translate <408.867000851, -631.278324508, 320.521515576>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_8
 }
 object {
     cell_L4SpinyStellate
     translate <172.674462602, -640.53178981, 404.970291866>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_9
 }
 object {
     cell_L4SpinyStellate
     translate <78.584792392, -681.598123823, 134.665183618>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_10
 }
 object {
     cell_L4SpinyStellate
     translate <77.4232478735, -668.095833039, 360.063989921>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_11
 }
 object {
     cell_L4SpinyStellate
     translate <396.781197887, -589.334132851, 35.3869426194>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_12
 }
 object {
     cell_L4SpinyStellate
     translate <197.621525132, -509.547059081, 143.06675197>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_13
 }
 object {
     cell_L4SpinyStellate
     translate <18.9972975082, -601.342968389, 43.8338994711>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_14
 }
 object {
     cell_L4SpinyStellate
     translate <466.41282342, -639.877457914, 158.493013328>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_15
 }
 object {
     cell_L4SpinyStellate
     translate <472.525535005, -513.245520867, 128.714445444>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_16
 }
 object {
     cell_L4SpinyStellate
     translate <36.4998232157, -585.260851606, 100.948386272>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_17
 }
 object {
     cell_L4SpinyStellate
     translate <198.323317597, -640.97198231, 443.676670863>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_18
 }
 object {
     cell_L4SpinyStellate
     translate <250.25889738, -663.706309792, 180.627256375>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_19
 }
 object {
     cell_L4SpinyStellate
     translate <429.3430865, -603.006835117, 351.207738449>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_20
 }
 object {
     cell_L4SpinyStellate
     translate <87.3449592015, -616.902362113, 150.8885289>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_21
 }
 object {
     cell_L4SpinyStellate
     translate <406.425697179, -606.868149568, 249.793652097>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_22
 }
 object {
     cell_L4SpinyStellate
     translate <386.662602242, -609.806134511, 166.879006247>
-    pigment { color rgb <0.548294,0.038024,0.494038> }
+    pigment { color rgb <0.965255,0.655763,0.515580> }
     //L4SpinyStellate_L4_23
 }
 
@@ -9658,301 +9658,301 @@ object {
 object {
     cell_L6NonTuftedPyrRS
     translate <65.4664302173, -1187.35179715, 462.673109565>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_0
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <421.169428326, -1020.9249356, 162.642602515>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_1
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <0.853187099993, -1202.40915953, 319.140058337>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_2
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <378.954387427, -1044.4821788, 108.516846001>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_3
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <216.38618928, -1221.01745678, 103.559501364>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_4
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <411.418462823, -1114.36032639, 437.142889631>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_5
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <480.012332201, -1161.24631606, 460.533679666>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_6
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <211.01843312, -1205.58102707, 423.454423068>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_7
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <419.383892911, -1027.86064766, 130.157881521>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_8
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <205.129010231, -1257.34730787, 138.371264658>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_9
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <56.8694572958, -1112.60453524, 106.942911809>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_10
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <358.118317415, -1176.25285476, 26.2494770792>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_11
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <438.715189079, -1132.16652699, 388.443520257>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_12
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <82.6603523662, -1092.37514884, 36.6631466158>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_13
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <197.495361039, -1128.6731098, 341.398145361>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_14
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <239.793927169, -1120.15355966, 238.980990489>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_15
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <140.630202709, -1110.85763124, 300.246873299>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_16
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <103.033990297, -1155.65929785, 464.836342514>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_17
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <228.708728417, -1200.4931535, 329.921595858>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_18
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <400.672584011, -1217.66511381, 330.353516338>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_19
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <51.8554114808, -1109.99012508, 397.030195131>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_20
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <32.59636803, -1042.00529729, 452.680084465>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_21
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <294.008733078, -1294.05062873, 376.790131453>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_22
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <497.838975078, -1089.58584968, 343.028256979>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_23
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <165.293371539, -1283.79103084, 146.890664706>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_24
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <97.2831640734, -1244.28530801, 139.517329903>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_25
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <267.016830644, -1180.66111402, 169.817121738>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_26
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <167.117431439, -1096.31835474, 133.75189932>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_27
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <379.83617383, -1176.76892113, 274.122529177>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_28
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <412.069258262, -1077.14518243, 68.5416529722>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_29
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <14.1895353591, -1011.20618581, 495.33811228>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_30
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <486.907345089, -1199.97992774, 495.330211941>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_31
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <257.826251371, -1130.36661873, 257.642116053>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_32
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <34.498422757, -1227.8742372, 152.580761393>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_33
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <349.040223232, -1272.85080905, 109.799546554>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_34
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <252.188138972, -1195.94254101, 405.479162999>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_35
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <341.375710759, -1099.32741194, 282.089915982>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_36
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <81.2671463116, -1149.82480858, 470.024036898>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_37
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <475.091349303, -1041.98160442, 266.156891818>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_38
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <309.930905954, -1043.65957126, 474.495481101>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_39
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <121.642867806, -1049.27503149, 253.215814957>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_40
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <252.501803232, -1232.034512, 426.588657643>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_41
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <163.251583013, -1212.46819198, 280.861208462>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_42
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <267.5406136, -1179.75974793, 223.1688799>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_43
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <185.851864773, -1278.91695507, 381.449527444>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_44
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <337.934760036, -1265.89332978, 302.021125749>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_45
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <35.4510296664, -1068.37690314, 401.510142528>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_46
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <173.093162253, -1281.88595292, 344.526148472>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_47
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <189.893374554, -1147.8357769, 26.2237825611>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_48
 }
 object {
     cell_L6NonTuftedPyrRS
     translate <224.037821613, -1024.05337504, 146.582023898>
-    pigment { color rgb <0.468388,0.553609,0.372082> }
+    pigment { color rgb <0.968930,0.709072,0.181502> }
     //L6NonTuftedPyrRS_L6_49
 }
 
@@ -9962,61 +9962,61 @@ object {
 object {
     cell_DeepBasket
     translate <464.645755814, -1044.3681996, 338.458674979>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_0
 }
 object {
     cell_DeepBasket
     translate <325.394456245, -1207.92031881, 397.235039733>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_1
 }
 object {
     cell_DeepBasket
     translate <432.128070808, -1106.98260797, 185.705778804>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_2
 }
 object {
     cell_DeepBasket
     translate <87.0247150759, -1191.82734642, 106.13536006>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_3
 }
 object {
     cell_DeepBasket
     translate <98.2247584869, -1297.02769355, 310.210837229>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_4
 }
 object {
     cell_DeepBasket
     translate <365.323521724, -1150.55667453, 66.2502112771>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_5
 }
 object {
     cell_DeepBasket
     translate <455.091048981, -1195.37392127, 24.7546581122>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_6
 }
 object {
     cell_DeepBasket
     translate <456.994085013, -1140.41431776, 298.879868273>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_7
 }
 object {
     cell_DeepBasket
     translate <185.896155567, -1118.99626644, 389.203754693>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_8
 }
 object {
     cell_DeepBasket
     translate <117.085059305, -1002.62353323, 156.374680188>
-    pigment { color rgb <0.110175,0.943114,0.872296> }
+    pigment { color rgb <0.627907,0.113029,0.494037> }
     //DeepBasket_L6_9
 }
 
@@ -10026,601 +10026,601 @@ object {
 object {
     cell_L23PyrRS
     translate <492.686298735, -60.2367652365, 299.952790273>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_0
 }
 object {
     cell_L23PyrRS
     translate <432.538502733, -266.994344335, 296.782614177>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_1
 }
 object {
     cell_L23PyrRS
     translate <268.598177224, -161.118407894, 181.427586221>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_2
 }
 object {
     cell_L23PyrRS
     translate <463.303485039, -356.071534361, 321.341802092>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_3
 }
 object {
     cell_L23PyrRS
     translate <228.433959155, -455.48606727, 438.4180233>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_4
 }
 object {
     cell_L23PyrRS
     translate <483.574442464, -271.77912256, 204.304964241>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_5
 }
 object {
     cell_L23PyrRS
     translate <95.8607474109, -136.701642848, 433.851080861>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_6
 }
 object {
     cell_L23PyrRS
     translate <87.123309649, -472.97965639, 293.179056844>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_7
 }
 object {
     cell_L23PyrRS
     translate <423.529317265, -265.060460143, 377.380470182>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_8
 }
 object {
     cell_L23PyrRS
     translate <293.603686545, -414.036804736, 257.167136093>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_9
 }
 object {
     cell_L23PyrRS
     translate <362.103949228, -401.752992481, 186.514771053>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_10
 }
 object {
     cell_L23PyrRS
     translate <51.2919117269, -337.501241003, 425.139622396>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_11
 }
 object {
     cell_L23PyrRS
     translate <417.026626244, -63.5212663788, 392.207754662>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_12
 }
 object {
     cell_L23PyrRS
     translate <244.052686158, -273.177555046, 65.9193352152>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_13
 }
 object {
     cell_L23PyrRS
     translate <384.825748413, -119.486361712, 349.251181151>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_14
 }
 object {
     cell_L23PyrRS
     translate <167.653964431, -478.305948129, 355.751177379>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_15
 }
 object {
     cell_L23PyrRS
     translate <177.488544604, -274.024288557, 94.1733516959>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_16
 }
 object {
     cell_L23PyrRS
     translate <236.462234243, -465.5670139, 464.510785288>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_17
 }
 object {
     cell_L23PyrRS
     translate <159.771524168, -220.790471577, 262.435246661>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_18
 }
 object {
     cell_L23PyrRS
     translate <269.584804075, -494.796020773, 42.9361465426>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_19
 }
 object {
     cell_L23PyrRS
     translate <98.7300506823, -303.852285807, 167.946417528>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_20
 }
 object {
     cell_L23PyrRS
     translate <188.877680419, -347.45657417, 99.7974770687>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_21
 }
 object {
     cell_L23PyrRS
     translate <14.6909660032, -485.415289781, 158.01835657>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_22
 }
 object {
     cell_L23PyrRS
     translate <49.8751850622, -27.8449610127, 339.82289307>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_23
 }
 object {
     cell_L23PyrRS
     translate <211.996772599, -169.97786726, 489.842011006>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_24
 }
 object {
     cell_L23PyrRS
     translate <464.798142887, -357.385689679, 451.266820283>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_25
 }
 object {
     cell_L23PyrRS
     translate <83.1317319563, -486.214359829, 4.4258880954>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_26
 }
 object {
     cell_L23PyrRS
     translate <298.299795368, -460.737367286, 454.937476031>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_27
 }
 object {
     cell_L23PyrRS
     translate <351.91136344, -463.007542702, 304.689944717>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_28
 }
 object {
     cell_L23PyrRS
     translate <78.0420185664, -460.381116189, 97.1489571411>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_29
 }
 object {
     cell_L23PyrRS
     translate <226.4741421, -222.514824634, 250.921192966>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_30
 }
 object {
     cell_L23PyrRS
     translate <168.198330414, -134.379173852, 444.455833864>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_31
 }
 object {
     cell_L23PyrRS
     translate <195.888672991, -342.779254818, 246.774708164>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_32
 }
 object {
     cell_L23PyrRS
     translate <123.845531914, -143.101581029, 485.097654774>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_33
 }
 object {
     cell_L23PyrRS
     translate <451.951557438, -78.8148158582, 116.278978349>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_34
 }
 object {
     cell_L23PyrRS
     translate <479.476021771, -460.748407923, 176.923839853>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_35
 }
 object {
     cell_L23PyrRS
     translate <271.925014281, -215.048797123, 222.134552986>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_36
 }
 object {
     cell_L23PyrRS
     translate <274.939322488, -389.952518304, 359.101231712>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_37
 }
 object {
     cell_L23PyrRS
     translate <358.720802006, -35.4074679926, 122.199799219>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_38
 }
 object {
     cell_L23PyrRS
     translate <323.229739, -356.859873553, 242.725723906>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_39
 }
 object {
     cell_L23PyrRS
     translate <389.754935289, -478.328187903, 346.246575202>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_40
 }
 object {
     cell_L23PyrRS
     translate <416.199272547, -163.63742562, 408.732229916>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_41
 }
 object {
     cell_L23PyrRS
     translate <259.186265811, -402.824128641, 341.136746348>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_42
 }
 object {
     cell_L23PyrRS
     translate <151.369258044, -385.045204409, 399.84120743>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_43
 }
 object {
     cell_L23PyrRS
     translate <250.532542097, -71.4017344522, 187.723969773>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_44
 }
 object {
     cell_L23PyrRS
     translate <88.5319431407, -68.4739907299, 150.690459064>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_45
 }
 object {
     cell_L23PyrRS
     translate <244.246965426, -400.607512652, 300.543740889>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_46
 }
 object {
     cell_L23PyrRS
     translate <133.513397977, -458.438835219, 474.634838965>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_47
 }
 object {
     cell_L23PyrRS
     translate <429.908926572, -236.000803406, 435.941149725>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_48
 }
 object {
     cell_L23PyrRS
     translate <83.7541858328, -395.994288621, 115.142529616>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_49
 }
 object {
     cell_L23PyrRS
     translate <124.875306167, -33.4081324438, 412.778489873>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_50
 }
 object {
     cell_L23PyrRS
     translate <407.900890818, -415.254216548, 280.694403776>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_51
 }
 object {
     cell_L23PyrRS
     translate <72.4356173687, -197.033092316, 108.933904026>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_52
 }
 object {
     cell_L23PyrRS
     translate <280.218800613, -73.0883029142, 106.029251004>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_53
 }
 object {
     cell_L23PyrRS
     translate <362.181021565, -309.055251677, 339.79637549>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_54
 }
 object {
     cell_L23PyrRS
     translate <259.218085388, -173.141769626, 95.6541472716>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_55
 }
 object {
     cell_L23PyrRS
     translate <111.823707234, -276.680182727, 8.82811798609>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_56
 }
 object {
     cell_L23PyrRS
     translate <181.585504922, -220.133886622, 341.24946506>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_57
 }
 object {
     cell_L23PyrRS
     translate <5.5352874635, -211.17483637, 210.860212638>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_58
 }
 object {
     cell_L23PyrRS
     translate <471.522092501, -324.242187973, 259.268202816>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_59
 }
 object {
     cell_L23PyrRS
     translate <378.523996423, -385.842738957, 390.192008465>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_60
 }
 object {
     cell_L23PyrRS
     translate <281.811786759, -152.738341946, 295.402180467>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_61
 }
 object {
     cell_L23PyrRS
     translate <10.0948746953, -349.10234275, 61.7076975246>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_62
 }
 object {
     cell_L23PyrRS
     translate <484.744993792, -285.990561755, 379.621424693>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_63
 }
 object {
     cell_L23PyrRS
     translate <197.61221267, -104.690000572, 215.656866847>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_64
 }
 object {
     cell_L23PyrRS
     translate <55.7615382885, -206.309248425, 428.370446615>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_65
 }
 object {
     cell_L23PyrRS
     translate <304.788705231, -456.256750173, 360.472624631>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_66
 }
 object {
     cell_L23PyrRS
     translate <393.426865975, -373.868907832, 114.783602967>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_67
 }
 object {
     cell_L23PyrRS
     translate <31.6346828366, -189.964812372, 63.5053748944>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_68
 }
 object {
     cell_L23PyrRS
     translate <337.421057753, -14.3841592412, 254.2071978>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_69
 }
 object {
     cell_L23PyrRS
     translate <400.290121416, -365.002216837, 8.84233755498>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_70
 }
 object {
     cell_L23PyrRS
     translate <22.5919016136, -473.445987259, 15.2104374301>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_71
 }
 object {
     cell_L23PyrRS
     translate <377.085966201, -441.537172282, 115.349862173>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_72
 }
 object {
     cell_L23PyrRS
     translate <311.323685534, -288.04846131, 446.499501521>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_73
 }
 object {
     cell_L23PyrRS
     translate <121.697420052, -229.48619416, 131.674107765>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_74
 }
 object {
     cell_L23PyrRS
     translate <208.715649857, -370.774713575, 261.118616513>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_75
 }
 object {
     cell_L23PyrRS
     translate <4.7676746204, -146.066340931, 327.246041321>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_76
 }
 object {
     cell_L23PyrRS
     translate <477.344500379, -297.375538219, 456.389066523>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_77
 }
 object {
     cell_L23PyrRS
     translate <350.255888077, -326.259226752, 314.469813327>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_78
 }
 object {
     cell_L23PyrRS
     translate <303.05164866, -460.248261757, 212.393031129>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_79
 }
 object {
     cell_L23PyrRS
     translate <217.3758285, -169.527011438, 143.412541112>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_80
 }
 object {
     cell_L23PyrRS
     translate <47.0216496105, -444.332480729, 416.650442693>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_81
 }
 object {
     cell_L23PyrRS
     translate <367.034936022, -284.926186861, 167.70395258>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_82
 }
 object {
     cell_L23PyrRS
     translate <263.735650883, -300.791278623, 329.202457522>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_83
 }
 object {
     cell_L23PyrRS
     translate <204.157810457, -221.109422014, 91.3393922368>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_84
 }
 object {
     cell_L23PyrRS
     translate <53.3237142692, -450.472271135, 165.606732114>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_85
 }
 object {
     cell_L23PyrRS
     translate <293.81967529, -486.817991495, 95.0593115961>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_86
 }
 object {
     cell_L23PyrRS
     translate <258.856576309, -198.196959085, 158.971755563>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_87
 }
 object {
     cell_L23PyrRS
     translate <256.435484161, -318.785152791, 473.207455398>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_88
 }
 object {
     cell_L23PyrRS
     translate <320.788005904, -165.175460136, 363.054457434>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_89
 }
 object {
     cell_L23PyrRS
     translate <306.94661469, -131.040769995, 435.149087646>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_90
 }
 object {
     cell_L23PyrRS
     translate <38.1736310711, -456.059554974, 225.329752193>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_91
 }
 object {
     cell_L23PyrRS
     translate <305.628679252, -5.2556483185, 18.1700646605>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_92
 }
 object {
     cell_L23PyrRS
     translate <305.094067813, -53.958433889, 332.092141531>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_93
 }
 object {
     cell_L23PyrRS
     translate <350.466760067, -89.5500813469, 286.69912756>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_94
 }
 object {
     cell_L23PyrRS
     translate <133.421214306, -415.289344912, 377.128979488>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_95
 }
 object {
     cell_L23PyrRS
     translate <410.150160641, -155.214978673, 468.760954667>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_96
 }
 object {
     cell_L23PyrRS
     translate <16.1444234193, -286.410173937, 168.703294788>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_97
 }
 object {
     cell_L23PyrRS
     translate <271.25767001, -369.440284418, 43.9414699323>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_98
 }
 object {
     cell_L23PyrRS
     translate <385.277518048, -467.84810386, 387.982269003>
-    pigment { color rgb <0.253319,0.495191,0.642019> }
+    pigment { color rgb <0.615996,0.419147,0.158484> }
     //L23PyrRS_L23_99
 }
 
@@ -10630,186 +10630,62 @@ object {
 object {
     cell_TCR
     translate <8.4099697631, -1516.82589207, 421.177943414>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_0
 }
 object {
     cell_TCR
     translate <278.789280396, -1569.08948961, 340.289051198>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_1
 }
 object {
     cell_TCR
     translate <407.986310986, -1621.93760689, 9.02516540466>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_2
 }
 object {
     cell_TCR
     translate <227.856222866, -1543.61982804, 174.214134543>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_3
 }
 object {
     cell_TCR
     translate <167.342682752, -1577.65111976, 347.726174053>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_4
 }
 object {
     cell_TCR
     translate <15.6196397888, -1526.73022516, 179.161800837>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_5
 }
 object {
     cell_TCR
     translate <372.327153109, -1519.28602466, 133.123314264>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_6
 }
 object {
     cell_TCR
     translate <79.2668611989, -1623.71195009, 280.11358758>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_7
 }
 object {
     cell_TCR
     translate <246.869730198, -1516.44313112, 394.632544176>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_8
 }
 object {
     cell_TCR
     translate <375.481983406, -1634.83111614, 419.399660147>
-    pigment { color rgb <0.019990,0.866735,0.828015> }
+    pigment { color rgb <0.398602,0.195003,0.526555> }
     //TCR_Thalamus_9
-}
-
-
-/* Population: L5TuftedPyrRS_L5 has 20 positioned cells of type: L5TuftedPyrRS */
-
-object {
-    cell_L5TuftedPyrRS
-    translate <210.237148831, -794.461729062, 270.856083058>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_0
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <312.250907939, -872.344951844, 354.315152106>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_1
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <85.6141992845, -829.761178868, 249.776920882>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_2
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <69.8259859508, -850.264237075, 238.034105735>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_3
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <287.857641971, -791.554374032, 138.434880449>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_4
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <71.4552155054, -739.43193023, 496.666787921>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_5
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <331.571466737, -997.758410442, 130.613407555>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_6
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <155.742147002, -788.58660944, 77.4910658727>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_7
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <316.313816536, -989.316112712, 227.72816963>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_8
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <130.697762294, -810.610734373, 24.892005724>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_9
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <173.893301329, -936.416352795, 351.912169857>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_10
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <4.38627789499, -711.234187031, 306.923379401>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_11
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <94.7551447, -947.509826, 486.868684694>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_12
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <326.093386422, -902.902517495, 401.203491845>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_13
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <158.113174128, -977.581130477, 454.102543684>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_14
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <207.829353485, -980.741821833, 222.797098195>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_15
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <259.497519792, -987.302175769, 315.865582288>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_16
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <167.259105507, -758.493240452, 474.219564229>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_17
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <157.65423363, -820.894589177, 182.547060268>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_18
-}
-object {
-    cell_L5TuftedPyrRS
-    translate <213.540212424, -816.638800108, 470.775087955>
-    pigment { color rgb <0.750306,0.984548,0.777648> }
-    //L5TuftedPyrRS_L5_19
 }
 
 
@@ -10817,56 +10693,56 @@ object {
 
 object {
     cell_SupLTSInter
-    translate <337.402687527, -128.468784366, 466.15805461>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <210.237148831, -157.436215103, 270.856083058>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_0
 }
 object {
     cell_SupLTSInter
-    translate <303.782031572, -227.146396668, 179.47558761>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <312.250907939, -287.241586407, 354.315152106>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_1
 }
 object {
     cell_SupLTSInter
-    translate <254.213566661, -468.266915022, 91.5350059502>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <85.6141992845, -216.268631447, 249.776920882>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_2
 }
 object {
     cell_SupLTSInter
-    translate <188.535014421, -227.115718968, 459.199419738>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <69.8259859508, -250.440395125, 238.034105735>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_3
 }
 object {
     cell_SupLTSInter
-    translate <416.983730556, -389.721478904, 66.3145528624>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <287.857641971, -152.590623386, 138.434880449>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_4
 }
 object {
     cell_SupLTSInter
-    translate <187.774931284, -462.631901249, 205.523926505>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <71.4552155054, -65.7198837167, 496.666787921>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_5
 }
 object {
     cell_SupLTSInter
-    translate <304.565339974, -127.041359333, 163.255272639>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <331.571466737, -496.264017404, 130.613407555>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_6
 }
 object {
     cell_SupLTSInter
-    translate <221.002440485, -156.889020992, 331.289899066>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <155.742147002, -147.644349067, 77.4910658727>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_7
 }
 object {
     cell_SupLTSInter
-    translate <312.700374967, -405.215170852, 360.186490504>
-    pigment { color rgb <0.924435,0.002490,0.031867> }
+    translate <316.313816536, -482.193521187, 227.72816963>
+    pigment { color rgb <0.424074,0.815153,0.775802> }
     //SupLTSInter_L23_8
 }
 
@@ -10875,482 +10751,482 @@ object {
 
 object {
     cell_L5TuftedPyrIB
-    translate <280.066230338, -752.886365513, 224.764761554>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <130.697762294, -810.610734373, 24.892005724>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_0
 }
 object {
     cell_L5TuftedPyrIB
-    translate <379.793194222, -835.196600313, 82.0452404126>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <173.893301329, -936.416352795, 351.912169857>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_1
 }
 object {
     cell_L5TuftedPyrIB
-    translate <227.846148828, -847.078758944, 332.662309301>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <4.38627789499, -711.234187031, 306.923379401>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_2
 }
 object {
     cell_L5TuftedPyrIB
-    translate <422.608230441, -717.401109575, 150.487548676>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <94.7551447, -947.509826, 486.868684694>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_3
 }
 object {
     cell_L5TuftedPyrIB
-    translate <105.945636999, -739.794237341, 468.892584067>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <326.093386422, -902.902517495, 401.203491845>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_4
 }
 object {
     cell_L5TuftedPyrIB
-    translate <289.630748597, -756.799967183, 488.429467552>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <158.113174128, -977.581130477, 454.102543684>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_5
 }
 object {
     cell_L5TuftedPyrIB
-    translate <435.110283232, -811.867237556, 145.745490419>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <207.829353485, -980.741821833, 222.797098195>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_6
 }
 object {
     cell_L5TuftedPyrIB
-    translate <289.703002343, -830.725191774, 234.806630955>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <259.497519792, -987.302175769, 315.865582288>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_7
 }
 object {
     cell_L5TuftedPyrIB
-    translate <472.024985558, -872.740804207, 382.917577317>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <167.259105507, -758.493240452, 474.219564229>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_8
 }
 object {
     cell_L5TuftedPyrIB
-    translate <479.914171215, -728.795540656, 497.643627818>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <157.65423363, -820.894589177, 182.547060268>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_9
 }
 object {
     cell_L5TuftedPyrIB
-    translate <486.345613776, -957.427719356, 57.4413653368>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <213.540212424, -816.638800108, 470.775087955>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_10
 }
 object {
     cell_L5TuftedPyrIB
-    translate <73.2865332952, -738.897379765, 235.592392722>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <337.402687527, -777.081270619, 466.15805461>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_11
 }
 object {
     cell_L5TuftedPyrIB
-    translate <433.122251575, -963.262975728, 10.5132351864>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <303.782031572, -836.287838001, 179.47558761>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_12
 }
 object {
     cell_L5TuftedPyrIB
-    translate <389.685563717, -761.801835451, 156.802156488>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <254.213566661, -980.960149013, 91.5350059502>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_13
 }
 object {
     cell_L5TuftedPyrIB
-    translate <128.190199334, -972.026387742, 211.895788781>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <188.535014421, -836.269431381, 459.199419738>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_14
 }
 object {
     cell_L5TuftedPyrIB
-    translate <490.467979756, -788.377136664, 179.821906422>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <416.983730556, -933.832887342, 66.3145528624>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_15
 }
 object {
     cell_L5TuftedPyrIB
-    translate <115.199741214, -794.101485717, 102.536435029>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <187.774931284, -977.57914075, 205.523926505>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_16
 }
 object {
     cell_L5TuftedPyrIB
-    translate <150.34603935, -922.571063939, 264.283446129>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <304.565339974, -776.2248156, 163.255272639>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_17
 }
 object {
     cell_L5TuftedPyrIB
-    translate <492.189678046, -857.711526365, 366.288346444>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <221.002440485, -794.133412595, 331.289899066>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_18
 }
 object {
     cell_L5TuftedPyrIB
-    translate <128.385893798, -986.882625092, 342.328064763>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <312.700374967, -943.129102511, 360.186490504>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_19
 }
 object {
     cell_L5TuftedPyrIB
-    translate <92.5421093304, -882.563523995, 19.7303697931>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <280.066230338, -752.886365513, 224.764761554>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_20
 }
 object {
     cell_L5TuftedPyrIB
-    translate <171.427219279, -853.93769591, 305.586566631>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <379.793194222, -835.196600313, 82.0452404126>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_21
 }
 object {
     cell_L5TuftedPyrIB
-    translate <227.335239799, -736.902664089, 40.5098041811>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <227.846148828, -847.078758944, 332.662309301>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_22
 }
 object {
     cell_L5TuftedPyrIB
-    translate <330.751118417, -890.571009556, 259.731388893>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <422.608230441, -717.401109575, 150.487548676>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_23
 }
 object {
     cell_L5TuftedPyrIB
-    translate <52.8669458278, -797.105904228, 462.123537039>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <105.945636999, -739.794237341, 468.892584067>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_24
 }
 object {
     cell_L5TuftedPyrIB
-    translate <134.189164198, -991.582968927, 188.297662909>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <289.630748597, -756.799967183, 488.429467552>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_25
 }
 object {
     cell_L5TuftedPyrIB
-    translate <203.234735333, -708.221010028, 110.976814079>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <435.110283232, -811.867237556, 145.745490419>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_26
 }
 object {
     cell_L5TuftedPyrIB
-    translate <323.740998394, -869.248295327, 392.005730013>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <289.703002343, -830.725191774, 234.806630955>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_27
 }
 object {
     cell_L5TuftedPyrIB
-    translate <31.7432492322, -718.966942696, 186.175235972>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <472.024985558, -872.740804207, 382.917577317>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_28
 }
 object {
     cell_L5TuftedPyrIB
-    translate <358.581617021, -846.808987202, 324.554510638>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <479.914171215, -728.795540656, 497.643627818>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_29
 }
 object {
     cell_L5TuftedPyrIB
-    translate <0.12192012038, -946.846116377, 309.653727474>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <486.345613776, -957.427719356, 57.4413653368>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_30
 }
 object {
     cell_L5TuftedPyrIB
-    translate <336.770762578, -959.375829077, 403.08232888>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <73.2865332952, -738.897379765, 235.592392722>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_31
 }
 object {
     cell_L5TuftedPyrIB
-    translate <60.1874343488, -783.366727471, 277.682337023>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <433.122251575, -963.262975728, 10.5132351864>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_32
 }
 object {
     cell_L5TuftedPyrIB
-    translate <472.898100436, -776.524596648, 149.075309408>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <389.685563717, -761.801835451, 156.802156488>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_33
 }
 object {
     cell_L5TuftedPyrIB
-    translate <394.767320289, -718.945269456, 372.349230989>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <128.190199334, -972.026387742, 211.895788781>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_34
 }
 object {
     cell_L5TuftedPyrIB
-    translate <145.564609516, -901.332761779, 170.954705865>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <490.467979756, -788.377136664, 179.821906422>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_35
 }
 object {
     cell_L5TuftedPyrIB
-    translate <237.584501482, -891.486075478, 18.7258141351>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <115.199741214, -794.101485717, 102.536435029>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_36
 }
 object {
     cell_L5TuftedPyrIB
-    translate <208.403738366, -965.464402718, 372.721351183>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <150.34603935, -922.571063939, 264.283446129>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_37
 }
 object {
     cell_L5TuftedPyrIB
-    translate <105.875198573, -917.741603106, 392.70509881>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <492.189678046, -857.711526365, 366.288346444>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_38
 }
 object {
     cell_L5TuftedPyrIB
-    translate <6.12577294395, -969.87555268, 265.302669062>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <128.385893798, -986.882625092, 342.328064763>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_39
 }
 object {
     cell_L5TuftedPyrIB
-    translate <320.335380847, -840.622454154, 136.232780044>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <92.5421093304, -882.563523995, 19.7303697931>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_40
 }
 object {
     cell_L5TuftedPyrIB
-    translate <366.791114266, -999.9919978, 292.626074965>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <171.427219279, -853.93769591, 305.586566631>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_41
 }
 object {
     cell_L5TuftedPyrIB
-    translate <27.1001256872, -881.021084802, 211.073574304>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <227.335239799, -736.902664089, 40.5098041811>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_42
 }
 object {
     cell_L5TuftedPyrIB
-    translate <475.353867145, -834.128441406, 494.590395075>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <330.751118417, -890.571009556, 259.731388893>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_43
 }
 object {
     cell_L5TuftedPyrIB
-    translate <450.595086744, -711.641277134, 313.745312748>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <52.8669458278, -797.105904228, 462.123537039>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_44
 }
 object {
     cell_L5TuftedPyrIB
-    translate <131.216365876, -762.933261627, 303.126116841>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <134.189164198, -991.582968927, 188.297662909>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_45
 }
 object {
     cell_L5TuftedPyrIB
-    translate <454.699260681, -941.355568649, 12.9424862136>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <203.234735333, -708.221010028, 110.976814079>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_46
 }
 object {
     cell_L5TuftedPyrIB
-    translate <323.820420142, -919.755184122, 169.047586999>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <323.740998394, -869.248295327, 392.005730013>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_47
 }
 object {
     cell_L5TuftedPyrIB
-    translate <462.82674199, -993.300793783, 40.2485545435>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <31.7432492322, -718.966942696, 186.175235972>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_48
 }
 object {
     cell_L5TuftedPyrIB
-    translate <58.1668797518, -835.615522847, 15.8218637178>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <358.581617021, -846.808987202, 324.554510638>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_49
 }
 object {
     cell_L5TuftedPyrIB
-    translate <201.632908153, -819.122442799, 410.997278675>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <0.12192012038, -946.846116377, 309.653727474>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_50
 }
 object {
     cell_L5TuftedPyrIB
-    translate <376.539126786, -920.311754187, 331.130573854>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <336.770762578, -959.375829077, 403.08232888>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_51
 }
 object {
     cell_L5TuftedPyrIB
-    translate <411.198634365, -801.291126887, 30.7652014982>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <60.1874343488, -783.366727471, 277.682337023>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_52
 }
 object {
     cell_L5TuftedPyrIB
-    translate <209.09606123, -822.793355831, 331.123047413>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <472.898100436, -776.524596648, 149.075309408>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_53
 }
 object {
     cell_L5TuftedPyrIB
-    translate <222.307613412, -990.902878915, 335.983598427>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <394.767320289, -718.945269456, 372.349230989>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_54
 }
 object {
     cell_L5TuftedPyrIB
-    translate <255.595135387, -808.882439564, 252.979318176>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <145.564609516, -901.332761779, 170.954705865>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_55
 }
 object {
     cell_L5TuftedPyrIB
-    translate <475.12281989, -871.960983417, 163.437916668>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <237.584501482, -891.486075478, 18.7258141351>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_56
 }
 object {
     cell_L5TuftedPyrIB
-    translate <481.149360532, -869.844187691, 243.777953502>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <208.403738366, -965.464402718, 372.721351183>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_57
 }
 object {
     cell_L5TuftedPyrIB
-    translate <430.327976166, -780.535939687, 179.731327837>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <105.875198573, -917.741603106, 392.70509881>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_58
 }
 object {
     cell_L5TuftedPyrIB
-    translate <233.953380304, -991.467727956, 72.3649158533>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <6.12577294395, -969.87555268, 265.302669062>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_59
 }
 object {
     cell_L5TuftedPyrIB
-    translate <479.99210205, -960.745652258, 137.10437868>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <320.335380847, -840.622454154, 136.232780044>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_60
 }
 object {
     cell_L5TuftedPyrIB
-    translate <427.653358471, -972.51964179, 442.186753957>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <366.791114266, -999.9919978, 292.626074965>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_61
 }
 object {
     cell_L5TuftedPyrIB
-    translate <227.707145747, -873.732792412, 134.312179954>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <27.1001256872, -881.021084802, 211.073574304>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_62
 }
 object {
     cell_L5TuftedPyrIB
-    translate <44.6000194482, -873.562735807, 418.200705374>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <475.353867145, -834.128441406, 494.590395075>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_63
 }
 object {
     cell_L5TuftedPyrIB
-    translate <239.213592367, -796.766111503, 265.41982508>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <450.595086744, -711.641277134, 313.745312748>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_64
 }
 object {
     cell_L5TuftedPyrIB
-    translate <50.5702568124, -861.833389971, 123.583875713>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <131.216365876, -762.933261627, 303.126116841>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_65
 }
 object {
     cell_L5TuftedPyrIB
-    translate <104.370747097, -728.795483854, 405.321107795>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <454.699260681, -941.355568649, 12.9424862136>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_66
 }
 object {
     cell_L5TuftedPyrIB
-    translate <385.184192532, -915.162297332, 427.471042035>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <323.820420142, -919.755184122, 169.047586999>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_67
 }
 object {
     cell_L5TuftedPyrIB
-    translate <402.070463717, -911.045384512, 98.3673207247>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <462.82674199, -993.300793783, 40.2485545435>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_68
 }
 object {
     cell_L5TuftedPyrIB
-    translate <417.416598371, -996.155322812, 440.440856442>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <58.1668797518, -835.615522847, 15.8218637178>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_69
 }
 object {
     cell_L5TuftedPyrIB
-    translate <381.87384563, -895.154975261, 174.390529705>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <201.632908153, -819.122442799, 410.997278675>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_70
 }
 object {
     cell_L5TuftedPyrIB
-    translate <139.463349754, -854.184256981, 325.562665175>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <376.539126786, -920.311754187, 331.130573854>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_71
 }
 object {
     cell_L5TuftedPyrIB
-    translate <20.3622375699, -839.869964721, 20.6489727843>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <411.198634365, -801.291126887, 30.7652014982>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_72
 }
 object {
     cell_L5TuftedPyrIB
-    translate <13.6053122432, -733.374330368, 447.647159167>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <209.09606123, -822.793355831, 331.123047413>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_73
 }
 object {
     cell_L5TuftedPyrIB
-    translate <89.8723425853, -855.978153757, 214.542816598>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <222.307613412, -990.902878915, 335.983598427>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_74
 }
 object {
     cell_L5TuftedPyrIB
-    translate <299.037176939, -945.43888825, 79.812397402>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <255.595135387, -808.882439564, 252.979318176>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_75
 }
 object {
     cell_L5TuftedPyrIB
-    translate <246.337163334, -721.043178074, 486.189960873>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <475.12281989, -871.960983417, 163.437916668>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_76
 }
 object {
     cell_L5TuftedPyrIB
-    translate <38.5104299437, -758.721104284, 228.088669837>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <481.149360532, -869.844187691, 243.777953502>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_77
 }
 object {
     cell_L5TuftedPyrIB
-    translate <230.592662801, -733.964299758, 334.384789682>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <430.327976166, -780.535939687, 179.731327837>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_78
 }
 object {
     cell_L5TuftedPyrIB
-    translate <195.561944291, -976.605701002, 140.661147576>
-    pigment { color rgb <0.330047,0.107872,0.292086> }
+    translate <233.953380304, -991.467727956, 72.3649158533>
+    pigment { color rgb <0.328996,0.380037,0.058485> }
     //L5TuftedPyrIB_L5_79
 }
 
@@ -11359,62 +11235,62 @@ object {
 
 object {
     cell_DeepAxAx
-    translate <36.661544515, -1288.21279382, 17.21701592>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <479.99210205, -1260.74565226, 137.10437868>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_0
 }
 object {
     cell_DeepAxAx
-    translate <261.804146733, -1092.3905238, 437.598197842>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <427.653358471, -1272.51964179, 442.186753957>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_1
 }
 object {
     cell_DeepAxAx
-    translate <75.9693141931, -1077.5667075, 344.696424638>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <227.707145747, -1173.73279241, 134.312179954>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_2
 }
 object {
     cell_DeepAxAx
-    translate <265.411168057, -1097.40214267, 121.060037046>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <44.6000194482, -1173.56273581, 418.200705374>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_3
 }
 object {
     cell_DeepAxAx
-    translate <223.091959889, -1158.75623123, 467.303570743>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <239.213592367, -1096.7661115, 265.41982508>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_4
 }
 object {
     cell_DeepAxAx
-    translate <199.549100653, -1035.4277188, 456.275361698>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <50.5702568124, -1161.83338997, 123.583875713>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_5
 }
 object {
     cell_DeepAxAx
-    translate <405.515983359, -1212.55507813, 30.4331952994>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <104.370747097, -1028.79548385, 405.321107795>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_6
 }
 object {
     cell_DeepAxAx
-    translate <289.372863989, -1116.21654102, 122.666140637>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <385.184192532, -1215.16229733, 427.471042035>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_7
 }
 object {
     cell_DeepAxAx
-    translate <449.146336947, -1225.64756166, 404.599758695>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <402.070463717, -1211.04538451, 98.3673207247>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_8
 }
 object {
     cell_DeepAxAx
-    translate <94.9056491059, -1040.48506226, 467.3305978>
-    pigment { color rgb <0.181559,0.895192,0.516426> }
+    translate <417.416598371, -1296.15532281, 440.440856442>
+    pigment { color rgb <0.931256,0.726586,0.780201> }
     //DeepAxAx_L6_9
 }
 
@@ -11423,56 +11299,56 @@ object {
 
 object {
     cell_SupAxAx
-    translate <345.809749787, -6.98023573026, 150.839624093>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <381.87384563, -325.258292102, 174.390529705>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_0
 }
 object {
     cell_SupAxAx
-    translate <261.287093927, -65.0136361331, 284.258479709>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <139.463349754, -256.973761636, 325.562665175>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_1
 }
 object {
     cell_SupAxAx
-    translate <147.843444307, -157.733148821, 224.781817314>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <20.3622375699, -233.116607869, 20.6489727843>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_2
 }
 object {
     cell_SupAxAx
-    translate <118.940994773, -380.391032048, 272.598981418>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <13.6053122432, -55.6238839463, 447.647159167>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_3
 }
 object {
     cell_SupAxAx
-    translate <217.712139686, -66.9560791186, 158.991672728>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <89.8723425853, -259.963589595, 214.542816598>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_4
 }
 object {
     cell_SupAxAx
-    translate <69.2331287778, -402.634450988, 165.456892341>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <299.037176939, -409.06481375, 79.812397402>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_5
 }
 object {
     cell_SupAxAx
-    translate <87.0403357901, -104.623768895, 129.876600673>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <246.337163334, -35.0719634572, 486.189960873>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_6
 }
 object {
     cell_SupAxAx
-    translate <180.408711269, -402.75018469, 318.736843298>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <38.5104299437, -97.8685071404, 228.088669837>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_7
 }
 object {
     cell_SupAxAx
-    translate <142.21056628, -489.665368994, 266.936776754>
-    pigment { color rgb <0.622932,0.419565,0.096219> }
+    translate <230.592662801, -56.607166263, 334.384789682>
+    pigment { color rgb <0.354779,0.517246,0.547336> }
     //SupAxAx_L23_8
 }
 
@@ -11481,32 +11357,32 @@ object {
 
 object {
     cell_L23PyrFRB
-    translate <40.3186617868, -197.752344083, 198.751372802>
-    pigment { color rgb <0.666189,0.890604,0.356247> }
+    translate <195.561944291, -461.009501671, 140.661147576>
+    pigment { color rgb <0.694523,0.532547,0.504861> }
     //L23PyrFRB_L23_0
 }
 object {
     cell_L23PyrFRB
-    translate <112.604350569, -419.836431591, 179.361514177>
-    pigment { color rgb <0.666189,0.890604,0.356247> }
+    translate <36.661544515, -480.35465637, 17.21701592>
+    pigment { color rgb <0.694523,0.532547,0.504861> }
     //L23PyrFRB_L23_1
 }
 object {
     cell_L23PyrFRB
-    translate <127.824947851, -68.0798388362, 68.3879980266>
-    pigment { color rgb <0.666189,0.890604,0.356247> }
+    translate <261.804146733, -153.984206339, 437.598197842>
+    pigment { color rgb <0.694523,0.532547,0.504861> }
     //L23PyrFRB_L23_2
 }
 object {
     cell_L23PyrFRB
-    translate <482.742135416, -429.711653091, 228.489392523>
-    pigment { color rgb <0.666189,0.890604,0.356247> }
+    translate <75.9693141931, -129.277845838, 344.696424638>
+    pigment { color rgb <0.694523,0.532547,0.504861> }
     //L23PyrFRB_L23_3
 }
 object {
     cell_L23PyrFRB
-    translate <217.78833586, -196.716267463, 195.926759684>
-    pigment { color rgb <0.666189,0.890604,0.356247> }
+    translate <265.411168057, -162.336904455, 121.060037046>
+    pigment { color rgb <0.694523,0.532547,0.504861> }
     //L23PyrFRB_L23_4
 }
 
@@ -11515,68 +11391,68 @@ object {
 
 object {
     cell_nRT
-    translate <34.894501099, -1561.52256686, 301.532092141>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <223.091959889, -1605.83748749, 467.303570743>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_0
 }
 object {
     cell_nRT
-    translate <27.3116080493, -1509.20952722, 349.154815162>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <199.549100653, -1523.6184792, 456.275361698>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_1
 }
 object {
     cell_nRT
-    translate <34.0024660679, -1643.56198349, 115.115140587>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <405.515983359, -1641.70338542, 30.4331952994>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_2
 }
 object {
     cell_nRT
-    translate <93.1439738614, -1639.29432128, 38.2647518478>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <289.372863989, -1577.47769401, 122.666140637>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_3
 }
 object {
     cell_nRT
-    translate <375.656924228, -1650.71054152, 291.710335875>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <449.146336947, -1650.43170778, 404.599758695>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_4
 }
 object {
     cell_nRT
-    translate <183.390536548, -1528.02677224, 223.191065973>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <94.9056491059, -1526.9900415, 467.3305978>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_5
 }
 object {
     cell_nRT
-    translate <49.21078294, -1653.3199108, 220.626559521>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <345.809749787, -1502.79209429, 150.839624093>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_6
 }
 object {
     cell_nRT
-    translate <238.543186951, -1589.34147021, 258.707362043>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <261.287093927, -1526.00545445, 284.258479709>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_7
 }
 object {
     cell_nRT
-    translate <69.4015784192, -1604.61116964, 486.976269718>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <147.843444307, -1563.09325953, 224.781817314>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_8
 }
 object {
     cell_nRT
-    translate <400.932095697, -1541.2732063, 476.174793001>
-    pigment { color rgb <0.223714,0.101176,0.444190> }
+    translate <118.940994773, -1652.15641282, 272.598981418>
+    pigment { color rgb <0.133733,0.001411,0.280946> }
     //nRT_Thalamus_9
 }
 
 
 #declare minX = -457.895192;
-#declare minY = -1873.738273;
+#declare minY = -1872.574775;
 #declare minZ = -455.125194;
 
 #declare maxX = 955.854388;
