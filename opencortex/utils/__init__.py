@@ -68,7 +68,11 @@ def add_populations_in_layers(net,boundaryDict,popDict,x_vector,z_vector,storeSo
               yl=boundaryDict[layer][1]-boundaryDict[layer][0]
               zl=z_vector[1]-z_vector[0]
           
-              pop, cellPositions=oc_build.add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl,storeSoma)
+              if storeSoma:
+                 pop, cellPositions=oc_build.add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl,storeSoma)
+              else:
+                 pop=oc_build.add_population_in_rectangular_region(net,"%s_%s"%(cellModel,layer),cellModel,size,x_vector[0],boundaryDict[layer][0],z_vector[0],xl,yl,zl,storeSoma)
+                 cellPositions=None
          
               return_pops[cellModel][layer]={}
               return_pops[cellModel][layer]['PopObj']=pop
@@ -130,7 +134,7 @@ def build_projection(net,
                
     
     if presynaptic_population.size==0 or postsynaptic_population.size==0:
-        return None
+       return None
     
     proj_array={}
     syn_counter=0
@@ -278,7 +282,6 @@ def build_connectivity(net,pop_objects,path_to_cells,conn_file_name,extra_params
                                     
                               if not isinstance(target_comp_groups,list):
                                  subset_dict[target_comp_groups]=float(projInfo[mode_string])
-                                 print subset_dict[target_comp_groups]
                                  target_comp_groups=[target_comp_groups]
                                  
                               if postPop not in cached_target_dict.keys():
@@ -530,8 +533,6 @@ def replace_network_components(net_file_name,path_to_net,replace_specifics):
         include=net_doc.includes[include_counter]
         includeRefs.append(include.href)
         
-    print includeRefs
-    
     for net_counter in range(0,len(net_doc.networks)):
         net=net_doc.networks[net_counter]
         for pop_counter in range(0,len(net.populations)):

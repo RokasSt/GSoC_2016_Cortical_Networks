@@ -4,7 +4,7 @@ parentdir = os.path.dirname(currentdir)
 sys.path.insert(0,parentdir) 
 
 
-import opencortex.utilities as oc_utils
+import opencortex.utils as oc_utils
 import opencortex.build as oc
 
 #### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment;

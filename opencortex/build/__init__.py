@@ -151,7 +151,8 @@ def add_chem_projection(net,
     
     net - the network object created using libNeuroML API ( neuroml.Network() );
     
-    proj_counter - stores the number of projections at any given moment;
+    proj_array - dictionary which stores the projections of class neuroml.Projection; each projection has unique synapse component (e.g. AMPA , NMDA or GABA);
+    thus the keys of proj_array must be equal to the synapse ids in the synapse_list;
     
     presynaptic_population - object corresponding to the presynaptic population in the network;
     
@@ -206,77 +207,82 @@ def add_chem_projection(net,
         if pop1_id == pop2_id:
            
            pop2_cell_ids.remove(i)
-        
-        if pop2_size >= total_given:
-        
-           pop2_cells=random.sample(pop2_cell_ids,total_given)
            
-        else:
+        if pop2_cell_ids != []:
         
-           pop2_cells=[]
+           if pop2_size >= total_given:
+              ##### get unique set of cells
+              pop2_cells=random.sample(pop2_cell_ids,total_given)
            
-           for value in range(0,total_given):
+           else:
+              #### any cell might appear several times
+              pop2_cells=[]
+              
+              for value in range(0,total_given):
            
-               cell_id=random.sample(pop2_cell_ids,1)
+                  cell_id=random.sample(pop2_cell_ids,1)
                
-               pop2_cells.extend(cell_id)
+                  pop2_cells.extend(cell_id)
         
-        target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
+           target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
         
-        for j in pop2_cells:
+           for j in pop2_cells:
         
-            post_seg_id=target_seg_array[0]
+               post_seg_id=target_seg_array[0]
             
-            del target_seg_array[0]
+               del target_seg_array[0]
             
-            fraction_along=target_fractions[0]
+               fraction_along=target_fractions[0]
             
-            del target_fractions[0]  
+               del target_fractions[0]  
                 
-            if targeting_mode=='divergent':
+               if targeting_mode=='divergent':
                    
-               pre_cell_id=i
+                  pre_cell_id=i
                       
-               post_cell_id=j
+                  post_cell_id=j
                       
-            if targeting_mode=='convergent':
+               if targeting_mode=='convergent':
                    
-               pre_cell_id=j
+                  pre_cell_id=j
                       
-               post_cell_id=i  
+                  post_cell_id=i  
                          
-            for synapse_id in synapse_list:
+               for synapse_id in synapse_list:
             
-                delay=0
+                   delay=0
                 
-                weight=1
+                   weight=1
                 
-                if delays_dict !=None:
-                   for synapseComp in delays_dict.keys():
-                       if synapseComp in synapse_id:
-                          delay=delays_dict[synapseComp]
+                   if delays_dict !=None:
+                      for synapseComp in delays_dict.keys():
+                          if synapseComp in synapse_id:
+                             delay=delays_dict[synapseComp]
                           
-                if weights_dict !=None:
-                   for synapseComp in weights_dict.keys():
-                       if synapseComp in synapse_id:
-                          weight=weights_dict[synapseComp]
+                   if weights_dict !=None:
+                      for synapseComp in weights_dict.keys():
+                          if synapseComp in synapse_id:
+                             weight=weights_dict[synapseComp]
                      
-                add_connection(proj_array[synapse_id], 
-                               count, 
-                               presynaptic_population, 
-                               pre_cell_id, 
-                               0, 
-                               postsynaptic_population, 
-                               post_cell_id, 
-                               post_seg_id,
-                               delay = delay,
-                               weight = weight,
-                               post_fraction=fraction_along)
-            count+=1
+                   add_connection(proj_array[synapse_id], 
+                                  count, 
+                                  presynaptic_population, 
+                                  pre_cell_id, 
+                                  0, 
+                                  postsynaptic_population, 
+                                  post_cell_id, 
+                                  post_seg_id,
+                                  delay = delay,
+                                  weight = weight,
+                                  post_fraction=fraction_along)
+               count+=1
+               
+               
+    if count !=0:   
                    
-    for synapse_id in synapse_list:
+       for synapse_id in synapse_list:
     
-        net.projections.append(proj_array[synapse_id])
+           net.projections.append(proj_array[synapse_id])
 
     return proj_array  
     
@@ -295,7 +301,8 @@ def add_elect_projection(net,
     
     net - the network object created using libNeuroML API ( neuroml.Network() );
     
-    proj_counter - stores the number of projections at any given moment;
+    proj_array - dictionary which stores the projections of class neuroml.Projection; each projection has unique gap junction component;
+    thus the keys of proj_array must be equal to the gap junction ids in the synapse_list;
     
     presynaptic_population - object corresponding to the presynaptic population in the network;
     
@@ -303,8 +310,8 @@ def add_elect_projection(net,
     
     targeting_mode - a string that specifies the targeting mode: 'convergent' or 'divergent';
     
-    synapse_list - the list of synapse ids that correspond to the individual receptor components on the physical synapse, e.g. the first element is
-    the id of the AMPA synapse and the second element is the id of the NMDA synapse; these synapse components will be mapped onto the same location of the target segment;
+    synapse_list - the list of gap junction (synapse) ids that correspond to the individual gap junction components on the physical contact;
+    these components will be mapped onto the same location of the target segment;
     
     seg_target_dict - a dictionary whose keys are the ids of target segment groups and the values are dictionaries in the format returned by make_target_dict();
     
@@ -358,63 +365,67 @@ def add_elect_projection(net,
         if pop1_id == pop2_id:
            
            pop2_cell_ids.remove(i)
+           
+        if pop2_cell_ids !=[]:
         
-        if pop2_size >= total:
+           if pop2_size >= total:
         
-           pop2_cells=random.sample(pop2_cell_ids,total)
+              pop2_cells=random.sample(pop2_cell_ids,total)
            
-        else:
+           else:
         
-           pop2_cells=[]
+              pop2_cells=[]
            
-           for value in range(0,total):
-               cell_id=random.sample(pop2_cell_ids,1)
-               pop2_cells.extend(cell_id)
-        
-        if total != 0:
+              for value in range(0,total):
+                  cell_id=random.sample(pop2_cell_ids,1)
+                  pop2_cells.extend(cell_id)
+           ###### TODO : total condition might not be necessary ; only the first version while initial handling of the average number of electrical connections is not final
+           if total != 0:
            
-           target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
+              target_seg_array, target_fractions=get_target_segments(seg_target_dict,subset_dict)
            
-           for j in pop2_cells:
+              for j in pop2_cells:
            
-               post_seg_id=target_seg_array[0]
+                  post_seg_id=target_seg_array[0]
                
-               del target_seg_array[0]
+                  del target_seg_array[0]
                
-               fraction_along=target_fractions[0]
+                  fraction_along=target_fractions[0]
                
-               del target_fractions[0]  
+                  del target_fractions[0]  
                 
-               if targeting_mode=='divergent':
+                  if targeting_mode=='divergent':
                    
-                  pre_cell_id=i
+                     pre_cell_id=i
                       
-                  post_cell_id=j
+                     post_cell_id=j
                       
-               if targeting_mode=='convergent':
+                  if targeting_mode=='convergent':
                    
-                  pre_cell_id=j
+                     pre_cell_id=j
                       
-                  post_cell_id=i  
+                     post_cell_id=i  
                          
-               for synapse_id in synapse_list:
+                  for synapse_id in synapse_list:
                    
-                   add_elect_connection(proj_array[synapse_id], 
-                                        count, 
-                                        presynaptic_population, 
-                                        pre_cell_id, 
-                                        0, 
-                                        postsynaptic_population, 
-                                        post_cell_id, 
-                                        post_seg_id,
-                                        synapse_id,
-                                        pre_fraction=0.5,
-                                        post_fraction=fraction_along)
-               count+=1
+                      add_elect_connection(proj_array[synapse_id], 
+                                           count, 
+                                           presynaptic_population, 
+                                           pre_cell_id, 
+                                           0, 
+                                           postsynaptic_population, 
+                                           post_cell_id, 
+                                           post_seg_id,
+                                           synapse_id,
+                                           pre_fraction=0.5,
+                                           post_fraction=fraction_along)
+                  count+=1
+                  
+    if count !=0:
                    
-    for synapse_id in synapse_list:
+       for synapse_id in synapse_list:
     
-        net.electrical_projections.append(proj_array[synapse_id])
+           net.electrical_projections.append(proj_array[synapse_id])
 
     return proj_array   
                        
@@ -440,7 +451,8 @@ def add_chem_spatial_projection(net,
     
     net - the network object created using libNeuroML API ( neuroml.Network() );
     
-    proj_counter - stores the number of projections at any given moment;
+    proj_array - dictionary which stores the projections of class neuroml.Projection; each projection has unique synapse component (e.g. AMPA , NMDA or GABA);
+    thus the keys of proj_array must be equal to the synapse ids in the synapse_list;
     
     presynaptic_population - object corresponding to the presynaptic population in the network;
     
@@ -513,93 +525,97 @@ def add_chem_spatial_projection(net,
         if pop1_id == pop2_id:
            
            pop2_cell_ids.remove(i)
-        
-        if pop2_size >= total_given:
-        
-           pop2_cells=random.sample(pop2_cell_ids,total_given)
            
-        else:
+        if pop2_cell_ids !=[]:
         
-           pop2_cells=[]
+           if pop2_size >= total_given:
+        
+              pop2_cells=random.sample(pop2_cell_ids,total_given)
            
-           for value in range(0,total_given):
+           else:
+        
+              pop2_cells=[]
            
-               cell_id=random.sample(pop2_cell_ids,1)
+              for value in range(0,total_given):
+           
+                  cell_id=random.sample(pop2_cell_ids,1)
                
-               pop2_cells.extend(cell_id)
+                  pop2_cells.extend(cell_id)
     
-        cell1_position=pop1_cell_positions[i]
+           cell1_position=pop1_cell_positions[i]
         
-        target_seg_array,fractions_along=get_target_segments(seg_target_dict,subset_dict)
+           target_seg_array,fractions_along=get_target_segments(seg_target_dict,subset_dict)
         
-        conn_counter=0
+           conn_counter=0
         
-        for j in pop2_cells:
+           for j in pop2_cells:
         
-            cell2_position=pop2_cell_positions[j]
+               cell2_position=pop2_cell_positions[j]
         
-            r=math.sqrt(sum([(a - b)**2 for a,b in zip(cell1_position,cell2_position)]))
+               r=math.sqrt(sum([(a - b)**2 for a,b in zip(cell1_position,cell2_position)]))
             
-            if eval(distance_rule) >= 1 or random.random() < eval(distance_rule):
+               if eval(distance_rule) >= 1 or random.random() < eval(distance_rule):
                   
-              conn_counter+=1
+                  conn_counter+=1
                      
-              post_seg_id=target_seg_array[0]
+                  post_seg_id=target_seg_array[0]
                      
-              del target_seg_array[0]
+                  del target_seg_array[0]
                      
-              fraction_along=fractions_along[0]
+                  fraction_along=fractions_along[0]
                      
-              del fractions_along[0]
+                  del fractions_along[0]
                        
-              if targeting_mode=='divergent':
+                  if targeting_mode=='divergent':
                    
-                 pre_cell_id=i
+                     pre_cell_id=i
                       
-                 post_cell_id=j
+                     post_cell_id=j
                       
-              if targeting_mode=='convergent':
+                  if targeting_mode=='convergent':
                    
-                 pre_cell_id=j
+                     pre_cell_id=j
                       
-                 post_cell_id=i
+                     post_cell_id=i
                                 
-              for synapse_id in synapse_list:
+                  for synapse_id in synapse_list:
                   
-                  delay=0
+                      delay=0
                       
-                  weight=1
+                      weight=1
                       
-                  if delays_dict !=None:
-                     for synapseComp in delays_dict.keys():
-                         if synapseComp in synapse_id:
-                            delay=delays_dict[synapseComp]
+                      if delays_dict !=None:
+                         for synapseComp in delays_dict.keys():
+                             if synapseComp in synapse_id:
+                                delay=delays_dict[synapseComp]
                                 
-                  if weights_dict !=None:
-                     for synapseComp in weights_dict.keys():
-                         if synapseComp in synapse_id:
-                            weight=weights_dict[synapseComp]
+                      if weights_dict !=None:
+                         for synapseComp in weights_dict.keys():
+                             if synapseComp in synapse_id:
+                                weight=weights_dict[synapseComp]
                        
                         
-                  add_connection(proj_array[synapse_id], 
-                                 count, 
-                                 presynaptic_population, 
-                                 pre_cell_id, 
-                                 0, 
-                                 postsynaptic_population, 
-                                 post_cell_id, 
-                                 post_seg_id,
-                                 delay = delay,
-                                 weight = weight,
-                                 post_fraction=fraction_along)
-              count+=1
+                      add_connection(proj_array[synapse_id], 
+                                     count, 
+                                     presynaptic_population, 
+                                     pre_cell_id, 
+                                     0, 
+                                     postsynaptic_population, 
+                                     post_cell_id, 
+                                     post_seg_id,
+                                     delay = delay,
+                                     weight = weight,
+                                     post_fraction=fraction_along)
+                  count+=1
                      
-            if conn_counter==total_given:
-               break
+               if conn_counter==total_given:
+                  break
+               
+    if count !=0:
                    
-    for synapse_id in synapseList:
+       for synapse_id in synapseList:
     
-        net.projections.append(proj_array[synapse_id])
+           net.projections.append(proj_array[synapse_id])
 
     return proj_array               
 
@@ -722,7 +738,6 @@ def extract_seg_ids(cell_object,
     segment_id_array=[]
     segment_group_array={}
     cell_segment_array=[]
-    print("Now printing segment ids")
     for segment in cell_object.morphology.segments:
         segment_id_array.append(segment.id)   
         segment_name_and_id=[]
@@ -821,9 +836,6 @@ def get_target_segments(seg_specifications,
                         
                         if loc > previous_dist_value and loc <  current_dist_value:
                         
-                           print("Will be print the current dist value")
-                           
-                           print current_dist_value
                         
                            segment_length=current_dist_value-previous_dist_value
                            
@@ -969,7 +981,7 @@ def add_poisson_firing_synapse(nml_doc, id, average_rate, synapse_id):
 
     return pfs
     
-
+#########################################################################
 def add_transient_poisson_firing_synapse(nml_doc, id, average_rate,delay,duration, synapse_id):
 
     pfs = neuroml.TransientPoissonFiringSynapse(id=id,
@@ -982,7 +994,7 @@ def add_transient_poisson_firing_synapse(nml_doc, id, average_rate,delay,duratio
     nml_doc.transient_poisson_firing_synapses.append(pfs)
 
     return pfs
-
+################################################################################
 
 def add_pulse_generator(nml_doc, id, delay, duration, amplitude):
 
@@ -1017,10 +1029,9 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
         pop.properties.append(Property("color",color))
     net.populations.append(pop)
     
-    if storeSoma==True:
+    if storeSoma:
        cellPositions=np.zeros([size,3])
-    else:
-       cellPositions=None
+    
        
     for i in range(0, size) :
             index = i
@@ -1035,9 +1046,10 @@ def add_population_in_rectangular_region(net, pop_id, cell_id, size, x_min, y_mi
                cellPositions[i,1]=Y
                cellPositions[i,2]=Z
             
-    
-    return pop, cellPositions
-
+    if storeSoma:
+       return pop, cellPositions
+    else:
+       return pop
 
 
 ###############################################################################################
