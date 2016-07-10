@@ -7,6 +7,11 @@ sys.path.insert(0,parentdir)
 import opencortex.utils as oc_utils
 import opencortex.build as oc
 
+
+###############################################
+from pyneuroml.pynml import read_neuroml2_file
+###############################################
+
 #### distribute cells for the sake of network visualization; no spatial dependence of connection probability at the moment;
 ###### larger networks exceed GitHub's file size limit of 100.00 MB;
 ######Note: the below leads to Java out of memory errors when validating the final nml2 network file; use another format instead of nml;
@@ -18,10 +23,10 @@ popDictFull['SupAxAx'] = [(90, 'L23')]
 popDictFull['L5TuftedPyrIB'] = [(800, 'L5')]
 popDictFull['L5TuftedPyrRS']=[(0,'L5')]           ##### not all of the L5TuftedPyrRS synapses can be found in generatedNeuroML2; therefore the size is set to 0 at the moment;
                                                   ##### original value in the full model is 200.
-popDictFull['L4SpinyStellate']=[(240,'L4')]
-popDictFull['L23PyrFRB']=[(50,'L23')]
-popDictFull['L6NonTuftedPyrRS']=[(500,'L6')]
-popDictFull['DeepAxAx']=[(100,'L6')]
+popDictFull['L4SpinyStellate']=[(240,'L4')] 
+popDictFull['L23PyrFRB']=[(50,'L23')]           
+popDictFull['L6NonTuftedPyrRS']=[(500,'L6')]    
+popDictFull['DeepAxAx']=[(100,'L6')]            
 popDictFull['DeepBasket']=[(100,'L6')]
 popDictFull['DeepLTSInter']=[(100,'L6')]
 popDictFull['SupLTSInter']=[(90,'L23')]
@@ -30,7 +35,12 @@ popDictFull['TCR']=[(100,'Thalamus')]
 ###########################################################
 scale=0.1
 popDict={}
+
+nml_doc, network = oc.generate_network("TestTraubBuildFull")
+
 for cell_model in popDictFull.keys():
+
+    include_cell_model=False
 
     popDict[cell_model]=[]
     
@@ -41,6 +51,15 @@ for cell_model in popDictFull.keys():
         pop_in_layer_tuple=( int(round(scale*popDictFull[cell_model][pop_in_layer][0] )), popDictFull[cell_model][pop_in_layer][1] )
         
         popDict[cell_model].append(pop_in_layer_tuple)
+        
+        if int(round(scale*popDictFull[cell_model][pop_in_layer][0] )) !=0:
+    
+           include_cell_model=True
+       
+    if include_cell_model:
+    
+       oc.add_cell_and_channels(nml_doc, '../NeuroML2/prototypes/Thalamocortical/%s.cell.nml'%cell_model,cell_model)
+
         
         
 
@@ -65,12 +84,6 @@ boundaries['Thalamus']=[t1+t2+t3+t4+t5+t6+t7,t1+t2+t3+t4+t5+t6+t7+t8]
 xs = [0,500]
 zs = [0,500] 
 
-nml_doc, network = oc.generate_network("TestTraubBuildFull")
-
-
-for cellModel in popDict.keys():
-    oc.add_cell_and_channels(nml_doc, '../NeuroML2/prototypes/Thalamocortical/%s.cell.nml'%cellModel,cellModel)
-
 
 
 pop_params=oc_utils.add_populations_in_layers(network,boundaries,popDict,xs,zs)
@@ -79,16 +92,23 @@ pop_params=oc_utils.add_populations_in_layers(network,boundaries,popDict,xs,zs)
 #extra_params=[{'pre':'L23PyrRS','post':'SupBasket','weights':[0.05],'delays':[5],'synComps':['NMDA']}]
 
 
-synapseList,projArray=oc_utils.build_connectivity(network,pop_params,"../NeuroML2/prototypes/Thalamocortical/",'netConnList')                  
+synapseList,projArray=oc_utils.build_connectivity(network,pop_params,"../NeuroML2/prototypes/Thalamocortical/",'../NeuroML2/prototypes/Thalamocortical/netConnList')                  
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 
 nml_file_name = '%s.net.nml'%network.id
 oc.save_network(nml_doc, nml_file_name, validate=True)
 
+for syn_ind in range(0,len(synapseList)):
+
+    synapseList[syn_ind]="TestTraubBuildFull/"+synapseList[syn_ind]+".synapse.nml"
+
 oc.generate_lems_simulation(nml_doc, 
                             network, 
                             nml_file_name, 
                             duration =      300, 
-                            dt =            0.025)
+                            dt =            0.025,
+                            include_extra_files=synapseList)
+
+
                                               

@@ -29,7 +29,6 @@ import math
 import operator
 
 all_cells = {}
-#all_included_on_cells = {}
 
 all_included_files = []
 

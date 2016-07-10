@@ -1,7 +1,10 @@
-*.*~
-*.pyc
 
-/NeuroML2Tests/*mod
-/NeuroML2Tests/*_nrn.py
-/NeuroML2Tests/*hoc
+*~
+*pyc
+
+
+
+/*/*.mod
+/*/*_nrn.py
+/*/*hoc
 /*/x86_64/

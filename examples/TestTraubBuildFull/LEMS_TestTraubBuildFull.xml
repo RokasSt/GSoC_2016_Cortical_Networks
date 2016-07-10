@@ -1,0 +1,985 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.13 (libNeuroML v0.2.17)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim_TestTraubBuildFull"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="TestTraubBuildFull/DeepLTSInter.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat_a.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/SupBasket.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L4SpinyStellate.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat_a.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/napf_spinstell__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L6NonTuftedPyrRS.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_01__phi13000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi65000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_deeppyr.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/DeepBasket.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L23PyrRS.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_01__phi26000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi52000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/TCR.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi52000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi104000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf_tcr__shift_hnafmin7__shift_mnaf_initmin3__shift_mnaf_runmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/napf_tcr__a0__b0__c0__d0__fastNa_shift7.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L5TuftedPyrRS.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_01__phi4333_33.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi86666_7.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_075__phi86666_7.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_deeppyr.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/SupLTSInter.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat_a.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L5TuftedPyrIB.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_01__phi4333_33.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi86666_7.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_075__phi86666_7.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka_ib.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_deeppyr.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/DeepAxAx.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/SupAxAx.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi520000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc_fast.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shiftmin2_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/L23PyrFRB.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00_25.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_01__phi26000.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi52000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf__a0__b0__c0__d0__fastNa_shiftmin3_5.channel.nml"/>
+    <Include file="TestTraubBuildFull/nap.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull/nRT.cell.nml"/>
+    <Include file="TestTraubBuildFull/ar__m00.channel.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_02__phi10400.nml"/>
+    <Include file="TestTraubBuildFull/cad__beta0_05__phi260000.nml"/>
+    <Include file="TestTraubBuildFull/cal.channel.nml"/>
+    <Include file="TestTraubBuildFull/cat_a.channel.nml"/>
+    <Include file="TestTraubBuildFull/k2.channel.nml"/>
+    <Include file="TestTraubBuildFull/ka.channel.nml"/>
+    <Include file="TestTraubBuildFull/kahp_slower.channel.nml"/>
+    <Include file="TestTraubBuildFull/kc.channel.nml"/>
+    <Include file="TestTraubBuildFull/kdr_fs.channel.nml"/>
+    <Include file="TestTraubBuildFull/km.channel.nml"/>
+    <Include file="TestTraubBuildFull/naf2__a0__b0__c0__d0__fastNa_shift0.channel.nml"/>
+    <Include file="TestTraubBuildFull/napf__a0__b0__c0__d0__fastNa_shift0.channel.nml"/>
+    <Include file="TestTraubBuildFull/pas.channel.nml"/>
+    <Include file="TestTraubBuildFull.net.nml"/>
+   
+    <Simulation id="Sim_TestTraubBuildFull" length="300ms" step="0.025ms" target="TestTraubBuildFull" seed="12345">  <!-- Note seed: ensures same random numbers used every run -->
+        
+        <Display id="DispPop__DeepLTSInter_L6" title="Membrane potentials of cells in DeepLTSInter_L6" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="DeepLTSInter_L6[0]: v" quantity="DeepLTSInter_L6/0/DeepLTSInter/v" scale="1mV" color="#6aa799" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[1]: v" quantity="DeepLTSInter_L6/1/DeepLTSInter/v" scale="1mV" color="#029a72" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[2]: v" quantity="DeepLTSInter_L6/2/DeepLTSInter/v" scale="1mV" color="#d340bb" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[3]: v" quantity="DeepLTSInter_L6/3/DeepLTSInter/v" scale="1mV" color="#4c73a9" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[4]: v" quantity="DeepLTSInter_L6/4/DeepLTSInter/v" scale="1mV" color="#5e503a" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[5]: v" quantity="DeepLTSInter_L6/5/DeepLTSInter/v" scale="1mV" color="#3193ca" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[6]: v" quantity="DeepLTSInter_L6/6/DeepLTSInter/v" scale="1mV" color="#90e5e9" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[7]: v" quantity="DeepLTSInter_L6/7/DeepLTSInter/v" scale="1mV" color="#29645f" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[8]: v" quantity="DeepLTSInter_L6/8/DeepLTSInter/v" scale="1mV" color="#1fcff4" timeScale="1ms"/>
+            <Line id="DeepLTSInter_L6[9]: v" quantity="DeepLTSInter_L6/9/DeepLTSInter/v" scale="1mV" color="#6ed4e9" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__SupBasket_L23" title="Membrane potentials of cells in SupBasket_L23" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="SupBasket_L23[0]: v" quantity="SupBasket_L23/0/SupBasket/v" scale="1mV" color="#8fe460" timeScale="1ms"/>
+            <Line id="SupBasket_L23[1]: v" quantity="SupBasket_L23/1/SupBasket/v" scale="1mV" color="#2ca1c7" timeScale="1ms"/>
+            <Line id="SupBasket_L23[2]: v" quantity="SupBasket_L23/2/SupBasket/v" scale="1mV" color="#8d9fe5" timeScale="1ms"/>
+            <Line id="SupBasket_L23[3]: v" quantity="SupBasket_L23/3/SupBasket/v" scale="1mV" color="#5adad1" timeScale="1ms"/>
+            <Line id="SupBasket_L23[4]: v" quantity="SupBasket_L23/4/SupBasket/v" scale="1mV" color="#f543bb" timeScale="1ms"/>
+            <Line id="SupBasket_L23[5]: v" quantity="SupBasket_L23/5/SupBasket/v" scale="1mV" color="#175f0c" timeScale="1ms"/>
+            <Line id="SupBasket_L23[6]: v" quantity="SupBasket_L23/6/SupBasket/v" scale="1mV" color="#fa8826" timeScale="1ms"/>
+            <Line id="SupBasket_L23[7]: v" quantity="SupBasket_L23/7/SupBasket/v" scale="1mV" color="#6980a8" timeScale="1ms"/>
+            <Line id="SupBasket_L23[8]: v" quantity="SupBasket_L23/8/SupBasket/v" scale="1mV" color="#8101e8" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__L4SpinyStellate_L4" title="Membrane potentials of cells in L4SpinyStellate_L4" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="L4SpinyStellate_L4[0]: v" quantity="L4SpinyStellate_L4/0/L4SpinyStellate/v" scale="1mV" color="#25ece8" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[1]: v" quantity="L4SpinyStellate_L4/1/L4SpinyStellate/v" scale="1mV" color="#b80e3b" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[2]: v" quantity="L4SpinyStellate_L4/2/L4SpinyStellate/v" scale="1mV" color="#30a1f6" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[3]: v" quantity="L4SpinyStellate_L4/3/L4SpinyStellate/v" scale="1mV" color="#577081" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[4]: v" quantity="L4SpinyStellate_L4/4/L4SpinyStellate/v" scale="1mV" color="#06057c" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[5]: v" quantity="L4SpinyStellate_L4/5/L4SpinyStellate/v" scale="1mV" color="#56eaa3" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[6]: v" quantity="L4SpinyStellate_L4/6/L4SpinyStellate/v" scale="1mV" color="#f7acee" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[7]: v" quantity="L4SpinyStellate_L4/7/L4SpinyStellate/v" scale="1mV" color="#fa9289" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[8]: v" quantity="L4SpinyStellate_L4/8/L4SpinyStellate/v" scale="1mV" color="#be9985" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[9]: v" quantity="L4SpinyStellate_L4/9/L4SpinyStellate/v" scale="1mV" color="#00e266" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[10]: v" quantity="L4SpinyStellate_L4/10/L4SpinyStellate/v" scale="1mV" color="#f0b378" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[11]: v" quantity="L4SpinyStellate_L4/11/L4SpinyStellate/v" scale="1mV" color="#deea95" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[12]: v" quantity="L4SpinyStellate_L4/12/L4SpinyStellate/v" scale="1mV" color="#c55566" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[13]: v" quantity="L4SpinyStellate_L4/13/L4SpinyStellate/v" scale="1mV" color="#2dcaab" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[14]: v" quantity="L4SpinyStellate_L4/14/L4SpinyStellate/v" scale="1mV" color="#1978ce" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[15]: v" quantity="L4SpinyStellate_L4/15/L4SpinyStellate/v" scale="1mV" color="#6a1ecc" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[16]: v" quantity="L4SpinyStellate_L4/16/L4SpinyStellate/v" scale="1mV" color="#e2b284" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[17]: v" quantity="L4SpinyStellate_L4/17/L4SpinyStellate/v" scale="1mV" color="#93fd72" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[18]: v" quantity="L4SpinyStellate_L4/18/L4SpinyStellate/v" scale="1mV" color="#bc90a6" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[19]: v" quantity="L4SpinyStellate_L4/19/L4SpinyStellate/v" scale="1mV" color="#3b8d0e" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[20]: v" quantity="L4SpinyStellate_L4/20/L4SpinyStellate/v" scale="1mV" color="#860a7d" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[21]: v" quantity="L4SpinyStellate_L4/21/L4SpinyStellate/v" scale="1mV" color="#b59a59" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[22]: v" quantity="L4SpinyStellate_L4/22/L4SpinyStellate/v" scale="1mV" color="#d32851" timeScale="1ms"/>
+            <Line id="L4SpinyStellate_L4[23]: v" quantity="L4SpinyStellate_L4/23/L4SpinyStellate/v" scale="1mV" color="#ce9fb6" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__L6NonTuftedPyrRS_L6" title="Membrane potentials of cells in L6NonTuftedPyrRS_L6" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="L6NonTuftedPyrRS_L6[0]: v" quantity="L6NonTuftedPyrRS_L6/0/L6NonTuftedPyrRS/v" scale="1mV" color="#3b788b" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[1]: v" quantity="L6NonTuftedPyrRS_L6/1/L6NonTuftedPyrRS/v" scale="1mV" color="#df8960" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[2]: v" quantity="L6NonTuftedPyrRS_L6/2/L6NonTuftedPyrRS/v" scale="1mV" color="#3764b5" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[3]: v" quantity="L6NonTuftedPyrRS_L6/3/L6NonTuftedPyrRS/v" scale="1mV" color="#cd4944" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[4]: v" quantity="L6NonTuftedPyrRS_L6/4/L6NonTuftedPyrRS/v" scale="1mV" color="#8e1a11" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[5]: v" quantity="L6NonTuftedPyrRS_L6/5/L6NonTuftedPyrRS/v" scale="1mV" color="#2f9272" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[6]: v" quantity="L6NonTuftedPyrRS_L6/6/L6NonTuftedPyrRS/v" scale="1mV" color="#96af0d" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[7]: v" quantity="L6NonTuftedPyrRS_L6/7/L6NonTuftedPyrRS/v" scale="1mV" color="#84ab56" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[8]: v" quantity="L6NonTuftedPyrRS_L6/8/L6NonTuftedPyrRS/v" scale="1mV" color="#f56ae7" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[9]: v" quantity="L6NonTuftedPyrRS_L6/9/L6NonTuftedPyrRS/v" scale="1mV" color="#0aa250" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[10]: v" quantity="L6NonTuftedPyrRS_L6/10/L6NonTuftedPyrRS/v" scale="1mV" color="#2a04f7" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[11]: v" quantity="L6NonTuftedPyrRS_L6/11/L6NonTuftedPyrRS/v" scale="1mV" color="#fbb911" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[12]: v" quantity="L6NonTuftedPyrRS_L6/12/L6NonTuftedPyrRS/v" scale="1mV" color="#d50b61" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[13]: v" quantity="L6NonTuftedPyrRS_L6/13/L6NonTuftedPyrRS/v" scale="1mV" color="#267841" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[14]: v" quantity="L6NonTuftedPyrRS_L6/14/L6NonTuftedPyrRS/v" scale="1mV" color="#3aa725" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[15]: v" quantity="L6NonTuftedPyrRS_L6/15/L6NonTuftedPyrRS/v" scale="1mV" color="#8a04f7" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[16]: v" quantity="L6NonTuftedPyrRS_L6/16/L6NonTuftedPyrRS/v" scale="1mV" color="#282fe5" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[17]: v" quantity="L6NonTuftedPyrRS_L6/17/L6NonTuftedPyrRS/v" scale="1mV" color="#52e1fb" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[18]: v" quantity="L6NonTuftedPyrRS_L6/18/L6NonTuftedPyrRS/v" scale="1mV" color="#0ca02f" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[19]: v" quantity="L6NonTuftedPyrRS_L6/19/L6NonTuftedPyrRS/v" scale="1mV" color="#b6307b" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[20]: v" quantity="L6NonTuftedPyrRS_L6/20/L6NonTuftedPyrRS/v" scale="1mV" color="#141cb0" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[21]: v" quantity="L6NonTuftedPyrRS_L6/21/L6NonTuftedPyrRS/v" scale="1mV" color="#fe9e62" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[22]: v" quantity="L6NonTuftedPyrRS_L6/22/L6NonTuftedPyrRS/v" scale="1mV" color="#ebaa77" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[23]: v" quantity="L6NonTuftedPyrRS_L6/23/L6NonTuftedPyrRS/v" scale="1mV" color="#c9f0b0" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[24]: v" quantity="L6NonTuftedPyrRS_L6/24/L6NonTuftedPyrRS/v" scale="1mV" color="#c5bc64" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[25]: v" quantity="L6NonTuftedPyrRS_L6/25/L6NonTuftedPyrRS/v" scale="1mV" color="#5e2503" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[26]: v" quantity="L6NonTuftedPyrRS_L6/26/L6NonTuftedPyrRS/v" scale="1mV" color="#adbfb0" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[27]: v" quantity="L6NonTuftedPyrRS_L6/27/L6NonTuftedPyrRS/v" scale="1mV" color="#c2e1da" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[28]: v" quantity="L6NonTuftedPyrRS_L6/28/L6NonTuftedPyrRS/v" scale="1mV" color="#7b1427" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[29]: v" quantity="L6NonTuftedPyrRS_L6/29/L6NonTuftedPyrRS/v" scale="1mV" color="#0fc01b" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[30]: v" quantity="L6NonTuftedPyrRS_L6/30/L6NonTuftedPyrRS/v" scale="1mV" color="#a04859" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[31]: v" quantity="L6NonTuftedPyrRS_L6/31/L6NonTuftedPyrRS/v" scale="1mV" color="#53650f" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[32]: v" quantity="L6NonTuftedPyrRS_L6/32/L6NonTuftedPyrRS/v" scale="1mV" color="#9c2ecc" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[33]: v" quantity="L6NonTuftedPyrRS_L6/33/L6NonTuftedPyrRS/v" scale="1mV" color="#6bbb69" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[34]: v" quantity="L6NonTuftedPyrRS_L6/34/L6NonTuftedPyrRS/v" scale="1mV" color="#f3d90e" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[35]: v" quantity="L6NonTuftedPyrRS_L6/35/L6NonTuftedPyrRS/v" scale="1mV" color="#339bb4" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[36]: v" quantity="L6NonTuftedPyrRS_L6/36/L6NonTuftedPyrRS/v" scale="1mV" color="#c4d3c5" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[37]: v" quantity="L6NonTuftedPyrRS_L6/37/L6NonTuftedPyrRS/v" scale="1mV" color="#b2d4f3" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[38]: v" quantity="L6NonTuftedPyrRS_L6/38/L6NonTuftedPyrRS/v" scale="1mV" color="#8e7ae9" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[39]: v" quantity="L6NonTuftedPyrRS_L6/39/L6NonTuftedPyrRS/v" scale="1mV" color="#147de9" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[40]: v" quantity="L6NonTuftedPyrRS_L6/40/L6NonTuftedPyrRS/v" scale="1mV" color="#2a3a46" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[41]: v" quantity="L6NonTuftedPyrRS_L6/41/L6NonTuftedPyrRS/v" scale="1mV" color="#f79fca" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[42]: v" quantity="L6NonTuftedPyrRS_L6/42/L6NonTuftedPyrRS/v" scale="1mV" color="#3b0b63" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[43]: v" quantity="L6NonTuftedPyrRS_L6/43/L6NonTuftedPyrRS/v" scale="1mV" color="#29ddf4" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[44]: v" quantity="L6NonTuftedPyrRS_L6/44/L6NonTuftedPyrRS/v" scale="1mV" color="#49cdbe" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[45]: v" quantity="L6NonTuftedPyrRS_L6/45/L6NonTuftedPyrRS/v" scale="1mV" color="#8980bb" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[46]: v" quantity="L6NonTuftedPyrRS_L6/46/L6NonTuftedPyrRS/v" scale="1mV" color="#850561" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[47]: v" quantity="L6NonTuftedPyrRS_L6/47/L6NonTuftedPyrRS/v" scale="1mV" color="#00da5a" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[48]: v" quantity="L6NonTuftedPyrRS_L6/48/L6NonTuftedPyrRS/v" scale="1mV" color="#00d0ba" timeScale="1ms"/>
+            <Line id="L6NonTuftedPyrRS_L6[49]: v" quantity="L6NonTuftedPyrRS_L6/49/L6NonTuftedPyrRS/v" scale="1mV" color="#7efe36" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__DeepBasket_L6" title="Membrane potentials of cells in DeepBasket_L6" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="DeepBasket_L6[0]: v" quantity="DeepBasket_L6/0/DeepBasket/v" scale="1mV" color="#2f529f" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[1]: v" quantity="DeepBasket_L6/1/DeepBasket/v" scale="1mV" color="#9b852c" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[2]: v" quantity="DeepBasket_L6/2/DeepBasket/v" scale="1mV" color="#cc6812" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[3]: v" quantity="DeepBasket_L6/3/DeepBasket/v" scale="1mV" color="#188b26" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[4]: v" quantity="DeepBasket_L6/4/DeepBasket/v" scale="1mV" color="#8152a2" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[5]: v" quantity="DeepBasket_L6/5/DeepBasket/v" scale="1mV" color="#67f8ab" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[6]: v" quantity="DeepBasket_L6/6/DeepBasket/v" scale="1mV" color="#ca5b25" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[7]: v" quantity="DeepBasket_L6/7/DeepBasket/v" scale="1mV" color="#f46d4e" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[8]: v" quantity="DeepBasket_L6/8/DeepBasket/v" scale="1mV" color="#6aae0b" timeScale="1ms"/>
+            <Line id="DeepBasket_L6[9]: v" quantity="DeepBasket_L6/9/DeepBasket/v" scale="1mV" color="#3e46cc" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__L23PyrRS_L23" title="Membrane potentials of cells in L23PyrRS_L23" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="L23PyrRS_L23[0]: v" quantity="L23PyrRS_L23/0/L23PyrRS/v" scale="1mV" color="#e0e3a1" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[1]: v" quantity="L23PyrRS_L23/1/L23PyrRS/v" scale="1mV" color="#06fb8a" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[2]: v" quantity="L23PyrRS_L23/2/L23PyrRS/v" scale="1mV" color="#549968" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[3]: v" quantity="L23PyrRS_L23/3/L23PyrRS/v" scale="1mV" color="#650ffb" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[4]: v" quantity="L23PyrRS_L23/4/L23PyrRS/v" scale="1mV" color="#2d9059" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[5]: v" quantity="L23PyrRS_L23/5/L23PyrRS/v" scale="1mV" color="#ae1036" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[6]: v" quantity="L23PyrRS_L23/6/L23PyrRS/v" scale="1mV" color="#84ad19" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[7]: v" quantity="L23PyrRS_L23/7/L23PyrRS/v" scale="1mV" color="#3fba91" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[8]: v" quantity="L23PyrRS_L23/8/L23PyrRS/v" scale="1mV" color="#69cacc" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[9]: v" quantity="L23PyrRS_L23/9/L23PyrRS/v" scale="1mV" color="#b11f43" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[10]: v" quantity="L23PyrRS_L23/10/L23PyrRS/v" scale="1mV" color="#5330d7" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[11]: v" quantity="L23PyrRS_L23/11/L23PyrRS/v" scale="1mV" color="#11552d" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[12]: v" quantity="L23PyrRS_L23/12/L23PyrRS/v" scale="1mV" color="#75e387" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[13]: v" quantity="L23PyrRS_L23/13/L23PyrRS/v" scale="1mV" color="#31efbe" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[14]: v" quantity="L23PyrRS_L23/14/L23PyrRS/v" scale="1mV" color="#9f0e56" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[15]: v" quantity="L23PyrRS_L23/15/L23PyrRS/v" scale="1mV" color="#33af06" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[16]: v" quantity="L23PyrRS_L23/16/L23PyrRS/v" scale="1mV" color="#22910c" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[17]: v" quantity="L23PyrRS_L23/17/L23PyrRS/v" scale="1mV" color="#e4daa2" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[18]: v" quantity="L23PyrRS_L23/18/L23PyrRS/v" scale="1mV" color="#548dc2" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[19]: v" quantity="L23PyrRS_L23/19/L23PyrRS/v" scale="1mV" color="#4ad484" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[20]: v" quantity="L23PyrRS_L23/20/L23PyrRS/v" scale="1mV" color="#89cb56" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[21]: v" quantity="L23PyrRS_L23/21/L23PyrRS/v" scale="1mV" color="#b1817b" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[22]: v" quantity="L23PyrRS_L23/22/L23PyrRS/v" scale="1mV" color="#abc677" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[23]: v" quantity="L23PyrRS_L23/23/L23PyrRS/v" scale="1mV" color="#cc638b" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[24]: v" quantity="L23PyrRS_L23/24/L23PyrRS/v" scale="1mV" color="#428b2d" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[25]: v" quantity="L23PyrRS_L23/25/L23PyrRS/v" scale="1mV" color="#6d47be" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[26]: v" quantity="L23PyrRS_L23/26/L23PyrRS/v" scale="1mV" color="#5d2c80" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[27]: v" quantity="L23PyrRS_L23/27/L23PyrRS/v" scale="1mV" color="#84459a" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[28]: v" quantity="L23PyrRS_L23/28/L23PyrRS/v" scale="1mV" color="#92f4b2" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[29]: v" quantity="L23PyrRS_L23/29/L23PyrRS/v" scale="1mV" color="#a11908" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[30]: v" quantity="L23PyrRS_L23/30/L23PyrRS/v" scale="1mV" color="#11656e" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[31]: v" quantity="L23PyrRS_L23/31/L23PyrRS/v" scale="1mV" color="#5f0819" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[32]: v" quantity="L23PyrRS_L23/32/L23PyrRS/v" scale="1mV" color="#b56471" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[33]: v" quantity="L23PyrRS_L23/33/L23PyrRS/v" scale="1mV" color="#090b35" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[34]: v" quantity="L23PyrRS_L23/34/L23PyrRS/v" scale="1mV" color="#bf0976" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[35]: v" quantity="L23PyrRS_L23/35/L23PyrRS/v" scale="1mV" color="#af973c" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[36]: v" quantity="L23PyrRS_L23/36/L23PyrRS/v" scale="1mV" color="#66dbcc" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[37]: v" quantity="L23PyrRS_L23/37/L23PyrRS/v" scale="1mV" color="#72fce3" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[38]: v" quantity="L23PyrRS_L23/38/L23PyrRS/v" scale="1mV" color="#43abd5" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[39]: v" quantity="L23PyrRS_L23/39/L23PyrRS/v" scale="1mV" color="#bcba85" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[40]: v" quantity="L23PyrRS_L23/40/L23PyrRS/v" scale="1mV" color="#7afbd9" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[41]: v" quantity="L23PyrRS_L23/41/L23PyrRS/v" scale="1mV" color="#43df86" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[42]: v" quantity="L23PyrRS_L23/42/L23PyrRS/v" scale="1mV" color="#0783a8" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[43]: v" quantity="L23PyrRS_L23/43/L23PyrRS/v" scale="1mV" color="#58569a" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[44]: v" quantity="L23PyrRS_L23/44/L23PyrRS/v" scale="1mV" color="#ebc622" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[45]: v" quantity="L23PyrRS_L23/45/L23PyrRS/v" scale="1mV" color="#ad17d5" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[46]: v" quantity="L23PyrRS_L23/46/L23PyrRS/v" scale="1mV" color="#a0277b" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[47]: v" quantity="L23PyrRS_L23/47/L23PyrRS/v" scale="1mV" color="#ef12d1" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[48]: v" quantity="L23PyrRS_L23/48/L23PyrRS/v" scale="1mV" color="#07d5ba" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[49]: v" quantity="L23PyrRS_L23/49/L23PyrRS/v" scale="1mV" color="#9a3a95" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[50]: v" quantity="L23PyrRS_L23/50/L23PyrRS/v" scale="1mV" color="#301d8a" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[51]: v" quantity="L23PyrRS_L23/51/L23PyrRS/v" scale="1mV" color="#659e23" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[52]: v" quantity="L23PyrRS_L23/52/L23PyrRS/v" scale="1mV" color="#2e8cc3" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[53]: v" quantity="L23PyrRS_L23/53/L23PyrRS/v" scale="1mV" color="#596091" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[54]: v" quantity="L23PyrRS_L23/54/L23PyrRS/v" scale="1mV" color="#e6c0bc" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[55]: v" quantity="L23PyrRS_L23/55/L23PyrRS/v" scale="1mV" color="#b9b34e" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[56]: v" quantity="L23PyrRS_L23/56/L23PyrRS/v" scale="1mV" color="#d8a692" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[57]: v" quantity="L23PyrRS_L23/57/L23PyrRS/v" scale="1mV" color="#1352e6" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[58]: v" quantity="L23PyrRS_L23/58/L23PyrRS/v" scale="1mV" color="#4d0412" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[59]: v" quantity="L23PyrRS_L23/59/L23PyrRS/v" scale="1mV" color="#c8bec0" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[60]: v" quantity="L23PyrRS_L23/60/L23PyrRS/v" scale="1mV" color="#0a5b03" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[61]: v" quantity="L23PyrRS_L23/61/L23PyrRS/v" scale="1mV" color="#3091a7" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[62]: v" quantity="L23PyrRS_L23/62/L23PyrRS/v" scale="1mV" color="#14f491" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[63]: v" quantity="L23PyrRS_L23/63/L23PyrRS/v" scale="1mV" color="#d14b5d" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[64]: v" quantity="L23PyrRS_L23/64/L23PyrRS/v" scale="1mV" color="#3b747b" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[65]: v" quantity="L23PyrRS_L23/65/L23PyrRS/v" scale="1mV" color="#6c9e62" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[66]: v" quantity="L23PyrRS_L23/66/L23PyrRS/v" scale="1mV" color="#038c13" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[67]: v" quantity="L23PyrRS_L23/67/L23PyrRS/v" scale="1mV" color="#1d1940" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[68]: v" quantity="L23PyrRS_L23/68/L23PyrRS/v" scale="1mV" color="#839542" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[69]: v" quantity="L23PyrRS_L23/69/L23PyrRS/v" scale="1mV" color="#ca9353" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[70]: v" quantity="L23PyrRS_L23/70/L23PyrRS/v" scale="1mV" color="#574d88" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[71]: v" quantity="L23PyrRS_L23/71/L23PyrRS/v" scale="1mV" color="#51c0d2" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[72]: v" quantity="L23PyrRS_L23/72/L23PyrRS/v" scale="1mV" color="#0a72aa" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[73]: v" quantity="L23PyrRS_L23/73/L23PyrRS/v" scale="1mV" color="#19806f" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[74]: v" quantity="L23PyrRS_L23/74/L23PyrRS/v" scale="1mV" color="#260512" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[75]: v" quantity="L23PyrRS_L23/75/L23PyrRS/v" scale="1mV" color="#34cd4f" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[76]: v" quantity="L23PyrRS_L23/76/L23PyrRS/v" scale="1mV" color="#91e19c" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[77]: v" quantity="L23PyrRS_L23/77/L23PyrRS/v" scale="1mV" color="#5be070" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[78]: v" quantity="L23PyrRS_L23/78/L23PyrRS/v" scale="1mV" color="#fa4c52" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[79]: v" quantity="L23PyrRS_L23/79/L23PyrRS/v" scale="1mV" color="#48bb6e" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[80]: v" quantity="L23PyrRS_L23/80/L23PyrRS/v" scale="1mV" color="#db3522" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[81]: v" quantity="L23PyrRS_L23/81/L23PyrRS/v" scale="1mV" color="#177e84" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[82]: v" quantity="L23PyrRS_L23/82/L23PyrRS/v" scale="1mV" color="#87111a" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[83]: v" quantity="L23PyrRS_L23/83/L23PyrRS/v" scale="1mV" color="#8caa59" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[84]: v" quantity="L23PyrRS_L23/84/L23PyrRS/v" scale="1mV" color="#a8448d" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[85]: v" quantity="L23PyrRS_L23/85/L23PyrRS/v" scale="1mV" color="#68feb0" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[86]: v" quantity="L23PyrRS_L23/86/L23PyrRS/v" scale="1mV" color="#862427" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[87]: v" quantity="L23PyrRS_L23/87/L23PyrRS/v" scale="1mV" color="#c71eb8" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[88]: v" quantity="L23PyrRS_L23/88/L23PyrRS/v" scale="1mV" color="#26cf61" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[89]: v" quantity="L23PyrRS_L23/89/L23PyrRS/v" scale="1mV" color="#881836" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[90]: v" quantity="L23PyrRS_L23/90/L23PyrRS/v" scale="1mV" color="#968c80" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[91]: v" quantity="L23PyrRS_L23/91/L23PyrRS/v" scale="1mV" color="#c81d4c" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[92]: v" quantity="L23PyrRS_L23/92/L23PyrRS/v" scale="1mV" color="#29e8fa" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[93]: v" quantity="L23PyrRS_L23/93/L23PyrRS/v" scale="1mV" color="#6a2254" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[94]: v" quantity="L23PyrRS_L23/94/L23PyrRS/v" scale="1mV" color="#064a2c" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[95]: v" quantity="L23PyrRS_L23/95/L23PyrRS/v" scale="1mV" color="#a99d45" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[96]: v" quantity="L23PyrRS_L23/96/L23PyrRS/v" scale="1mV" color="#de372e" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[97]: v" quantity="L23PyrRS_L23/97/L23PyrRS/v" scale="1mV" color="#5a80c8" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[98]: v" quantity="L23PyrRS_L23/98/L23PyrRS/v" scale="1mV" color="#d0f6cb" timeScale="1ms"/>
+            <Line id="L23PyrRS_L23[99]: v" quantity="L23PyrRS_L23/99/L23PyrRS/v" scale="1mV" color="#a8748e" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__TCR_Thalamus" title="Membrane potentials of cells in TCR_Thalamus" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="TCR_Thalamus[0]: v" quantity="TCR_Thalamus/0/TCR/v" scale="1mV" color="#045ca3" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[1]: v" quantity="TCR_Thalamus/1/TCR/v" scale="1mV" color="#7861a5" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[2]: v" quantity="TCR_Thalamus/2/TCR/v" scale="1mV" color="#0bb58d" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[3]: v" quantity="TCR_Thalamus/3/TCR/v" scale="1mV" color="#502f52" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[4]: v" quantity="TCR_Thalamus/4/TCR/v" scale="1mV" color="#ccf6ae" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[5]: v" quantity="TCR_Thalamus/5/TCR/v" scale="1mV" color="#201e28" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[6]: v" quantity="TCR_Thalamus/6/TCR/v" scale="1mV" color="#90bc0e" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[7]: v" quantity="TCR_Thalamus/7/TCR/v" scale="1mV" color="#0e851f" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[8]: v" quantity="TCR_Thalamus/8/TCR/v" scale="1mV" color="#1c1d86" timeScale="1ms"/>
+            <Line id="TCR_Thalamus[9]: v" quantity="TCR_Thalamus/9/TCR/v" scale="1mV" color="#f3c10a" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__SupLTSInter_L23" title="Membrane potentials of cells in SupLTSInter_L23" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="SupLTSInter_L23[0]: v" quantity="SupLTSInter_L23/0/SupLTSInter/v" scale="1mV" color="#18ae27" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[1]: v" quantity="SupLTSInter_L23/1/SupLTSInter/v" scale="1mV" color="#2c92bd" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[2]: v" quantity="SupLTSInter_L23/2/SupLTSInter/v" scale="1mV" color="#f0a8c3" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[3]: v" quantity="SupLTSInter_L23/3/SupLTSInter/v" scale="1mV" color="#4f10da" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[4]: v" quantity="SupLTSInter_L23/4/SupLTSInter/v" scale="1mV" color="#376bec" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[5]: v" quantity="SupLTSInter_L23/5/SupLTSInter/v" scale="1mV" color="#18b151" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[6]: v" quantity="SupLTSInter_L23/6/SupLTSInter/v" scale="1mV" color="#7fcf87" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[7]: v" quantity="SupLTSInter_L23/7/SupLTSInter/v" scale="1mV" color="#0f137e" timeScale="1ms"/>
+            <Line id="SupLTSInter_L23[8]: v" quantity="SupLTSInter_L23/8/SupLTSInter/v" scale="1mV" color="#38556b" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__L5TuftedPyrIB_L5" title="Membrane potentials of cells in L5TuftedPyrIB_L5" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="L5TuftedPyrIB_L5[0]: v" quantity="L5TuftedPyrIB_L5/0/L5TuftedPyrIB/v" scale="1mV" color="#38dcc1" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[1]: v" quantity="L5TuftedPyrIB_L5/1/L5TuftedPyrIB/v" scale="1mV" color="#bec1e4" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[2]: v" quantity="L5TuftedPyrIB_L5/2/L5TuftedPyrIB/v" scale="1mV" color="#29815f" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[3]: v" quantity="L5TuftedPyrIB_L5/3/L5TuftedPyrIB/v" scale="1mV" color="#969031" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[4]: v" quantity="L5TuftedPyrIB_L5/4/L5TuftedPyrIB/v" scale="1mV" color="#3ddf7b" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[5]: v" quantity="L5TuftedPyrIB_L5/5/L5TuftedPyrIB/v" scale="1mV" color="#fe6b0f" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[6]: v" quantity="L5TuftedPyrIB_L5/6/L5TuftedPyrIB/v" scale="1mV" color="#fd9a77" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[7]: v" quantity="L5TuftedPyrIB_L5/7/L5TuftedPyrIB/v" scale="1mV" color="#ec81ac" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[8]: v" quantity="L5TuftedPyrIB_L5/8/L5TuftedPyrIB/v" scale="1mV" color="#e66be0" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[9]: v" quantity="L5TuftedPyrIB_L5/9/L5TuftedPyrIB/v" scale="1mV" color="#8dbee3" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[10]: v" quantity="L5TuftedPyrIB_L5/10/L5TuftedPyrIB/v" scale="1mV" color="#ee4c8d" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[11]: v" quantity="L5TuftedPyrIB_L5/11/L5TuftedPyrIB/v" scale="1mV" color="#a3cddd" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[12]: v" quantity="L5TuftedPyrIB_L5/12/L5TuftedPyrIB/v" scale="1mV" color="#28cdd5" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[13]: v" quantity="L5TuftedPyrIB_L5/13/L5TuftedPyrIB/v" scale="1mV" color="#bb7b32" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[14]: v" quantity="L5TuftedPyrIB_L5/14/L5TuftedPyrIB/v" scale="1mV" color="#d96ad6" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[15]: v" quantity="L5TuftedPyrIB_L5/15/L5TuftedPyrIB/v" scale="1mV" color="#03b318" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[16]: v" quantity="L5TuftedPyrIB_L5/16/L5TuftedPyrIB/v" scale="1mV" color="#31e638" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[17]: v" quantity="L5TuftedPyrIB_L5/17/L5TuftedPyrIB/v" scale="1mV" color="#c8c7e5" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[18]: v" quantity="L5TuftedPyrIB_L5/18/L5TuftedPyrIB/v" scale="1mV" color="#c49ee9" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[19]: v" quantity="L5TuftedPyrIB_L5/19/L5TuftedPyrIB/v" scale="1mV" color="#8f8236" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[20]: v" quantity="L5TuftedPyrIB_L5/20/L5TuftedPyrIB/v" scale="1mV" color="#1f4fb4" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[21]: v" quantity="L5TuftedPyrIB_L5/21/L5TuftedPyrIB/v" scale="1mV" color="#43e7a2" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[22]: v" quantity="L5TuftedPyrIB_L5/22/L5TuftedPyrIB/v" scale="1mV" color="#3c57d6" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[23]: v" quantity="L5TuftedPyrIB_L5/23/L5TuftedPyrIB/v" scale="1mV" color="#fb078b" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[24]: v" quantity="L5TuftedPyrIB_L5/24/L5TuftedPyrIB/v" scale="1mV" color="#39aee1" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[25]: v" quantity="L5TuftedPyrIB_L5/25/L5TuftedPyrIB/v" scale="1mV" color="#5ec053" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[26]: v" quantity="L5TuftedPyrIB_L5/26/L5TuftedPyrIB/v" scale="1mV" color="#b06475" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[27]: v" quantity="L5TuftedPyrIB_L5/27/L5TuftedPyrIB/v" scale="1mV" color="#a9c544" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[28]: v" quantity="L5TuftedPyrIB_L5/28/L5TuftedPyrIB/v" scale="1mV" color="#8febd8" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[29]: v" quantity="L5TuftedPyrIB_L5/29/L5TuftedPyrIB/v" scale="1mV" color="#a692be" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[30]: v" quantity="L5TuftedPyrIB_L5/30/L5TuftedPyrIB/v" scale="1mV" color="#dd710d" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[31]: v" quantity="L5TuftedPyrIB_L5/31/L5TuftedPyrIB/v" scale="1mV" color="#e9f8fc" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[32]: v" quantity="L5TuftedPyrIB_L5/32/L5TuftedPyrIB/v" scale="1mV" color="#1bc32d" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[33]: v" quantity="L5TuftedPyrIB_L5/33/L5TuftedPyrIB/v" scale="1mV" color="#07b67c" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[34]: v" quantity="L5TuftedPyrIB_L5/34/L5TuftedPyrIB/v" scale="1mV" color="#e9e110" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[35]: v" quantity="L5TuftedPyrIB_L5/35/L5TuftedPyrIB/v" scale="1mV" color="#e90726" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[36]: v" quantity="L5TuftedPyrIB_L5/36/L5TuftedPyrIB/v" scale="1mV" color="#5e33e8" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[37]: v" quantity="L5TuftedPyrIB_L5/37/L5TuftedPyrIB/v" scale="1mV" color="#66528d" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[38]: v" quantity="L5TuftedPyrIB_L5/38/L5TuftedPyrIB/v" scale="1mV" color="#af5641" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[39]: v" quantity="L5TuftedPyrIB_L5/39/L5TuftedPyrIB/v" scale="1mV" color="#6be805" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[40]: v" quantity="L5TuftedPyrIB_L5/40/L5TuftedPyrIB/v" scale="1mV" color="#1c6c52" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[41]: v" quantity="L5TuftedPyrIB_L5/41/L5TuftedPyrIB/v" scale="1mV" color="#3fccf7" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[42]: v" quantity="L5TuftedPyrIB_L5/42/L5TuftedPyrIB/v" scale="1mV" color="#4dc094" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[43]: v" quantity="L5TuftedPyrIB_L5/43/L5TuftedPyrIB/v" scale="1mV" color="#90f23c" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[44]: v" quantity="L5TuftedPyrIB_L5/44/L5TuftedPyrIB/v" scale="1mV" color="#2bd47c" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[45]: v" quantity="L5TuftedPyrIB_L5/45/L5TuftedPyrIB/v" scale="1mV" color="#ba87b5" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[46]: v" quantity="L5TuftedPyrIB_L5/46/L5TuftedPyrIB/v" scale="1mV" color="#f84417" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[47]: v" quantity="L5TuftedPyrIB_L5/47/L5TuftedPyrIB/v" scale="1mV" color="#62852c" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[48]: v" quantity="L5TuftedPyrIB_L5/48/L5TuftedPyrIB/v" scale="1mV" color="#920026" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[49]: v" quantity="L5TuftedPyrIB_L5/49/L5TuftedPyrIB/v" scale="1mV" color="#a2e109" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[50]: v" quantity="L5TuftedPyrIB_L5/50/L5TuftedPyrIB/v" scale="1mV" color="#cc4883" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[51]: v" quantity="L5TuftedPyrIB_L5/51/L5TuftedPyrIB/v" scale="1mV" color="#a10d94" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[52]: v" quantity="L5TuftedPyrIB_L5/52/L5TuftedPyrIB/v" scale="1mV" color="#843aac" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[53]: v" quantity="L5TuftedPyrIB_L5/53/L5TuftedPyrIB/v" scale="1mV" color="#b872d8" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[54]: v" quantity="L5TuftedPyrIB_L5/54/L5TuftedPyrIB/v" scale="1mV" color="#0614cf" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[55]: v" quantity="L5TuftedPyrIB_L5/55/L5TuftedPyrIB/v" scale="1mV" color="#f09646" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[56]: v" quantity="L5TuftedPyrIB_L5/56/L5TuftedPyrIB/v" scale="1mV" color="#e60cca" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[57]: v" quantity="L5TuftedPyrIB_L5/57/L5TuftedPyrIB/v" scale="1mV" color="#b19e09" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[58]: v" quantity="L5TuftedPyrIB_L5/58/L5TuftedPyrIB/v" scale="1mV" color="#339d4e" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[59]: v" quantity="L5TuftedPyrIB_L5/59/L5TuftedPyrIB/v" scale="1mV" color="#a02798" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[60]: v" quantity="L5TuftedPyrIB_L5/60/L5TuftedPyrIB/v" scale="1mV" color="#073321" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[61]: v" quantity="L5TuftedPyrIB_L5/61/L5TuftedPyrIB/v" scale="1mV" color="#65cfa1" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[62]: v" quantity="L5TuftedPyrIB_L5/62/L5TuftedPyrIB/v" scale="1mV" color="#372273" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[63]: v" quantity="L5TuftedPyrIB_L5/63/L5TuftedPyrIB/v" scale="1mV" color="#8fad43" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[64]: v" quantity="L5TuftedPyrIB_L5/64/L5TuftedPyrIB/v" scale="1mV" color="#401c00" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[65]: v" quantity="L5TuftedPyrIB_L5/65/L5TuftedPyrIB/v" scale="1mV" color="#179fb7" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[66]: v" quantity="L5TuftedPyrIB_L5/66/L5TuftedPyrIB/v" scale="1mV" color="#cb3aae" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[67]: v" quantity="L5TuftedPyrIB_L5/67/L5TuftedPyrIB/v" scale="1mV" color="#405355" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[68]: v" quantity="L5TuftedPyrIB_L5/68/L5TuftedPyrIB/v" scale="1mV" color="#8f492c" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[69]: v" quantity="L5TuftedPyrIB_L5/69/L5TuftedPyrIB/v" scale="1mV" color="#043c86" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[70]: v" quantity="L5TuftedPyrIB_L5/70/L5TuftedPyrIB/v" scale="1mV" color="#903f13" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[71]: v" quantity="L5TuftedPyrIB_L5/71/L5TuftedPyrIB/v" scale="1mV" color="#ca0c42" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[72]: v" quantity="L5TuftedPyrIB_L5/72/L5TuftedPyrIB/v" scale="1mV" color="#c8f548" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[73]: v" quantity="L5TuftedPyrIB_L5/73/L5TuftedPyrIB/v" scale="1mV" color="#541152" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[74]: v" quantity="L5TuftedPyrIB_L5/74/L5TuftedPyrIB/v" scale="1mV" color="#20df15" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[75]: v" quantity="L5TuftedPyrIB_L5/75/L5TuftedPyrIB/v" scale="1mV" color="#9c06a6" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[76]: v" quantity="L5TuftedPyrIB_L5/76/L5TuftedPyrIB/v" scale="1mV" color="#4e7746" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[77]: v" quantity="L5TuftedPyrIB_L5/77/L5TuftedPyrIB/v" scale="1mV" color="#492b44" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[78]: v" quantity="L5TuftedPyrIB_L5/78/L5TuftedPyrIB/v" scale="1mV" color="#35ca0e" timeScale="1ms"/>
+            <Line id="L5TuftedPyrIB_L5[79]: v" quantity="L5TuftedPyrIB_L5/79/L5TuftedPyrIB/v" scale="1mV" color="#64b0bc" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__DeepAxAx_L6" title="Membrane potentials of cells in DeepAxAx_L6" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="DeepAxAx_L6[0]: v" quantity="DeepAxAx_L6/0/DeepAxAx/v" scale="1mV" color="#aea505" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[1]: v" quantity="DeepAxAx_L6/1/DeepAxAx/v" scale="1mV" color="#66cb8c" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[2]: v" quantity="DeepAxAx_L6/2/DeepAxAx/v" scale="1mV" color="#a57d91" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[3]: v" quantity="DeepAxAx_L6/3/DeepAxAx/v" scale="1mV" color="#ba52b1" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[4]: v" quantity="DeepAxAx_L6/4/DeepAxAx/v" scale="1mV" color="#cf72b4" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[5]: v" quantity="DeepAxAx_L6/5/DeepAxAx/v" scale="1mV" color="#921f5c" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[6]: v" quantity="DeepAxAx_L6/6/DeepAxAx/v" scale="1mV" color="#fd8566" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[7]: v" quantity="DeepAxAx_L6/7/DeepAxAx/v" scale="1mV" color="#8087e4" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[8]: v" quantity="DeepAxAx_L6/8/DeepAxAx/v" scale="1mV" color="#8984dc" timeScale="1ms"/>
+            <Line id="DeepAxAx_L6[9]: v" quantity="DeepAxAx_L6/9/DeepAxAx/v" scale="1mV" color="#a887f6" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__SupAxAx_L23" title="Membrane potentials of cells in SupAxAx_L23" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="SupAxAx_L23[0]: v" quantity="SupAxAx_L23/0/SupAxAx/v" scale="1mV" color="#f8a76f" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[1]: v" quantity="SupAxAx_L23/1/SupAxAx/v" scale="1mV" color="#b3b2cb" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[2]: v" quantity="SupAxAx_L23/2/SupAxAx/v" scale="1mV" color="#eab59d" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[3]: v" quantity="SupAxAx_L23/3/SupAxAx/v" scale="1mV" color="#289e1e" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[4]: v" quantity="SupAxAx_L23/4/SupAxAx/v" scale="1mV" color="#6c0811" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[5]: v" quantity="SupAxAx_L23/5/SupAxAx/v" scale="1mV" color="#b4197a" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[6]: v" quantity="SupAxAx_L23/6/SupAxAx/v" scale="1mV" color="#bb9342" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[7]: v" quantity="SupAxAx_L23/7/SupAxAx/v" scale="1mV" color="#d47c1e" timeScale="1ms"/>
+            <Line id="SupAxAx_L23[8]: v" quantity="SupAxAx_L23/8/SupAxAx/v" scale="1mV" color="#443000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__L23PyrFRB_L23" title="Membrane potentials of cells in L23PyrFRB_L23" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="L23PyrFRB_L23[0]: v" quantity="L23PyrFRB_L23/0/L23PyrFRB/v" scale="1mV" color="#509140" timeScale="1ms"/>
+            <Line id="L23PyrFRB_L23[1]: v" quantity="L23PyrFRB_L23/1/L23PyrFRB/v" scale="1mV" color="#69a837" timeScale="1ms"/>
+            <Line id="L23PyrFRB_L23[2]: v" quantity="L23PyrFRB_L23/2/L23PyrFRB/v" scale="1mV" color="#64722c" timeScale="1ms"/>
+            <Line id="L23PyrFRB_L23[3]: v" quantity="L23PyrFRB_L23/3/L23PyrFRB/v" scale="1mV" color="#17bb14" timeScale="1ms"/>
+            <Line id="L23PyrFRB_L23[4]: v" quantity="L23PyrFRB_L23/4/L23PyrFRB/v" scale="1mV" color="#63c759" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="DispPop__nRT_Thalamus" title="Membrane potentials of cells in nRT_Thalamus" timeScale="1ms" xmin="-30.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="nRT_Thalamus[0]: v" quantity="nRT_Thalamus/0/nRT/v" scale="1mV" color="#a47390" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[1]: v" quantity="nRT_Thalamus/1/nRT/v" scale="1mV" color="#bd4dec" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[2]: v" quantity="nRT_Thalamus/2/nRT/v" scale="1mV" color="#3ad921" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[3]: v" quantity="nRT_Thalamus/3/nRT/v" scale="1mV" color="#9ee4b9" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[4]: v" quantity="nRT_Thalamus/4/nRT/v" scale="1mV" color="#c0485e" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[5]: v" quantity="nRT_Thalamus/5/nRT/v" scale="1mV" color="#27d052" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[6]: v" quantity="nRT_Thalamus/6/nRT/v" scale="1mV" color="#03aaa7" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[7]: v" quantity="nRT_Thalamus/7/nRT/v" scale="1mV" color="#28fdf2" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[8]: v" quantity="nRT_Thalamus/8/nRT/v" scale="1mV" color="#adce60" timeScale="1ms"/>
+            <Line id="nRT_Thalamus[9]: v" quantity="nRT_Thalamus/9/nRT/v" scale="1mV" color="#e9cf5a" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Volts_file__DeepLTSInter_L6" fileName="Sim_TestTraubBuildFull.DeepLTSInter_L6.v.dat">
+            <OutputColumn id="v_DeepLTSInter_L6_0_DeepLTSInter_v" quantity="DeepLTSInter_L6/0/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_1_DeepLTSInter_v" quantity="DeepLTSInter_L6/1/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_2_DeepLTSInter_v" quantity="DeepLTSInter_L6/2/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_3_DeepLTSInter_v" quantity="DeepLTSInter_L6/3/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_4_DeepLTSInter_v" quantity="DeepLTSInter_L6/4/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_5_DeepLTSInter_v" quantity="DeepLTSInter_L6/5/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_6_DeepLTSInter_v" quantity="DeepLTSInter_L6/6/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_7_DeepLTSInter_v" quantity="DeepLTSInter_L6/7/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_8_DeepLTSInter_v" quantity="DeepLTSInter_L6/8/DeepLTSInter/v"/> 
+            <OutputColumn id="v_DeepLTSInter_L6_9_DeepLTSInter_v" quantity="DeepLTSInter_L6/9/DeepLTSInter/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__SupBasket_L23" fileName="Sim_TestTraubBuildFull.SupBasket_L23.v.dat">
+            <OutputColumn id="v_SupBasket_L23_0_SupBasket_v" quantity="SupBasket_L23/0/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_1_SupBasket_v" quantity="SupBasket_L23/1/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_2_SupBasket_v" quantity="SupBasket_L23/2/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_3_SupBasket_v" quantity="SupBasket_L23/3/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_4_SupBasket_v" quantity="SupBasket_L23/4/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_5_SupBasket_v" quantity="SupBasket_L23/5/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_6_SupBasket_v" quantity="SupBasket_L23/6/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_7_SupBasket_v" quantity="SupBasket_L23/7/SupBasket/v"/> 
+            <OutputColumn id="v_SupBasket_L23_8_SupBasket_v" quantity="SupBasket_L23/8/SupBasket/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__L4SpinyStellate_L4" fileName="Sim_TestTraubBuildFull.L4SpinyStellate_L4.v.dat">
+            <OutputColumn id="v_L4SpinyStellate_L4_0_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/0/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_1_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/1/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_2_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/2/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_3_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/3/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_4_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/4/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_5_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/5/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_6_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/6/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_7_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/7/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_8_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/8/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_9_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/9/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_10_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/10/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_11_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/11/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_12_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/12/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_13_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/13/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_14_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/14/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_15_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/15/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_16_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/16/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_17_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/17/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_18_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/18/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_19_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/19/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_20_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/20/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_21_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/21/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_22_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/22/L4SpinyStellate/v"/> 
+            <OutputColumn id="v_L4SpinyStellate_L4_23_L4SpinyStellate_v" quantity="L4SpinyStellate_L4/23/L4SpinyStellate/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__L6NonTuftedPyrRS_L6" fileName="Sim_TestTraubBuildFull.L6NonTuftedPyrRS_L6.v.dat">
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_0_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/0/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_1_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/1/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_2_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/2/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_3_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/3/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_4_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/4/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_5_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/5/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_6_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/6/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_7_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/7/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_8_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/8/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_9_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/9/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_10_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/10/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_11_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/11/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_12_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/12/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_13_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/13/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_14_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/14/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_15_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/15/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_16_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/16/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_17_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/17/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_18_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/18/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_19_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/19/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_20_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/20/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_21_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/21/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_22_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/22/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_23_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/23/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_24_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/24/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_25_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/25/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_26_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/26/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_27_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/27/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_28_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/28/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_29_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/29/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_30_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/30/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_31_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/31/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_32_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/32/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_33_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/33/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_34_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/34/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_35_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/35/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_36_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/36/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_37_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/37/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_38_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/38/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_39_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/39/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_40_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/40/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_41_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/41/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_42_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/42/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_43_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/43/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_44_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/44/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_45_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/45/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_46_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/46/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_47_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/47/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_48_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/48/L6NonTuftedPyrRS/v"/> 
+            <OutputColumn id="v_L6NonTuftedPyrRS_L6_49_L6NonTuftedPyrRS_v" quantity="L6NonTuftedPyrRS_L6/49/L6NonTuftedPyrRS/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__DeepBasket_L6" fileName="Sim_TestTraubBuildFull.DeepBasket_L6.v.dat">
+            <OutputColumn id="v_DeepBasket_L6_0_DeepBasket_v" quantity="DeepBasket_L6/0/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_1_DeepBasket_v" quantity="DeepBasket_L6/1/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_2_DeepBasket_v" quantity="DeepBasket_L6/2/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_3_DeepBasket_v" quantity="DeepBasket_L6/3/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_4_DeepBasket_v" quantity="DeepBasket_L6/4/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_5_DeepBasket_v" quantity="DeepBasket_L6/5/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_6_DeepBasket_v" quantity="DeepBasket_L6/6/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_7_DeepBasket_v" quantity="DeepBasket_L6/7/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_8_DeepBasket_v" quantity="DeepBasket_L6/8/DeepBasket/v"/> 
+            <OutputColumn id="v_DeepBasket_L6_9_DeepBasket_v" quantity="DeepBasket_L6/9/DeepBasket/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__L23PyrRS_L23" fileName="Sim_TestTraubBuildFull.L23PyrRS_L23.v.dat">
+            <OutputColumn id="v_L23PyrRS_L23_0_L23PyrRS_v" quantity="L23PyrRS_L23/0/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_1_L23PyrRS_v" quantity="L23PyrRS_L23/1/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_2_L23PyrRS_v" quantity="L23PyrRS_L23/2/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_3_L23PyrRS_v" quantity="L23PyrRS_L23/3/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_4_L23PyrRS_v" quantity="L23PyrRS_L23/4/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_5_L23PyrRS_v" quantity="L23PyrRS_L23/5/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_6_L23PyrRS_v" quantity="L23PyrRS_L23/6/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_7_L23PyrRS_v" quantity="L23PyrRS_L23/7/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_8_L23PyrRS_v" quantity="L23PyrRS_L23/8/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_9_L23PyrRS_v" quantity="L23PyrRS_L23/9/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_10_L23PyrRS_v" quantity="L23PyrRS_L23/10/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_11_L23PyrRS_v" quantity="L23PyrRS_L23/11/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_12_L23PyrRS_v" quantity="L23PyrRS_L23/12/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_13_L23PyrRS_v" quantity="L23PyrRS_L23/13/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_14_L23PyrRS_v" quantity="L23PyrRS_L23/14/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_15_L23PyrRS_v" quantity="L23PyrRS_L23/15/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_16_L23PyrRS_v" quantity="L23PyrRS_L23/16/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_17_L23PyrRS_v" quantity="L23PyrRS_L23/17/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_18_L23PyrRS_v" quantity="L23PyrRS_L23/18/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_19_L23PyrRS_v" quantity="L23PyrRS_L23/19/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_20_L23PyrRS_v" quantity="L23PyrRS_L23/20/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_21_L23PyrRS_v" quantity="L23PyrRS_L23/21/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_22_L23PyrRS_v" quantity="L23PyrRS_L23/22/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_23_L23PyrRS_v" quantity="L23PyrRS_L23/23/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_24_L23PyrRS_v" quantity="L23PyrRS_L23/24/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_25_L23PyrRS_v" quantity="L23PyrRS_L23/25/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_26_L23PyrRS_v" quantity="L23PyrRS_L23/26/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_27_L23PyrRS_v" quantity="L23PyrRS_L23/27/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_28_L23PyrRS_v" quantity="L23PyrRS_L23/28/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_29_L23PyrRS_v" quantity="L23PyrRS_L23/29/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_30_L23PyrRS_v" quantity="L23PyrRS_L23/30/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_31_L23PyrRS_v" quantity="L23PyrRS_L23/31/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_32_L23PyrRS_v" quantity="L23PyrRS_L23/32/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_33_L23PyrRS_v" quantity="L23PyrRS_L23/33/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_34_L23PyrRS_v" quantity="L23PyrRS_L23/34/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_35_L23PyrRS_v" quantity="L23PyrRS_L23/35/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_36_L23PyrRS_v" quantity="L23PyrRS_L23/36/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_37_L23PyrRS_v" quantity="L23PyrRS_L23/37/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_38_L23PyrRS_v" quantity="L23PyrRS_L23/38/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_39_L23PyrRS_v" quantity="L23PyrRS_L23/39/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_40_L23PyrRS_v" quantity="L23PyrRS_L23/40/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_41_L23PyrRS_v" quantity="L23PyrRS_L23/41/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_42_L23PyrRS_v" quantity="L23PyrRS_L23/42/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_43_L23PyrRS_v" quantity="L23PyrRS_L23/43/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_44_L23PyrRS_v" quantity="L23PyrRS_L23/44/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_45_L23PyrRS_v" quantity="L23PyrRS_L23/45/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_46_L23PyrRS_v" quantity="L23PyrRS_L23/46/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_47_L23PyrRS_v" quantity="L23PyrRS_L23/47/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_48_L23PyrRS_v" quantity="L23PyrRS_L23/48/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_49_L23PyrRS_v" quantity="L23PyrRS_L23/49/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_50_L23PyrRS_v" quantity="L23PyrRS_L23/50/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_51_L23PyrRS_v" quantity="L23PyrRS_L23/51/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_52_L23PyrRS_v" quantity="L23PyrRS_L23/52/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_53_L23PyrRS_v" quantity="L23PyrRS_L23/53/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_54_L23PyrRS_v" quantity="L23PyrRS_L23/54/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_55_L23PyrRS_v" quantity="L23PyrRS_L23/55/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_56_L23PyrRS_v" quantity="L23PyrRS_L23/56/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_57_L23PyrRS_v" quantity="L23PyrRS_L23/57/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_58_L23PyrRS_v" quantity="L23PyrRS_L23/58/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_59_L23PyrRS_v" quantity="L23PyrRS_L23/59/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_60_L23PyrRS_v" quantity="L23PyrRS_L23/60/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_61_L23PyrRS_v" quantity="L23PyrRS_L23/61/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_62_L23PyrRS_v" quantity="L23PyrRS_L23/62/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_63_L23PyrRS_v" quantity="L23PyrRS_L23/63/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_64_L23PyrRS_v" quantity="L23PyrRS_L23/64/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_65_L23PyrRS_v" quantity="L23PyrRS_L23/65/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_66_L23PyrRS_v" quantity="L23PyrRS_L23/66/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_67_L23PyrRS_v" quantity="L23PyrRS_L23/67/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_68_L23PyrRS_v" quantity="L23PyrRS_L23/68/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_69_L23PyrRS_v" quantity="L23PyrRS_L23/69/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_70_L23PyrRS_v" quantity="L23PyrRS_L23/70/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_71_L23PyrRS_v" quantity="L23PyrRS_L23/71/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_72_L23PyrRS_v" quantity="L23PyrRS_L23/72/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_73_L23PyrRS_v" quantity="L23PyrRS_L23/73/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_74_L23PyrRS_v" quantity="L23PyrRS_L23/74/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_75_L23PyrRS_v" quantity="L23PyrRS_L23/75/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_76_L23PyrRS_v" quantity="L23PyrRS_L23/76/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_77_L23PyrRS_v" quantity="L23PyrRS_L23/77/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_78_L23PyrRS_v" quantity="L23PyrRS_L23/78/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_79_L23PyrRS_v" quantity="L23PyrRS_L23/79/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_80_L23PyrRS_v" quantity="L23PyrRS_L23/80/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_81_L23PyrRS_v" quantity="L23PyrRS_L23/81/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_82_L23PyrRS_v" quantity="L23PyrRS_L23/82/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_83_L23PyrRS_v" quantity="L23PyrRS_L23/83/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_84_L23PyrRS_v" quantity="L23PyrRS_L23/84/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_85_L23PyrRS_v" quantity="L23PyrRS_L23/85/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_86_L23PyrRS_v" quantity="L23PyrRS_L23/86/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_87_L23PyrRS_v" quantity="L23PyrRS_L23/87/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_88_L23PyrRS_v" quantity="L23PyrRS_L23/88/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_89_L23PyrRS_v" quantity="L23PyrRS_L23/89/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_90_L23PyrRS_v" quantity="L23PyrRS_L23/90/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_91_L23PyrRS_v" quantity="L23PyrRS_L23/91/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_92_L23PyrRS_v" quantity="L23PyrRS_L23/92/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_93_L23PyrRS_v" quantity="L23PyrRS_L23/93/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_94_L23PyrRS_v" quantity="L23PyrRS_L23/94/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_95_L23PyrRS_v" quantity="L23PyrRS_L23/95/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_96_L23PyrRS_v" quantity="L23PyrRS_L23/96/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_97_L23PyrRS_v" quantity="L23PyrRS_L23/97/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_98_L23PyrRS_v" quantity="L23PyrRS_L23/98/L23PyrRS/v"/> 
+            <OutputColumn id="v_L23PyrRS_L23_99_L23PyrRS_v" quantity="L23PyrRS_L23/99/L23PyrRS/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__TCR_Thalamus" fileName="Sim_TestTraubBuildFull.TCR_Thalamus.v.dat">
+            <OutputColumn id="v_TCR_Thalamus_0_TCR_v" quantity="TCR_Thalamus/0/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_1_TCR_v" quantity="TCR_Thalamus/1/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_2_TCR_v" quantity="TCR_Thalamus/2/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_3_TCR_v" quantity="TCR_Thalamus/3/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_4_TCR_v" quantity="TCR_Thalamus/4/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_5_TCR_v" quantity="TCR_Thalamus/5/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_6_TCR_v" quantity="TCR_Thalamus/6/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_7_TCR_v" quantity="TCR_Thalamus/7/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_8_TCR_v" quantity="TCR_Thalamus/8/TCR/v"/> 
+            <OutputColumn id="v_TCR_Thalamus_9_TCR_v" quantity="TCR_Thalamus/9/TCR/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__SupLTSInter_L23" fileName="Sim_TestTraubBuildFull.SupLTSInter_L23.v.dat">
+            <OutputColumn id="v_SupLTSInter_L23_0_SupLTSInter_v" quantity="SupLTSInter_L23/0/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_1_SupLTSInter_v" quantity="SupLTSInter_L23/1/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_2_SupLTSInter_v" quantity="SupLTSInter_L23/2/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_3_SupLTSInter_v" quantity="SupLTSInter_L23/3/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_4_SupLTSInter_v" quantity="SupLTSInter_L23/4/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_5_SupLTSInter_v" quantity="SupLTSInter_L23/5/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_6_SupLTSInter_v" quantity="SupLTSInter_L23/6/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_7_SupLTSInter_v" quantity="SupLTSInter_L23/7/SupLTSInter/v"/> 
+            <OutputColumn id="v_SupLTSInter_L23_8_SupLTSInter_v" quantity="SupLTSInter_L23/8/SupLTSInter/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__L5TuftedPyrIB_L5" fileName="Sim_TestTraubBuildFull.L5TuftedPyrIB_L5.v.dat">
+            <OutputColumn id="v_L5TuftedPyrIB_L5_0_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/0/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_1_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/1/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_2_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/2/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_3_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/3/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_4_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/4/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_5_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/5/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_6_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/6/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_7_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/7/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_8_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/8/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_9_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/9/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_10_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/10/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_11_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/11/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_12_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/12/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_13_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/13/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_14_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/14/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_15_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/15/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_16_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/16/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_17_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/17/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_18_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/18/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_19_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/19/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_20_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/20/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_21_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/21/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_22_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/22/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_23_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/23/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_24_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/24/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_25_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/25/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_26_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/26/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_27_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/27/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_28_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/28/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_29_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/29/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_30_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/30/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_31_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/31/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_32_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/32/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_33_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/33/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_34_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/34/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_35_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/35/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_36_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/36/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_37_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/37/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_38_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/38/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_39_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/39/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_40_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/40/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_41_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/41/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_42_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/42/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_43_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/43/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_44_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/44/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_45_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/45/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_46_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/46/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_47_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/47/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_48_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/48/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_49_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/49/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_50_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/50/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_51_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/51/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_52_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/52/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_53_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/53/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_54_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/54/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_55_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/55/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_56_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/56/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_57_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/57/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_58_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/58/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_59_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/59/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_60_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/60/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_61_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/61/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_62_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/62/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_63_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/63/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_64_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/64/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_65_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/65/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_66_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/66/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_67_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/67/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_68_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/68/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_69_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/69/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_70_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/70/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_71_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/71/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_72_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/72/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_73_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/73/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_74_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/74/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_75_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/75/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_76_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/76/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_77_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/77/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_78_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/78/L5TuftedPyrIB/v"/> 
+            <OutputColumn id="v_L5TuftedPyrIB_L5_79_L5TuftedPyrIB_v" quantity="L5TuftedPyrIB_L5/79/L5TuftedPyrIB/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__DeepAxAx_L6" fileName="Sim_TestTraubBuildFull.DeepAxAx_L6.v.dat">
+            <OutputColumn id="v_DeepAxAx_L6_0_DeepAxAx_v" quantity="DeepAxAx_L6/0/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_1_DeepAxAx_v" quantity="DeepAxAx_L6/1/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_2_DeepAxAx_v" quantity="DeepAxAx_L6/2/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_3_DeepAxAx_v" quantity="DeepAxAx_L6/3/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_4_DeepAxAx_v" quantity="DeepAxAx_L6/4/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_5_DeepAxAx_v" quantity="DeepAxAx_L6/5/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_6_DeepAxAx_v" quantity="DeepAxAx_L6/6/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_7_DeepAxAx_v" quantity="DeepAxAx_L6/7/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_8_DeepAxAx_v" quantity="DeepAxAx_L6/8/DeepAxAx/v"/> 
+            <OutputColumn id="v_DeepAxAx_L6_9_DeepAxAx_v" quantity="DeepAxAx_L6/9/DeepAxAx/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__SupAxAx_L23" fileName="Sim_TestTraubBuildFull.SupAxAx_L23.v.dat">
+            <OutputColumn id="v_SupAxAx_L23_0_SupAxAx_v" quantity="SupAxAx_L23/0/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_1_SupAxAx_v" quantity="SupAxAx_L23/1/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_2_SupAxAx_v" quantity="SupAxAx_L23/2/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_3_SupAxAx_v" quantity="SupAxAx_L23/3/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_4_SupAxAx_v" quantity="SupAxAx_L23/4/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_5_SupAxAx_v" quantity="SupAxAx_L23/5/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_6_SupAxAx_v" quantity="SupAxAx_L23/6/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_7_SupAxAx_v" quantity="SupAxAx_L23/7/SupAxAx/v"/> 
+            <OutputColumn id="v_SupAxAx_L23_8_SupAxAx_v" quantity="SupAxAx_L23/8/SupAxAx/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__L23PyrFRB_L23" fileName="Sim_TestTraubBuildFull.L23PyrFRB_L23.v.dat">
+            <OutputColumn id="v_L23PyrFRB_L23_0_L23PyrFRB_v" quantity="L23PyrFRB_L23/0/L23PyrFRB/v"/> 
+            <OutputColumn id="v_L23PyrFRB_L23_1_L23PyrFRB_v" quantity="L23PyrFRB_L23/1/L23PyrFRB/v"/> 
+            <OutputColumn id="v_L23PyrFRB_L23_2_L23PyrFRB_v" quantity="L23PyrFRB_L23/2/L23PyrFRB/v"/> 
+            <OutputColumn id="v_L23PyrFRB_L23_3_L23PyrFRB_v" quantity="L23PyrFRB_L23/3/L23PyrFRB/v"/> 
+            <OutputColumn id="v_L23PyrFRB_L23_4_L23PyrFRB_v" quantity="L23PyrFRB_L23/4/L23PyrFRB/v"/> 
+        </OutputFile>
+        
+        <OutputFile id="Volts_file__nRT_Thalamus" fileName="Sim_TestTraubBuildFull.nRT_Thalamus.v.dat">
+            <OutputColumn id="v_nRT_Thalamus_0_nRT_v" quantity="nRT_Thalamus/0/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_1_nRT_v" quantity="nRT_Thalamus/1/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_2_nRT_v" quantity="nRT_Thalamus/2/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_3_nRT_v" quantity="nRT_Thalamus/3/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_4_nRT_v" quantity="nRT_Thalamus/4/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_5_nRT_v" quantity="nRT_Thalamus/5/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_6_nRT_v" quantity="nRT_Thalamus/6/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_7_nRT_v" quantity="nRT_Thalamus/7/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_8_nRT_v" quantity="nRT_Thalamus/8/nRT/v"/> 
+            <OutputColumn id="v_nRT_Thalamus_9_nRT_v" quantity="nRT_Thalamus/9/nRT/v"/> 
+        </OutputFile>
+        
+    </Simulation>
+
+</Lems>
