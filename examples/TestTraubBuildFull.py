@@ -96,6 +96,33 @@ synapseList,projArray=oc_utils.build_connectivity(network,pop_params,"../NeuroML
 
 oc.add_synapses(nml_doc,'../NeuroML2/prototypes/Thalamocortical/',synapseList)
 
+input_params={'TCR':[{'InputType':'GeneratePoissonTrains',
+                  'Layer':'Thalamus',
+                  'TrainType':'transient',
+                  'Synapse':'Syn_AMPA_L6NT_TCR',
+                  'AverageRateList':[200.0,150.0],
+                  'DurationList':[100.0,50.0],
+                  'DelayList':[50.0,200.0],
+                  'FractionToTarget':1.0,
+                  'LocationSpecific':False,
+                  'TargetDict':{'dendrite_group':2 }       }]              }
+                  
+input_params_pulses={'TCR':[{'InputType':'PulseGenerators',
+                     'Layer':'Thalamus',
+                     'AmplitudeList':[20.0,-20.0],
+                     'DurationList':[100.0,50.0],
+                     'DelayList':[50.0,200.0],
+                     'FractionToTarget':1.0,
+                     'LocationSpecific':False,
+                     'TargetDict':{'dendrite_group':2 }       }]              }
+              
+              
+passed=oc_utils.check_inputs(input_params_pulses,popDict,"../NeuroML2/prototypes/Thalamocortical/")
+
+if passed:
+   print("Input parameters are specified correctly")
+   oc_utils.build_inputs(nml_doc=nml_doc,net=network,pop_params=pop_params,input_params=input_params_pulses,path_to_nml2="../NeuroML2/prototypes/Thalamocortical/") 
+
 nml_file_name = '%s.net.nml'%network.id
 oc.save_network(nml_doc, nml_file_name, validate=True)
 
@@ -109,6 +136,8 @@ oc.generate_lems_simulation(nml_doc,
                             duration =      300, 
                             dt =            0.025,
                             include_extra_files=synapseList)
+                            
+
 
 
                                               
