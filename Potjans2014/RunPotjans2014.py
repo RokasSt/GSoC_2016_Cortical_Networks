@@ -26,9 +26,9 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    V0_mean = -58.0,
                    V0_sd= 5.0,
                    which_populations='all',
-                   scale_excitatory_cortex=0.05,
-                   scale_inhibitory_cortex=0.05,
-                   scale_thalamus=0.05,  
+                   scale_excitatory_cortex=0.01,
+                   scale_inhibitory_cortex=0.01,
+                   scale_thalamus=0.01,  
                    input_scaling=1.0,
                    rel_inh_syn_w=-4.0,
                    input_type='poisson',
@@ -45,15 +45,16 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    
     ##############   Full model ##################################
     
-    popDictFull['L23_E'] = (20683, 'L23','IF_curr_exp_L23_E')
-    popDictFull['L23_I'] = (5834, 'L23','IF_curr_exp_L23_I')
-    popDictFull['L4_E'] = (21915, 'L4','IF_curr_exp_L4_E')
-    popDictFull['L4_I'] = (5479, 'L4','IF_curr_exp_L4_I')
-    popDictFull['L5_E']= (4850,'L5','IF_curr_exp_L5_E')          
-    popDictFull['L5_I']= (1065,'L5','IF_curr_exp_L5_I')
-    popDictFull['L6_E']= (14395,'L23','IF_curr_exp_L6_E')
-    popDictFull['L6_I']= (2948,'L6','IF_curr_exp_L6_I')
-    popDictFull['Thalamus_E']=(902,'Thalamus',None)
+    popDictFull['L23_E'] = (20683, 'L23','IF_curr_exp_L23_E','single')
+    popDictFull['L23_I'] = (5834, 'L23','IF_curr_exp_L23_I','single')
+    popDictFull['L4_E'] = (21915, 'L4','IF_curr_exp_L4_E','single')
+    popDictFull['L4_I'] = (5479, 'L4','IF_curr_exp_L4_I','single')
+    popDictFull['L5_E']= (4850,'L5','IF_curr_exp_L5_E','single')          
+    popDictFull['L5_I']= (1065,'L5','IF_curr_exp_L5_I','single')
+    popDictFull['L6_E']= (14395,'L23','IF_curr_exp_L6_E','single')
+    popDictFull['L6_I']= (2948,'L6','IF_curr_exp_L6_I','single')
+    
+    popDictFull['Thalamus_E']=(902,'Thalamus')
     
     ###############################################################
     
@@ -73,17 +74,23 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
            
               if 'E' in cell_pop_id:
              
-                 popDict[cell_pop_id]=( int(round(scale_excitatory_cortex*popDictFull[cell_pop_id][0])), popDictFull[cell_pop_id][1],popDictFull[cell_pop_id][2])
+                 popDict[cell_pop_id]=(int(round(scale_excitatory_cortex*popDictFull[cell_pop_id][0])), 
+                                       popDictFull[cell_pop_id][1],
+                                       popDictFull[cell_pop_id][2],
+                                       popDictFull[cell_pop_id][3])
              
               if 'I' in cell_pop_id:
                   
-                 popDict[cell_pop_id]=( int(round(scale_inhibitory_cortex*popDictFull[cell_pop_id][0])), popDictFull[cell_pop_id][1],popDictFull[cell_pop_id][2])
+                 popDict[cell_pop_id]=(int(round(scale_inhibitory_cortex*popDictFull[cell_pop_id][0])), 
+                                       popDictFull[cell_pop_id][1],
+                                       popDictFull[cell_pop_id][2],
+                                       popDictFull[cell_pop_id][3])
                
            else:
            
               if thalamic_input:
              
-                 scaledThalamus[cell_pop_id]=( int(round(scale_thalamus*popDictFull[cell_pop_id][0])),popDictFull[cell_pop_id][1],popDictFull[cell_pop_id][2])
+                 scaledThalamus[cell_pop_id]=( int(round(scale_thalamus*popDictFull[cell_pop_id][0])),popDictFull[cell_pop_id][1])
                  
     popDictFinal={}
     
@@ -242,7 +249,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L23_E",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
@@ -264,7 +271,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L23_I",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
@@ -283,17 +290,17 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'TargetDict':{None:1500}  }],
                      
                    'L4_E':[ {'InputType':'GeneratePoissonTrains',
-                             'InputName':"EXT_L4_I",
+                             'InputName':"EXT_L4_E",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:2100} },
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L4_E",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -308,14 +315,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L4_I",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:1900}},
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L4_I",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -330,14 +337,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L5_E",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:2000}},
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L5_E",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -352,14 +359,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L5_I",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:1900}},
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L5_I",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -374,14 +381,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L6_E",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:2900}},
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L6_E",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -396,14 +403,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'InputName':"EXT_L6_I",
                              'TrainType':'persistent',
                              'Synapse':'exp_curr_syn_all',
-                             'AverageRateList':[8],
+                             'AverageRateList':[8.0],
                              'RateUnits':'Hz',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:2100}},
                              
                             {'InputType':'PulseGenerators',
-                             'InputName':"Ext_L23_E",
+                             'InputName':"Ext_L6_I",
                              'Noise':False,
                              'AmplitudeList':[],
                              'DurationList':[],
@@ -413,14 +420,20 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'FractionToTarget':1.0,
                              'LocationSpecific':False,
                              'TargetDict':{None:1600}  } ] }
+                             
+    for pop_id in input_params.keys(): 
+    
+        for input_group_ind in range(0,len(input_params[pop_id]) ):
+           
+            if input_type=='poisson' and input_params[pop_id][input_group_ind]['InputType']=='PulseGenerators':
+            
+               del input_params[pop_id][input_group_ind]
                    
-    if input_scaling ! = 1.0:              
+    if input_scaling != 1.0:              
                    
        for pop_id in input_params.keys(): 
     
            for input_group_ind in range(0,len(input_params[pop_id]) ):
-           
-               
            
                if 'TargetDict' in input_params[pop_id][input_group_ind].keys():
                
@@ -469,10 +482,10 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     input_list_array_final, input_synapse_list=oc_utils.build_inputs(nml_doc=nml_doc,
                                                                      net=network,
                                                                      population_params=pop_params,
-                                                                     input_params=input_params_final,
-                                                                     cached_dicts=cached_segment_dicts,
-                                                                     path_to_cells=dir_to_cells,
-                                                                     path_to_synapses=dir_to_synapses)
+                                                                     input_params=input_params,
+                                                                     cached_dicts=None,
+                                                                     path_to_cells=None,
+                                                                     path_to_synapses=False)
                                                                      
     # Mean rates in the full-scale model, necessary for scaling
     # Precise values differ somewhat between network realizations
