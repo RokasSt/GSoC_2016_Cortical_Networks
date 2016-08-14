@@ -31,6 +31,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    scale_thalamus=0.05,  
                    input_scaling=1.0,
                    rel_inh_syn_w=-4.0,
+                   input_type='poisson',
                    thalamic_input=False,
                    duration=300,
                    dt=0.025,
@@ -186,13 +187,13 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                  [0.0364,   0.001,  0.0034, 0.0005, 0.0277, 0.008,  0.0658, 0.1443]]
                  
     conn_mean_w=[[87.8E-3,  rel_inh_syn_w*87.8E-3, 2*87.8E-3, rel_inh_syn_w*2*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
-                 [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3]]  
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3],
+                    [87.8E-3,  rel_inh_syn_w*87.8E-3,   87.8E-3,   rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3, 87.8E-3, rel_inh_syn_w*87.8E-3]]  
                  
     conn_std_w=[[0.1,  0.1, 0.05, 0.1, 0.1, 0.1, 0.1, 0.1],
                 [0.1,  0.1,  0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
@@ -220,14 +221,241 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                     [0.75,  0.375, 0.75, 0.375, 0.75, 0.375, 0.75, 0.375],
                     [0.75,  0.375, 0.75, 0.375, 0.75, 0.375, 0.75, 0.375],
                     [0.75,  0.375, 0.75, 0.375, 0.75, 0.375, 0.75, 0.375]] 
-                   
+                    
     syn=neuroml.ExpCurrSynapse(id='exp_curr_syn_all',tau_syn=0.5)
     
     nml_doc.exp_curr_synapses.append(syn)
                     
     syn_id_matrix=[['exp_curr_syn_all']]       # utils method build_probability_based_connectivity will assume that the same synapse model is shared by all projections; 
                                                # however, it must be inside 'list' because generically each physical projection might contain multiple synaptic components.
-                                               
+                 
+    # In-degrees for external inputs
+    
+    K_ext = {
+    'L23': {'E': 1600, 'I': 1500},
+    'L4' : {'E': 2100, 'I': 1900},
+    'L5' : {'E': 2000, 'I': 1900},
+    'L6' : {'E': 2900, 'I': 2100}
+    }
+    
+    input_params ={'L23_E':[{'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L23_E",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600} },
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  }],
+                     
+                   'L23_I':[{'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L23_I",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1500} },
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_I",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1500}  }],
+                     
+                   'L4_E':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L4_I",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:2100} },
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  }], 
+                     
+                   'L4_I':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L4_I",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1900}},
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  } ],
+                     
+                   'L5_E':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L5_E",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:2000}},
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  } ],
+                             
+                   'L5_I':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L5_I",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1900}},
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  } ],
+                     
+                   'L6_E':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L6_E",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:2900}},
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  } ],    
+                             
+                   'L6_I':[ {'InputType':'GeneratePoissonTrains',
+                             'InputName':"EXT_L6_I",
+                             'TrainType':'persistent',
+                             'Synapse':'exp_curr_syn_all',
+                             'AverageRateList':[8],
+                             'RateUnits':'Hz',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:2100}},
+                             
+                            {'InputType':'PulseGenerators',
+                             'InputName':"Ext_L23_E",
+                             'Noise':False,
+                             'AmplitudeList':[],
+                             'DurationList':[],
+                             'DelayList':[],
+                             'TimeUnits':'ms',
+                             'AmplitudeUnits':'nA',
+                             'FractionToTarget':1.0,
+                             'LocationSpecific':False,
+                             'TargetDict':{None:1600}  } ] }
+                   
+    if input_scaling ! = 1.0:              
+                   
+       for pop_id in input_params.keys(): 
+    
+           for input_group_ind in range(0,len(input_params[pop_id]) ):
+           
+               
+           
+               if 'TargetDict' in input_params[pop_id][input_group_ind].keys():
+               
+                  if None in input_params[pop_id][input_group_ind]['TargetDict'].keys():
+                      
+                     num_of_inputs_per_cell=int(round(input_params[pop_id][input_group_ind]['TargetDict'][None]*input_scaling) )
+                      
+                     if num_of_inputs_per_cell !=0:
+                      
+                        input_params[pop_id][input_group_ind]['TargetDict'][None]=num_of_inputs_per_cell
+                         
+                        for pop_tag_ind in range(0,len(pop_tags_on_matrix)):
+                         
+                            if pop_tags_on_matrix[pop_tag_ind] == pop_id:
+                             
+                               post_pop_tag=pop_tag_ind
+                                
+                               for post_pop_index in range(0,len(conn_mean_w)):
+                                
+                                   if post_pop_tag == post_pop_index:
+                                
+                                      for pre_pop_index in range(0,len(conn_mean_w[post_pop_index])):
+                                       
+                                          conn_mean_w[post_pop_index][pre_pop_index]=(1.0/math.sqrt(num_of_inputs_per_cell))*conn_mean_w[post_pop_index][pre_pop_index]
+                                          
+                                          conn_std_w[post_pop_index][pre_pop_index]=(1.0/math.sqrt(num_of_inputs_per_cell))*conn_std_w[post_pop_index][pre_pop_index]
+                                                                   
+                     else:
+                      
+                        del input_params[pop_id][input_group_ind]   
+                         
+                        if input_params[pop_id] == []:
+                         
+                           del input_params[pop_id] 
+          
     proj_array=oc_utils.build_probability_based_connectivity(net=network,
                                                              pop_params=pop_params,
                                                              probability_matrix=conn_probs, 
@@ -237,28 +465,28 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                                              tags_on_populations=pop_tags_on_matrix, 
                                                              std_weight_matrix=conn_std_w,
                                                              std_delay_matrix=conn_std_delay)
-    
-    #TODO inputs
-    
-    # In-degrees for external inputs
-    K_ext = {
-    'L23': {'E': 1600, 'I': 1500},
-    'L4' : {'E': 2100, 'I': 1900},
-    'L5' : {'E': 2000, 'I': 1900},
-    'L6' : {'E': 2900, 'I': 2100}
-    }
+                                                             
+    input_list_array_final, input_synapse_list=oc_utils.build_inputs(nml_doc=nml_doc,
+                                                                     net=network,
+                                                                     population_params=pop_params,
+                                                                     input_params=input_params_final,
+                                                                     cached_dicts=cached_segment_dicts,
+                                                                     path_to_cells=dir_to_cells,
+                                                                     path_to_synapses=dir_to_synapses)
+                                                                     
     # Mean rates in the full-scale model, necessary for scaling
     # Precise values differ somewhat between network realizations
+    
     full_mean_rates = {
     'L23': {'E': 0.971, 'I': 2.868},
     'L4' : {'E': 4.746, 'I': 5.396},
     'L5' : {'E': 8.142, 'I': 9.078},
     'L6' : {'E': 0.991, 'I': 7.523}
 
-    }
+    }                                                                 
     
-    # Background rate per synapse
-    bg_rate = 8.  # spikes/s
+    # Background rate per synapse: done
+    # bg_rate = 8.  # spikes/s
     
     # Parameters for transient thalamic input
     thalamic_input = False
@@ -319,6 +547,6 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
 if __name__=="__main__":
 
    ## generation is faster when initial membrane potential does not vary with the cell instance
-   #RunPotjans2014(V0_mean = None,V0_sd= None)
+   RunPotjans2014(V0_mean = None,V0_sd= None)
    
-   RunPotjans2014()
+   #RunPotjans2014()
