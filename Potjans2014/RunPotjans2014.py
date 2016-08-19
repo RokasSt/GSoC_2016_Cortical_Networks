@@ -27,6 +27,46 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                     },
                    V0_mean = -58.0,
                    V0_sd= 5.0,
+                   bg_rate=8.0,       # spikes/s
+                   w_mean = 87.8e-3, # nA
+                   w_ext = 87.8e-3, # nA
+                   w_234 = 2 * 87.8e-3,  # nA
+                   w_rel = 0.1,
+                   w_rel_234 = 0.05,
+                   d_mean = {'E': 1.5, 'I': 0.75},
+                   d_sd = {'E': 0.75, 'I': 0.375},
+                   K_ext = {'L23_E': 1600, 
+                            'L23_I': 1500,
+                            'L4_E': 2100, 
+                            'L4_I': 1900,
+                            'L5_E': 2000, 
+                            'L5_I': 1900,
+                            'L6_E': 2900, 
+                            'L6_I': 2100},
+                   full_mean_rates = {'L23_E': 0.971, 
+                                      'L23_I': 2.868,
+                                      'L4_E': 4.746, 
+                                      'L4_I': 5.396,
+                                      'L5_E': 8.142, 
+                                      'L5_I': 9.078,
+                                      'L6_E' : 0.991, 
+                                      'L6_I': 7.523},
+                   thal_params = {
+                   # Number of neurons in thalamic population
+                   'n_thal'      : 902,
+                   # Connection probabilities
+                   'C'           : {'L23_E': 0,
+                                    'L23_I': 0,
+                                    'L4_E' : 0.0983, 
+                                    'L4_I': 0.0619,
+                                    'L5_E' : 0, 
+                                    'L5_I': 0,
+                                    'L6_E' : 0.0512, 
+                                    'L6_I': 0.0196},
+                   'rate'        : 120.,  # spikes/s;
+                   'start'       : 700.,  # ms
+                   'duration'    : 10.   # ms;
+                   },
                    which_populations='all',
                    scale_excitatory_cortex=0.01,
                    scale_inhibitory_cortex=0.01,
@@ -35,102 +75,14 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    rel_inh_syn_w=-4.0,
                    input_type='poisson',
                    thalamic_input=False,
-                   duration=300,
+                   duration=50,
                    dt=0.025,
                    max_memory='4000M',
                    seed=1234,
                    simulator=None):
-   
-                   
-    ##############   Original model parameters ##############################################################################################
     
-    n_layers = 4
+    ######################### Full-scale model #############################################################
     
-    n_pops_per_layer = 2
-              
-    K_full = np.zeros([n_layers * n_pops_per_layer, n_layers * n_pops_per_layer])
-    
-    #### get in-degrees for all connections in the full scale model according to scaling.py in the original project
-    
-    for source_pop in popDictFull.keys():
-    
-        for target_pop in popDictFull.keys():
-        
-            n_target = popDictFull[target_pop][0]
-            
-            n_source = popDictFull[source_pop][0]
-            
-            K_full[target_index][source_index] = round(np.log(1. -
-            conn_probs[target_index][source_index]) / np.log(
-            (n_target * n_source - 1.) / (n_target * n_source))) / n_target
-            
-    # Background rate
-    bg_rate = 8.0  # spikes/s
-
-    # Mean synaptic weight for all excitatory projections except L4e->L2/3e
-    w_mean = 87.8e-3  # nA
-    w_ext = 87.8e-3  # nA
-    # Mean synaptic weight for L4e->L2/3e connections 
-    # See p. 801 of the paper, second paragraph under 'Model Parameterization', 
-    # and the caption to Supplementary Fig. 7
-    w_234 = 2 * w_mean  # nA
-
-    # Standard deviation of weight distribution relative to mean for 
-    # all projections except L4e->L2/3e
-    w_rel = 0.1
-    # Standard deviation of weight distribution relative to mean for L4e->L2/3e
-    # This value is not mentioned in the paper, but is chosen to match the 
-    # original code by Tobias Potjans
-    w_rel_234 = 0.05
-    
-    # Means and standard deviations of delays from given source populations (ms)
-    d_mean = {'E': 1.5, 'I': 0.75}
-    d_sd = {'E': 0.75, 'I': 0.375}
-    
-    # in-degrees for external inputs
-    
-    K_ext = {'L23_E': 1600, 
-             'L23_I': 1500,
-             'L4_E': 2100, 
-             'L4_I': 1900,
-             'L5_E': 2000, 
-             'L5_I': 1900,
-             'L6_E': 2900, 
-             'L6_I': 2100}
-    
-    # Mean rates in the full-scale model, necessary for scaling
-    # Precise values differ somewhat between network realizations
-    
-    full_mean_rates = {'L23_E': 0.971, 
-                       'L23_I': 2.868,
-                       'L4_E': 4.746, 
-                       'L4_I': 5.396,
-                       'L5_E': 8.142, 
-                       'L5_I': 9.078,
-                       'L6_E' : 0.991, 
-                       'L6_I': 7.523}
-                       
-    thal_params = {
-    # Number of neurons in thalamic population
-    'n_thal'      : 902,
-    # Connection probabilities
-    'C'           : {'L23_E': 0,
-                     'L23_I': 0,
-                     'L4_E' : 0.0983, 
-                     'L4_I': 0.0619},
-                     'L5_E' : 0, 
-                     'L5_I': 0,
-                     'L6_E' : 0.0512, 
-                     'L6_I': 0.0196},
-    'rate'        : 120.,  # spikes/s;
-    'start'       : 700.,  # ms
-    'duration'    : 10.   # ms;
-    }
-    
-    #######################################################################################################
-    
-    nml_doc, network = oc.generate_network(net_id,seed)
-                   
     popDictFull={}
     
     popDictFull['L23_E'] = (20683, 'L23','IF_curr_exp_L23_E','single')
@@ -145,15 +97,25 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     
     pop_ids=['L23_E','L23_I','L4_E','L4_I', 'L5_E','L5_I', 'L6_E','L6_I']
     
+    n_layers = 4
+    
+    n_pops_per_layer = 2
+              
+    K_full = np.zeros([n_layers * n_pops_per_layer, n_layers * n_pops_per_layer])
+    
+    #######################################################################################################
+    
+    nml_doc, network = oc.generate_network(net_id,seed)
+    
     popDict={}
     
     for cell_pop_id in popDictFull.keys():
         
         if which_populations=='all' or cell_pop_id in which_populations:
            
-           popDict[cell_pop_id]=()
-           
            if 'Thalamus' not in cell_pop_id:
+           
+              popDict[cell_pop_id]=()
            
               if 'E' in cell_pop_id:
              
@@ -172,8 +134,8 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
            else:
            
               if thalamic_input:
-           
-                 popDict[cell_pop_id]=(int(round(scale_thalamus*popDictFull[cell_pop_id][0])), 
+                 
+                 thal_tuple=(int(round(scale_thalamus*popDictFull[cell_pop_id][0])), 
                                        popDictFull[cell_pop_id][1],
                                        popDictFull[cell_pop_id][2],
                                        popDictFull[cell_pop_id][3])
@@ -182,13 +144,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     
     for cell_pop_id in popDict.keys():
     
-        not_thalamus='Thalamus' not in cell_pop_id
-        
-        if not not_thalamus:
-        
-           popDictFinal[cell_pop_id]=popDict[cell_pop_id]
-    
-        if V0_mean != None and  V0_sd != None and not_thalamus:
+        if V0_mean != None and  V0_sd != None:
 
            for cell_ind in range(0,popDict[cell_pop_id][0]):
            
@@ -210,7 +166,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                              
                nml_doc.IF_curr_exp.append(PyNN_cell)
                
-               popDictFinal[new_pop_id]=(1,popDict[cell_pop_id][1],popDict[cell_pop_id][2]+str(cell_ind))
+               popDictFinal[new_pop_id]=(1,popDict[cell_pop_id][1],popDict[cell_pop_id][2]+str(cell_ind),popDict[cell_pop_id][3])
             
         else:
         
@@ -229,7 +185,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                          v_thresh=neuron_params['v_thresh'])
                                              
            nml_doc.IF_curr_exp.append(PyNN_cell)
-           
+        
     t1=-100
     t2=-150
     t3=-150
@@ -327,6 +283,21 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                     
     syn_id_matrix=[['exp_curr_syn_all']]       # utils method build_probability_based_connectivity will assume that the same synapse model is shared by all projections; 
                                                # however, it must be inside 'list' because generically each physical projection might contain multiple synaptic components.
+                                               
+           
+    #### get in-degrees for all connections in the full scale model according to scaling.py in the original project
+    
+    for source_pop in pop_ids:
+    
+        for target_pop in pop_ids:
+        
+            n_target = popDictFull[target_pop][0]
+            
+            n_source = popDictFull[source_pop][0]
+            
+            K_full[pop_ids.index(target_pop)][pop_ids.index(source_pop)] = round(np.log(1. -
+            conn_probs[pop_ids.index(target_pop)][pop_ids.index(source_pop)]) / np.log(
+            (n_target * n_source - 1.) / (n_target * n_source))) / n_target
     
     input_params ={'L23_E':[{'InputType':'GenerateSpikeSourcePoisson',
                              'InputName':"EXT_L23_E",
@@ -334,6 +305,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -358,10 +330,11 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
-                             'LocationSpecific':False},
+                             'LocationSpecific':False,
                              'TargetDict':{None:1} },
                              
                             {'InputType':'PulseGenerators',
@@ -382,6 +355,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -406,6 +380,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -430,6 +405,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -454,6 +430,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -478,6 +455,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -502,6 +480,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                              'DurationList':[],
                              'DelayList':[],
                              'WeightList':[],
+                             'Synapse':'exp_curr_syn_all',
                              'RateUnits':'Hz',
                              'TimeUnits':'ms',
                              'FractionToTarget':1.0,
@@ -556,43 +535,49 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
           (1. - np.sqrt(K_scaling)) * input_coefficient + DC[pop_ids[target_pop_index]]
           
        w_ext = w_ext / np.sqrt(K_scaling)
+       
+    input_params_final={}
               
-    for pop_id in input_params.keys(): 
+    for target_pop_tag in input_params.keys(): 
     
-        if pop_id not in pop_params.keys():
-        
-           del input_params[pop_id]
-           
-        else:
-        
-           for input_group_ind in range(0,len(input_params[pop_id]) ):
-           
-               if input_type=='poisson' and input_params[pop_id][input_group_ind]['InputType']=='PulseGenerators' and K_scaling==1:
-            
-                  del input_params[pop_id][input_group_ind]
-               
-               if input_type=='DC' and input_params[pop_id][input_group_ind]['InputType']=='GenerateSpikeSourcePoisson':
-            
-                  del input_params[pop_id][input_group_ind]
-               
-               if (input_type=='DC' or K_scaling !=1) and input_params[pop_id][input_group_ind]['InputType']=='PulseGenerators':
-            
-                  input_params[pop_id][input_group_ind]['AmplitudeList'].append(DC_amp[pop_id])
-                  
-                  input_params[pop_id][input_group_ind]['DurationList'].append(0.0)
-                  
-                  input_params[pop_id][input_group_ind]['DelayList'].append(0.0)
-            
-               if input_type=='poisson' and input_params[pop_id][input_group_ind]['InputType']=='GenerateSpikeSourcePoisson':               
+        found_target_pop=False
     
-                  input_params[pop_id][input_group_ind]['AverageRateList'].append(bg_rate*K_ext[pop_id])
+        for pop_id in pop_params.keys():
+    
+            if target_pop_tag  in pop_id:
+        
+               found_target_pop=True
+               
+               break
+           
+        if found_target_pop:
+        
+           input_params_final[target_pop_tag]=[]
+        
+           for input_group_ind in range(0,len(input_params[target_pop_tag])):
+               
+               if (input_type=='DC' or K_scaling !=1) and input_params[target_pop_tag][input_group_ind]['InputType']=='PulseGenerators':
+            
+                  input_params[target_pop_tag][input_group_ind]['AmplitudeList'].append(DC_amp[target_pop_tag])
                   
-                  input_params[pop_id][input_group_ind]['WeightList'].append(w_ext)
+                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(0.0)
                   
-                  input_params[pop_id][input_group_ind]['DurationList'].append(0.0)
+                  input_params[target_pop_tag][input_group_ind]['DelayList'].append(0.0)
                   
-                  input_params[pop_id][input_group_ind]['DelayList'].append(0.0)
-          
+                  input_params_final[target_pop_tag].append(input_params[target_pop_tag][input_group_ind])
+            
+               if input_type=='poisson' and input_params[target_pop_tag][input_group_ind]['InputType']=='GenerateSpikeSourcePoisson':               
+    
+                  input_params[target_pop_tag][input_group_ind]['AverageRateList'].append(bg_rate*K_ext[target_pop_tag])
+                  
+                  input_params[target_pop_tag][input_group_ind]['WeightList'].append(w_ext)
+                  
+                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(0.0)
+                  
+                  input_params[target_pop_tag][input_group_ind]['DelayList'].append(0.0)
+                  
+                  input_params_final[target_pop_tag].append(input_params[target_pop_tag][input_group_ind])
+    
     proj_array=oc_utils.build_probability_based_connectivity(net=network,
                                                              pop_params=pop_params,
                                                              probability_matrix=conn_probs, 
@@ -606,23 +591,24 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     input_list_array_final, input_synapse_list=oc_utils.build_inputs(nml_doc=nml_doc,
                                                                      net=network,
                                                                      population_params=pop_params,
-                                                                     input_params=input_params,
+                                                                     input_params=input_params_final,
                                                                      cached_dicts=None,
                                                                      path_to_cells=None,
                                                                      path_to_synapses=None)
-                                                                     
+                                                                                                                                      
     if thalamic_input:
     
-       if 'Thalamus' in pop_params.keys():
+       if thal_tuple[0] != 0:
        
           oc.add_spike_source_poisson(nml_doc, 
-                                      id=popDictFinal['Thalamus'][2], 
+                                      id=thal_tuple[2], 
                                       start="%f ms"%thal_params['start'], 
                                       duration="%f ms"%thal_params['duration'], 
-                                      rate="% ms"%thal_params['rate'])
-                                      
+                                      rate="%f Hz"%thal_params['rate'])
           
-          thalamus_pop=pop_params['Thalamus']['PopObj']
+          thalamus_pop = neuroml.Population(id='Thalamus', component=thal_tuple[2], size=thal_tuple[0] )
+          
+          network.populations.append(thalamus_pop)
           
           for target_pop in thal_params['C'].keys():
           
@@ -633,11 +619,13 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                                    connection_probability=thal_params['C'][target_pop],
                                                    delay = d_mean['E'],
                                                    weight = w_ext,
+                                                   presynaptic_population_list=False,
                                                    std_delay=d_sd['E'],
                                                    std_weight=w_ext*w_rel)
-            
+       else:
        
-                                                                     
+          print("Note: thalamic_input is set to True but population was scaled down to zero, thus thalamic input will not be added.")  
+                                                
     nml_file_name = '%s.net.nml'%network.id
     
     oc.save_network(nml_doc, nml_file_name, validate=True,max_memory=max_memory)
@@ -646,8 +634,13 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                                                network, 
                                                nml_file_name, 
                                                duration =duration, 
-                                               dt =dt)
-     
+                                               dt =dt,
+                                               include_extra_lems_files=["PyNN.xml"],
+                                               gen_plots_for_all_v = False,
+                                               gen_plots_for_only_populations=pop_params.keys(),
+                                               gen_saves_for_all_v = False,
+                                               gen_saves_for_only_populations=pop_params.keys() )
+    
     if simulator != None:                                          
                                                
        opencortex.print_comment_v("Starting simulation of %s.net.nml"%net_id)
@@ -660,6 +653,6 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
 if __name__=="__main__":
 
    ## generation is faster when initial membrane potential does not vary with the cell instance
-   RunPotjans2014(V0_mean = None,V0_sd= None)
+   RunPotjans2014(V0_mean = None,V0_sd= None,thalamic_input=True,simulator=None)
    
    #RunPotjans2014()
