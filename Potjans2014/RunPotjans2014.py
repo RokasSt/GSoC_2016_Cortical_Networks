@@ -75,7 +75,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    rel_inh_syn_w=-4.0,
                    input_type='poisson',
                    thalamic_input=False,
-                   duration=50,
+                   duration=300,
                    dt=0.025,
                    max_memory='4000M',
                    seed=1234,
@@ -215,11 +215,11 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
        
        #other options
       
-       pop_params=oc_utils.add_populations_in_cylindrical_layers(network,boundaries,popDictFinal,radiusOfCylinder=500,numOfSides=6)
+       #pop_params=oc_utils.add_populations_in_cylindrical_layers(network,boundaries,popDictFinal,radiusOfCylinder=500,numOfSides=3)
        
        #pop_params=oc_utils.add_populations_in_cylindrical_layers(network,boundaries,popDictFinal,radiusOfCylinder=500)
                                                                  
-       #pop_params=oc_utils.add_populations_in_rectangular_layers(network,boundaries,popDictFinal,xs,zs) 
+       pop_params=oc_utils.add_populations_in_rectangular_layers(network,boundaries,popDictFinal,xs,zs) 
        
     else:
     
@@ -249,15 +249,28 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                  [w_mean,  rel_inh_syn_w*w_mean,   w_mean,   rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean],
                  [w_mean,  rel_inh_syn_w*w_mean,   w_mean,   rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean],
                  [w_mean,  rel_inh_syn_w*w_mean,   w_mean,   rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean, w_mean, rel_inh_syn_w*w_mean]]  
-                 
-    conn_std_w=[[w_rel,  w_rel,  w_rel_234,  w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel],
-                [w_rel,  w_rel,  w_rel, w_rel, w_rel, w_rel, w_rel, w_rel]] 
+                
+    conn_std_w=[]
+                
+    for target_pop_index in range(0,len(pop_ids)):
+    
+        conn_std_w_per_target_pop=[]
+    
+        for source_pop_index in range(0,len(pop_ids)):
+        
+            w_val=conn_mean_w[target_pop_index][source_pop_index]
+        
+            if pop_ids[source_pop_index]=="L4_E" and pop_ids[target_pop_index]=="L23_E":
+            
+               w_sd=w_val*w_rel_234
+            
+            else:
+            
+               w_sd=abs(w_val * w_rel)
+               
+            conn_std_w_per_target_pop.append(w_sd)
+            
+        conn_std_w.append(conn_std_w_per_target_pop)
                 
     conn_mean_delay=[[d_mean['E'],  d_mean['I'], d_mean['E'], d_mean['I'], d_mean['E'], d_mean['I'], d_mean['E'], d_mean['I']],
                      [d_mean['E'],  d_mean['I'], d_mean['E'], d_mean['I'], d_mean['E'], d_mean['I'], d_mean['E'], d_mean['I']],
@@ -653,6 +666,11 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
 if __name__=="__main__":
 
    ## generation is faster when initial membrane potential does not vary with the cell instance
-   RunPotjans2014(V0_mean = None,V0_sd= None,thalamic_input=True,simulator=None)
+   RunPotjans2014(V0_mean = None,
+                  V0_sd= None,
+                  thalamic_input=True,
+                  max_memory='8000M',
+                  duration=1000,
+                  simulator=None)
    
    #RunPotjans2014()
