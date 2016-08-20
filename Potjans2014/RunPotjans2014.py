@@ -625,16 +625,20 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
           
           for target_pop in thal_params['C'].keys():
           
-              oc.add_probabilistic_projection_list(net=network,
-                                                   presynaptic_population=thalamus_pop, 
-                                                   postsynaptic_population=pop_params[target_pop]['PopObj'], 
-                                                   synapse_list=['exp_curr_syn_all'],  
-                                                   connection_probability=thal_params['C'][target_pop],
-                                                   delay = d_mean['E'],
-                                                   weight = w_ext,
-                                                   presynaptic_population_list=False,
-                                                   std_delay=d_sd['E'],
-                                                   std_weight=w_ext*w_rel)
+              for pop_id in pop_params.keys():
+                
+                  if target_pop in pop_id:
+          
+                     oc.add_probabilistic_projection_list(net=network,
+                                                          presynaptic_population=thalamus_pop, 
+                                                          postsynaptic_population=pop_params[pop_id]['PopObj'], 
+                                                          synapse_list=['exp_curr_syn_all'],  
+                                                          connection_probability=thal_params['C'][target_pop],
+                                                          delay = d_mean['E'],
+                                                          weight = w_ext,
+                                                          presynaptic_population_list=False,
+                                                          std_delay=d_sd['E'],
+                                                          std_weight=w_ext*w_rel)
        else:
        
           print("Note: thalamic_input is set to True but population was scaled down to zero, thus thalamic input will not be added.")  
@@ -666,11 +670,16 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
 if __name__=="__main__":
 
    ## generation is faster when initial membrane potential does not vary with the cell instance
-   RunPotjans2014(V0_mean = None,
+   RunPotjans2014(thalamic_input=True,
+                  max_memory='8000M',
+                  duration=1000,
+                  simulator=None)
+                  
+   RunPotjans2014(net_id='TestRunPotjansFixedV0',
+                  V0_mean = None,
                   V0_sd= None,
                   thalamic_input=True,
                   max_memory='8000M',
                   duration=1000,
                   simulator=None)
-   
-   #RunPotjans2014()
+  
