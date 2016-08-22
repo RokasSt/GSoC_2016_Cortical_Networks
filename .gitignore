@@ -1,8 +1,13 @@
 
-*~
+*.*~
 *pyc
-
-
+*.png
+*.pov
+*.ini
+*.xml
+*.net.nml
+/Potjans2014/*
+!/Potjans2014/RunPotjans2014.py
 
 /*/*.mod
 /*/*_nrn.py

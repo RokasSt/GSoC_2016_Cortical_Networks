@@ -68,6 +68,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    'duration'    : 10.   # ms;
                    },
                    which_populations='all',
+                   which_pops_to_stimulate=[],
                    scale_excitatory_cortex=0.01,
                    scale_inhibitory_cortex=0.01,
                    scale_thalamus=0.01, 
@@ -525,10 +526,8 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
         else:
        
            DC_amp[pop_ids[target_pop_index]]= 0.0
-               
+           
     if K_scaling != 1 :
-       
-       DC_amp={}     
        
        for target_pop_index in range(0,len(pop_ids)):
            
@@ -547,7 +546,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
               K_ext[pop_ids[target_pop_index]] = K_ext[pop_ids[target_pop_index]]*K_scaling
               
            DC_amp[pop_ids[target_pop_index]] = 0.001 * neuron_params['tau_syn_E'] * \
-          (1. - np.sqrt(K_scaling)) * input_coefficient + DC[pop_ids[target_pop_index]]
+          (1. - np.sqrt(K_scaling)) * input_coefficient + DC_amp[pop_ids[target_pop_index]]
           
        w_ext = w_ext / np.sqrt(K_scaling)
        
@@ -556,16 +555,16 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     for target_pop_tag in input_params.keys(): 
     
         found_target_pop=False
-    
-        for pop_id in pop_params.keys():
-    
-            if target_pop_tag  in pop_id:
         
+        for pop_id in pop_params.keys():
+            
+            if target_pop_tag  in pop_id:
+               
                found_target_pop=True
                
                break
            
-        if found_target_pop:
+        if found_target_pop and ( (target_pop_tag in which_pops_to_stimulate) or (which_pops_to_stimulate==[])):
         
            input_params_final[target_pop_tag]=[]
         
@@ -683,18 +682,18 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
     
 if __name__=="__main__":
 
-   ## generation is faster when initial membrane potential does not vary with the cell instance
-   #RunPotjans2014(thalamic_input=True,max_memory='8000M',duration=1000, simulator=None)
-                  
+   ## generation is faster when initial membrane potential does not vary with the cell instance: V0_mean = None,  V0_sd= None;
+   ## however, default values in the original specification of the project are: V0_mean = -58.0, V0_sd= 5.0; 
+   
    RunPotjans2014(net_id='TestRunPotjansFixedV0',
-                  scale_excitatory_cortex=0.001,
-                  scale_inhibitory_cortex=0.001,
-                  scale_thalamus=0.001, 
-                  V0_mean = None,
-                  V0_sd= None,
+                  scale_excitatory_cortex=0.0001,
+                  scale_inhibitory_cortex=0.0001,
+                  scale_thalamus=0.0001,
+                  K_scaling=0.2,
                   thalamic_input=True,
-                  build_connections=False,
+                  build_connections=True,
                   build_inputs=True,
+                  which_pops_to_stimulate=[], # if [] then all populations are stimulated as in the original version of the project;
                   max_memory='8000M',
                   simulator=None)
   
