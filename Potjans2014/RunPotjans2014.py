@@ -77,7 +77,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    thalamic_input=False,
                    build_connections=True,
                    build_inputs=True,
-                   duration=300,
+                   duration=300.0,
                    dt=0.025,
                    max_memory='4000M',
                    seed=1234,
@@ -575,7 +575,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
             
                   input_params[target_pop_tag][input_group_ind]['AmplitudeList'].append(DC_amp[target_pop_tag])
                   
-                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(0.0)
+                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(duration)
                   
                   input_params[target_pop_tag][input_group_ind]['DelayList'].append(0.0)
                   
@@ -587,7 +587,7 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                   
                   input_params[target_pop_tag][input_group_ind]['WeightList'].append(w_ext)
                   
-                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(0.0)
+                  input_params[target_pop_tag][input_group_ind]['DurationList'].append(duration)
                   
                   input_params[target_pop_tag][input_group_ind]['DelayList'].append(0.0)
                   
@@ -618,10 +618,18 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
        if thalamic_input:
     
           if thal_tuple[0] != 0:
+          
+             if duration > thal_params['start']:
+             
+                start_time="%f ms"%thal_params['start']
+            
+             else:
+             
+                start_time="0 ms"
        
              oc.add_spike_source_poisson(nml_doc, 
                                          id=thal_tuple[2], 
-                                         start="%f ms"%thal_params['start'], 
+                                         start=start_time, 
                                          duration="%f ms"%thal_params['duration'], 
                                          rate="%f Hz"%thal_params['rate'])
           
@@ -685,8 +693,8 @@ if __name__=="__main__":
                   V0_mean = None,
                   V0_sd= None,
                   thalamic_input=True,
-                  build_connections=True,
-                  build_inputs=False,
+                  build_connections=False,
+                  build_inputs=True,
                   max_memory='8000M',
                   simulator=None)
   
