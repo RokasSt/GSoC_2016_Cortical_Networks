@@ -70,11 +70,13 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                    which_populations='all',
                    scale_excitatory_cortex=0.01,
                    scale_inhibitory_cortex=0.01,
-                   scale_thalamus=0.01,  
+                   scale_thalamus=0.01, 
                    K_scaling=1.0,
                    rel_inh_syn_w=-4.0,
                    input_type='poisson',
                    thalamic_input=False,
+                   build_connections=True,
+                   build_inputs=True,
                    duration=300,
                    dt=0.025,
                    max_memory='4000M',
@@ -590,58 +592,62 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
                   input_params[target_pop_tag][input_group_ind]['DelayList'].append(0.0)
                   
                   input_params_final[target_pop_tag].append(input_params[target_pop_tag][input_group_ind])
+                  
+    if build_connections:
     
-    proj_array=oc_utils.build_probability_based_connectivity(net=network,
-                                                             pop_params=pop_params,
-                                                             probability_matrix=conn_probs, 
-                                                             synapse_matrix=syn_id_matrix,
-                                                             weight_matrix=conn_mean_w, 
-                                                             delay_matrix=conn_mean_delay,
-                                                             tags_on_populations=pop_ids, 
-                                                             std_weight_matrix=conn_std_w,
-                                                             std_delay_matrix=conn_std_delay)
+       proj_array=oc_utils.build_probability_based_connectivity(net=network,
+                                                                pop_params=pop_params,
+                                                                probability_matrix=conn_probs, 
+                                                                synapse_matrix=syn_id_matrix,
+                                                                weight_matrix=conn_mean_w, 
+                                                                delay_matrix=conn_mean_delay,
+                                                                tags_on_populations=pop_ids, 
+                                                                std_weight_matrix=conn_std_w,
+                                                                std_delay_matrix=conn_std_delay)
+                                                                
+    if build_inputs: 
                                                              
-    input_list_array_final, input_synapse_list=oc_utils.build_inputs(nml_doc=nml_doc,
-                                                                     net=network,
-                                                                     population_params=pop_params,
-                                                                     input_params=input_params_final,
-                                                                     cached_dicts=None,
-                                                                     path_to_cells=None,
-                                                                     path_to_synapses=None)
+       input_list_array_final, input_synapse_list=oc_utils.build_inputs(nml_doc=nml_doc,
+                                                                        net=network,
+                                                                        population_params=pop_params,
+                                                                        input_params=input_params_final,
+                                                                        cached_dicts=None,
+                                                                        path_to_cells=None,
+                                                                        path_to_synapses=None)
                                                                                                                                       
-    if thalamic_input:
+       if thalamic_input:
     
-       if thal_tuple[0] != 0:
+          if thal_tuple[0] != 0:
        
-          oc.add_spike_source_poisson(nml_doc, 
-                                      id=thal_tuple[2], 
-                                      start="%f ms"%thal_params['start'], 
-                                      duration="%f ms"%thal_params['duration'], 
-                                      rate="%f Hz"%thal_params['rate'])
+             oc.add_spike_source_poisson(nml_doc, 
+                                         id=thal_tuple[2], 
+                                         start="%f ms"%thal_params['start'], 
+                                         duration="%f ms"%thal_params['duration'], 
+                                         rate="%f Hz"%thal_params['rate'])
           
-          thalamus_pop = neuroml.Population(id='Thalamus', component=thal_tuple[2], size=thal_tuple[0] )
+             thalamus_pop = neuroml.Population(id='Thalamus', component=thal_tuple[2], size=thal_tuple[0] )
           
-          network.populations.append(thalamus_pop)
+             network.populations.append(thalamus_pop)
           
-          for target_pop in thal_params['C'].keys():
+             for target_pop in thal_params['C'].keys():
           
-              for pop_id in pop_params.keys():
+                 for pop_id in pop_params.keys():
                 
-                  if target_pop in pop_id:
+                     if target_pop in pop_id:
           
-                     oc.add_probabilistic_projection_list(net=network,
-                                                          presynaptic_population=thalamus_pop, 
-                                                          postsynaptic_population=pop_params[pop_id]['PopObj'], 
-                                                          synapse_list=['exp_curr_syn_all'],  
-                                                          connection_probability=thal_params['C'][target_pop],
-                                                          delay = d_mean['E'],
-                                                          weight = w_ext,
-                                                          presynaptic_population_list=False,
-                                                          std_delay=d_sd['E'],
-                                                          std_weight=w_ext*w_rel)
-       else:
+                        oc.add_probabilistic_projection_list(net=network,
+                                                             presynaptic_population=thalamus_pop, 
+                                                             postsynaptic_population=pop_params[pop_id]['PopObj'], 
+                                                             synapse_list=['exp_curr_syn_all'],  
+                                                             connection_probability=thal_params['C'][target_pop],
+                                                             delay = d_mean['E'],
+                                                             weight = w_ext,
+                                                             presynaptic_population_list=False,
+                                                             std_delay=d_sd['E'],
+                                                             std_weight=w_ext*w_rel)
+          else:
        
-          print("Note: thalamic_input is set to True but population was scaled down to zero, thus thalamic input will not be added.")  
+             print("Note: thalamic_input is set to True but population was scaled down to zero, thus thalamic input will not be added.")  
                                                 
     nml_file_name = '%s.net.nml'%network.id
     
@@ -670,16 +676,17 @@ def RunPotjans2014(net_id='TestRunPotjans2014',
 if __name__=="__main__":
 
    ## generation is faster when initial membrane potential does not vary with the cell instance
-   RunPotjans2014(thalamic_input=True,
-                  max_memory='8000M',
-                  duration=1000,
-                  simulator=None)
+   #RunPotjans2014(thalamic_input=True,max_memory='8000M',duration=1000, simulator=None)
                   
    RunPotjans2014(net_id='TestRunPotjansFixedV0',
+                  scale_excitatory_cortex=0.001,
+                  scale_inhibitory_cortex=0.001,
+                  scale_thalamus=0.001, 
                   V0_mean = None,
                   V0_sd= None,
                   thalamic_input=True,
+                  build_connections=True,
+                  build_inputs=False,
                   max_memory='8000M',
-                  duration=1000,
                   simulator=None)
   
