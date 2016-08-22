@@ -686,9 +686,11 @@ if __name__=="__main__":
    ## however, default values in the original specification of the project are: V0_mean = -58.0, V0_sd= 5.0; 
    
    RunPotjans2014(net_id='TestRunPotjansFixedV0',
-                  scale_excitatory_cortex=0.0001,
-                  scale_inhibitory_cortex=0.0001,
-                  scale_thalamus=0.0001,
+                  scale_excitatory_cortex=0.0010,
+                  scale_inhibitory_cortex=0.0010,
+                  scale_thalamus=0.0010,
+                  V0_mean = None,  
+                  V0_sd= None,
                   K_scaling=0.2,
                   thalamic_input=True,
                   build_connections=True,
